@@ -61,10 +61,10 @@ public class AttackArea : MonoBehaviour
 
         visualObject.localScale = originalScale;
         triggerCollider.enabled = true;
-        active = true;
+        active = false;
 
         yield return new WaitForSeconds(activeDuration);
-        gameObject.SetActive(false);
+        gameObject.SetActive(active);
     }
 
     private void OnTriggerEnter(Collider other)

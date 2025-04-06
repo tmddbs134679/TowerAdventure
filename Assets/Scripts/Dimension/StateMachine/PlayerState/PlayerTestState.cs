@@ -4,32 +4,31 @@ using UnityEngine;
 
 public class PlayerTestState : PlayerBaseState
 {
-    private float timer;
+
     public PlayerTestState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
-        stateMachine.InputReader.JumpEvent += OnJump;
+       
     }
 
     public override void Exit()
     {
-        stateMachine.InputReader.JumpEvent -= OnJump;
+        
     }
 
     public override void Tick(float deltaTime)
     {
-        
+        Vector3 movment = new Vector3();
+        movment.x = stateMachine.InputReader.MovementValue.x;
+        movment.y = 0;
+        movment.z = stateMachine.InputReader.MovementValue.y;
+        stateMachine.Controller.Move(movment * stateMachine.FreeLookMovementSpeed * deltaTime);
 
-        timer += deltaTime;
+        if (stateMachine.InputReader.MovementValue == Vector2.zero)
+            return;
 
-        Debug.Log(timer);
-    
+        stateMachine.transform.rotation = Quaternion.LookRotation(movment);
     }
 
-    private void OnJump()
-    {
-        stateMachine.SwitchState(new PlayerTestState(stateMachine));
-       
-    }
 }

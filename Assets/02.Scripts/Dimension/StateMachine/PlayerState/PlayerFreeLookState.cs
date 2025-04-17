@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +13,12 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Enter()
     {
-       
+        stateMachine.InputReader.TargetEvent += OnTarget;
     }
 
-    public override void Exit()
+    private void OnTarget()
     {
-        
+       stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
     }
 
     public override void Tick(float deltaTime)
@@ -37,6 +38,10 @@ public class PlayerFreeLookState : PlayerBaseState
 
         stateMachine.Animator.SetFloat(FreeLookSpeedHas, 1, AnimatorDampTime, deltaTime);
         FaceMovementDirection(movment, deltaTime);
+    }
+    public override void Exit()
+    {
+        stateMachine.InputReader.TargetEvent -= OnTarget;
     }
 
     private void FaceMovementDirection(Vector3 movment, float deltaTtime)

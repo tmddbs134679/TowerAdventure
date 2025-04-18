@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class Targeter : MonoBehaviour
 {
+
+    private Camera mainCaemra;
+
     [SerializeField] private List<Target> targets = new List<Target>();
 
     public Target CurrentTarget { get; private set; }
+
+
+    private void Start()
+    {
+        mainCaemra = Camera.main;
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.TryGetComponent<Target>(out Target target)) 
@@ -30,7 +41,23 @@ public class Targeter : MonoBehaviour
         if (targets.Count == 0) 
         { return false; }
 
-        CurrentTarget = targets[0];
+        Target closestTarget = null;
+        float closestTargetDistance = Mathf.Infinity;
+
+        foreach (var target in targets)
+        {
+            float distance = (target.transform.position - transform.position).sqrMagnitude;
+
+            if (distance < closestTargetDistance)
+            {
+                closestTarget = target;
+                closestTargetDistance = distance;
+            }
+        }
+
+        if (closestTarget == null) { return false; }
+
+        CurrentTarget = closestTarget;
         return true;
     }
 

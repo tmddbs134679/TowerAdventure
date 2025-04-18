@@ -13,7 +13,13 @@ public class PlayerTargetingState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
-        Debug.Log(stateMachine.Targeter.CurrentTarget.name);
+        if(stateMachine.Targeter.CurrentTarget == null)
+        {
+            stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+            return;
+        }
+
+        FaceTarget();
     }
 
     public override void Exit()

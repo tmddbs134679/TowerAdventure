@@ -2523,7 +2523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8851921776189814456
 Transform:
   m_ObjectHideFlags: 0
@@ -2967,6 +2967,7 @@ MonoBehaviour:
   <InputReader>k__BackingField: {fileID: 1469007580279242358}
   <Controller>k__BackingField: {fileID: 1785133771934567129}
   <Animator>k__BackingField: {fileID: 4337233954034475254}
+  <ForceReceiver>k__BackingField: {fileID: 0}
   <Targeter>k__BackingField: {fileID: 2114706196166344664}
   <FreeLookMovementSpeed>k__BackingField: 4
   <RotationDamping>k__BackingField: 10

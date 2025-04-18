@@ -18430,29 +18430,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1418059963432224869, guid: d3be3902f0af21d40b381cd77208daa0, type: 3}
   m_PrefabInstance: {fileID: 777614385}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &783401455 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8896679678164239736, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
-  m_PrefabInstance: {fileID: 3536427021146220983}
-  m_PrefabAsset: {fileID: 0}
---- !u!143 &783401456 stripped
-CharacterController:
-  m_CorrespondingSourceObject: {fileID: 1785133771934567129, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
-  m_PrefabInstance: {fileID: 3536427021146220983}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &783401461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783401455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d33f09c3cb75ba3438d792ac8f76e532, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 783401456}
 --- !u!1001 &787726338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55363,42 +55340,18 @@ PrefabInstance:
     - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: <ForceReceiver>k__BackingField
       value: 
-      objectReference: {fileID: 783401461}
-    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
-      propertyPath: <Attaks>k__BackingField.Array.data[0].<ComboAttackTime>k__BackingField
-      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
-      propertyPath: <Attaks>k__BackingField.Array.data[0].<ComboStateIndex>k__BackingField
+      propertyPath: <Attaks>k__BackingField.Array.data[0].<Force>k__BackingField
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
-      propertyPath: <Attaks>k__BackingField.Array.data[1].<ComboAttackTime>k__BackingField
-      value: 0.5
+      propertyPath: <Attaks>k__BackingField.Array.data[1].<Force>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
-      propertyPath: <Attaks>k__BackingField.Array.data[1].<ComboStateIndex>k__BackingField
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
-      propertyPath: <Attaks>k__BackingField.Array.data[2].<ComboAttackTime>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
-      propertyPath: <Attaks>k__BackingField.Array.data[2].<ComboStateIndex>k__BackingField
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
-      propertyPath: <Attaks>k__BackingField.Array.data[0].<TransitionDuration>k__BackingField
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
-      propertyPath: <Attaks>k__BackingField.Array.data[1].<TransitionDuration>k__BackingField
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
-      propertyPath: <Attaks>k__BackingField.Array.data[2].<TransitionDuration>k__BackingField
-      value: 0.4
+      propertyPath: <Attaks>k__BackingField.Array.data[2].<Force>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3141873384141952458, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55525,10 +55478,7 @@ PrefabInstance:
     - {fileID: 1677869894946686220, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8896679678164239736, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 783401461}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
 --- !u!1001 &4790272928309581261
 PrefabInstance:

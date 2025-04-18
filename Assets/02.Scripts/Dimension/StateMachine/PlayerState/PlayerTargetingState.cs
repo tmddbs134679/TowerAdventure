@@ -13,7 +13,9 @@ public class PlayerTargetingState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
-        if(stateMachine.InputReader.IsAttacking)
+      
+
+        if (stateMachine.InputReader.IsAttacking)
         {
             stateMachine.SwitchState(new PlayerAttackingState(stateMachine , 0));
             return;
@@ -25,7 +27,8 @@ public class PlayerTargetingState : PlayerBaseState
             return;
         }
 
-        FaceTarget();
+        // 공격할때 target하게
+        //FaceTarget();
     }
 
     public override void Exit()

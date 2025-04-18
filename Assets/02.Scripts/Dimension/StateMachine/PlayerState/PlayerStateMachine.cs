@@ -14,7 +14,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float FreeLookMovementSpeed { get; private set; }
     [field: SerializeField] public float RotationDamping { get; private set; }
 
-
+    [field: SerializeField] public Attack[] Attaks { get; private set; }
     // Start is called before the first frame update
     private void Start()
     {

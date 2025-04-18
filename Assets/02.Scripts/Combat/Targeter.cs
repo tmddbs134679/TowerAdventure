@@ -1,3 +1,4 @@
+using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,7 +48,7 @@ public class Targeter : MonoBehaviour
         foreach (var target in targets)
         {
             float distance = (target.transform.position - transform.position).sqrMagnitude;
-
+         
             if (distance < closestTargetDistance)
             {
                 closestTarget = target;

@@ -13,6 +13,9 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action DodgeEvent;
     public event Action TargetEvent;
     public event Action CancelEvent;
+
+    public bool IsAttacking { get; private set; }
+
     private Controls controls;
 
     // Start is called before the first frame update
@@ -66,5 +69,17 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
             return;
 
         CancelEvent?.Invoke();
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            IsAttacking = true;
+        }
+        else if(context.canceled)
+        {
+            IsAttacking = false;
+        }
     }
 }

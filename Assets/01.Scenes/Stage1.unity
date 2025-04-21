@@ -22040,6 +22040,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1418059963432224869, guid: d3be3902f0af21d40b381cd77208daa0, type: 3}
   m_PrefabInstance: {fileID: 901595170}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &902855130 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6544392633634396695, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+  m_PrefabInstance: {fileID: 3536427021146220983}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d33f09c3cb75ba3438d792ac8f76e532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!143 &902855131 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 1785133771934567129, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+  m_PrefabInstance: {fileID: 3536427021146220983}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &907560200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55340,7 +55356,7 @@ PrefabInstance:
     - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: <ForceReceiver>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 902855130}
     - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: <Attaks>k__BackingField.Array.data[0].<Force>k__BackingField
       value: 1
@@ -55429,6 +55445,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 13.834282
       objectReference: {fileID: 0}
+    - target: {fileID: 6544392633634396695, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 902855131}
     - target: {fileID: 8618254747320590482, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.5

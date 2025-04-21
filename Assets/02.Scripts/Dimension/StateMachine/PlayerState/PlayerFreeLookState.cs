@@ -8,11 +8,12 @@ public class PlayerFreeLookState : PlayerBaseState
     //string은 컴파일 타임이기 떄문에 런타임에 작동하면서 빠르게 찾을 수 있게 Animator.stringToHah 사용
     private readonly int FreeLookSpeedHas = Animator.StringToHash("FreeLookSpeed");
     private const float AnimatorDampTime = 0.1f;
-
+    private readonly string FreeLookAnimName = "FreeLookBlentTree";
     public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
+        stateMachine.Animator.CrossFadeInFixedTime(FreeLookAnimName, 0.1f);
         stateMachine.InputReader.TargetEvent += OnTarget;
     }
 

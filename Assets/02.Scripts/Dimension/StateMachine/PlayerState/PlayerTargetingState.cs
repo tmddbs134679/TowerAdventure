@@ -13,7 +13,8 @@ public class PlayerTargetingState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
-      
+
+        FaceTarget();
 
         if (stateMachine.InputReader.IsAttacking)
         {
@@ -28,7 +29,7 @@ public class PlayerTargetingState : PlayerBaseState
         }
 
         // 공격할때 target하게
-        //FaceTarget();
+     
     }
 
     public override void Exit()

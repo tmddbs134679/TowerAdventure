@@ -363,6 +363,7 @@ GameObject:
   - component: {fileID: 8035681660144644490}
   - component: {fileID: 8889979282121583324}
   - component: {fileID: 8774871697901528111}
+  - component: {fileID: 7972296665022132385}
   m_Layer: 0
   m_Name: SlimePolyart
   m_TagString: Untagged
@@ -441,6 +442,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c970f1b5272527498251e5f1467bad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7972296665022132385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153141402127884706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f1b23bf209c6a4eaf735742d8fb86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &7446019047767849115
 GameObject:
   m_ObjectHideFlags: 0

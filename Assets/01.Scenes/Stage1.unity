@@ -55358,6 +55358,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 902855130}
     - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: <Attaks>k__BackingField.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: <Attaks>k__BackingField.Array.data[0].<Force>k__BackingField
       value: 1
       objectReference: {fileID: 0}
@@ -55368,6 +55372,30 @@ PrefabInstance:
     - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: <Attaks>k__BackingField.Array.data[2].<Force>k__BackingField
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: <Attaks>k__BackingField.Array.data[3].<Force>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: <Attaks>k__BackingField.Array.data[3].<ForceTime>k__BackingField
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: <Attaks>k__BackingField.Array.data[1].<AnimationName>k__BackingField
+      value: Attack2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: <Attaks>k__BackingField.Array.data[3].<AnimationName>k__BackingField
+      value: Attack3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: <Attaks>k__BackingField.Array.data[3].<ComboStateIndex>k__BackingField
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: <Attaks>k__BackingField.Array.data[3].<TransitionDuration>k__BackingField
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3141873384141952458, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: m_LocalPosition.x

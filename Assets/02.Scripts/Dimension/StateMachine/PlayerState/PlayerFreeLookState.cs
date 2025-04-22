@@ -9,11 +9,14 @@ public class PlayerFreeLookState : PlayerBaseState
     private readonly int FreeLookSpeedHas = Animator.StringToHash("FreeLookSpeed");
     private const float AnimatorDampTime = 0.1f;
     private readonly string FreeLookAnimName = "FreeLookBlentTree";
+    private const float CrossFadeDuration = 0.1f;
+
+
     public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
-        stateMachine.Animator.CrossFadeInFixedTime(FreeLookAnimName, 0.1f);
+        stateMachine.Animator.CrossFadeInFixedTime(FreeLookAnimName, CrossFadeDuration);
         stateMachine.InputReader.TargetEvent += OnTarget;
     }
 

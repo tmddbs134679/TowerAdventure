@@ -38,11 +38,7 @@ public class EnemyIdleState : EnemyBaseState
         stateMachine.Animator.SetFloat(SpeedHas, 0, AnimatorDampTime, deltaTime);
     }
 
-    private void MoveToPlayer(float deltaTime)
-    {
-        
-    }
-
+ 
     public override void Exit()
     {
 

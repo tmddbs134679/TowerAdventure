@@ -25419,6 +25419,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1418059963432224869, guid: d3be3902f0af21d40b381cd77208daa0, type: 3}
   m_PrefabInstance: {fileID: 1045105838}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1046987820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8182295123987398291, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+  m_PrefabInstance: {fileID: 3536427021146220983}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f1b23bf209c6a4eaf735742d8fb86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1047419011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26007,10 +26018,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.71
-  m_Height: 2.03
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.45, z: 0.12}
+  m_Radius: 0.16
+  m_Height: 0.67
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.27, z: 0.74}
 --- !u!114 &1060203921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57125,8 +57136,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.51, z: 0}
+  m_Size: {x: 1, y: 1.2080933, z: 1}
+  m_Center: {x: 0, y: 0.61404663, z: 0}
 --- !u!1001 &1817244225333597501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57252,6 +57263,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: <Health>k__BackingField
+      value: 
+      objectReference: {fileID: 1046987820}
     - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: <ForceReceiver>k__BackingField
       value: 
@@ -57627,11 +57642,12 @@ MonoBehaviour:
   <Controller>k__BackingField: {fileID: 7829174616753338681}
   <Agent>k__BackingField: {fileID: 7829174616753338682}
   <Weapon>k__BackingField: {fileID: 1060203921}
+  <Health>k__BackingField: {fileID: 7829174616753338679}
   <AttackDamage>k__BackingField: 20
   <AttackRange>k__BackingField: 1
   <PlayerChasingRange>k__BackingField: 3
   <MovementSpeed>k__BackingField: 1
-  <AttackKnockback>k__BackingField: 1
+  <AttackKnockback>k__BackingField: 0.5
 --- !u!143 &7829174616753338681
 CharacterController:
   m_ObjectHideFlags: 0
@@ -57672,7 +57688,7 @@ NavMeshAgent:
   m_Acceleration: 0
   avoidancePriority: 50
   m_AngularSpeed: 0
-  m_StoppingDistance: 0.5
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

@@ -32,6 +32,7 @@ public abstract class PlayerBaseState : State
         stateMachine.transform.rotation = Quaternion.LookRotation(lookPos);
     }
 
+
     //private Vector3 CalculateMovent()
     //{
     //    Vector3 movement = new Vector3();

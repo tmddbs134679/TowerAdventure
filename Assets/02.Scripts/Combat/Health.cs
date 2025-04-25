@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class Health : MonoBehaviour
 
     private int health;
 
-
+    public event Action OnTakeDamage;
     void Start()
     {
         health = maxHealth;
@@ -26,6 +27,8 @@ public class Health : MonoBehaviour
         if (health <= 0) { return; }
 
         health = Mathf.Max(health - dmg, 0);
+
+        OnTakeDamage?.Invoke();
 
         Debug.Log(health);
     }

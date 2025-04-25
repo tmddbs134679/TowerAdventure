@@ -19,12 +19,19 @@ public class EnemyAttackingState : EnemyBaseState
   
     public override void Tick(float deltaTime)
     {
-        if(!IsInAttackRange())
+        //AnimatorStateInfo stateInfo = stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
+
+        //// 애니메이션이 끝났으면
+        //if (stateInfo.normalizedTime >= 1f && stateInfo.IsName("Attack1"))
+        //{
+        //    FacePlayer();
+        //}
+
+
+        if (!IsInAttackRange())
         {
             stateMachine.SwitchState(new EnemyChasingState(stateMachine));
         }
-
-
     }
 
 

@@ -25,6 +25,7 @@ public class Targeter : MonoBehaviour
         { return; }
 
         targets.Add(target);
+        target.OnDestroyed += RemoveTarget;
 
     }
 
@@ -33,8 +34,7 @@ public class Targeter : MonoBehaviour
         if(!other.TryGetComponent<Target>(out Target target))
         { return; }
         
-        targets.Remove(target);
-        
+         RemoveTarget(target);
     }
 
     public bool SelectTatget()
@@ -66,5 +66,18 @@ public class Targeter : MonoBehaviour
     {
         CurrentTarget = null;
     }
+
+    private void RemoveTarget(Target target)
+    {
+        if (CurrentTarget == target)
+        {
+            CurrentTarget = null;
+        }
+
+        target.OnDestroyed -= RemoveTarget;
+        targets.Remove(target);
+    }
+
+
 
 }

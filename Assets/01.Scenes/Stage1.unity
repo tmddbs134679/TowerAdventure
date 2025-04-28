@@ -26034,7 +26034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85020feb0109ca54a9bac4411705e982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCollder: {fileID: 0}
+  myCollder: {fileID: 1060203920}
 --- !u!1001 &1060929895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57369,6 +57369,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 13.834282
       objectReference: {fileID: 0}
+    - target: {fileID: 6481184125018657158, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6544392633634396695, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: controller
       value: 
@@ -57613,7 +57617,7 @@ MonoBehaviour:
   <Agent>k__BackingField: {fileID: 7829174616753338682}
   <Weapon>k__BackingField: {fileID: 1060203921}
   <Health>k__BackingField: {fileID: 7829174616753338679}
-  <AttackDamage>k__BackingField: 20
+  <AttackDamage>k__BackingField: 10
   <AttackRange>k__BackingField: 1
   <PlayerChasingRange>k__BackingField: 3
   <MovementSpeed>k__BackingField: 1
@@ -57639,7 +57643,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 0.75
-  m_Radius: 0.5
+  m_Radius: 0.83
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08

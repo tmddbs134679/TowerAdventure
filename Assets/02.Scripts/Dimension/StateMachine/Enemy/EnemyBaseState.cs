@@ -36,6 +36,8 @@ public abstract class EnemyBaseState : State
 
     protected bool IsInChaseRange()
     {
+        if (stateMachine.Player.IsDead) { return false; }
+
         //distance안쓰고 sqr사용하여 최적화
         float playerDistanceSqr = (stateMachine.Player.transform.position - stateMachine.transform.position).sqrMagnitude;
 
@@ -44,6 +46,8 @@ public abstract class EnemyBaseState : State
 
     protected bool IsInAttackRange()
     {
+        if (stateMachine.Player.IsDead) { return false; }
+
         //distance안쓰고 sqr사용하여 최적화
         float playerDistanceSqr = (stateMachine.Player.transform.position - stateMachine.transform.position).sqrMagnitude;
 

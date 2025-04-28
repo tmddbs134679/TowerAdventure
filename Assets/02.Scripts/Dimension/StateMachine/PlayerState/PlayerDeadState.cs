@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerDeadState : PlayerBaseState
 {
-    private readonly int DeadkHas = Animator.StringToHash("Dead");
+    private readonly int DeadHas = Animator.StringToHash("Dead");
     private readonly int SpeedHas = Animator.StringToHash("Speed");
     private const float AnimatorDampTime = 0.1f;
 
@@ -13,8 +13,9 @@ public class PlayerDeadState : PlayerBaseState
 
     public override void Enter()
     {
+
         stateMachine.Weapon.gameObject.SetActive(false);
-        stateMachine.Animator.CrossFadeInFixedTime(DeadkHas, AnimatorDampTime);
+        stateMachine.Animator.CrossFadeInFixedTime(DeadHas, AnimatorDampTime);
     }
 
     public override void Tick(float deltaTime){ }

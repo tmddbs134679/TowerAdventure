@@ -11,13 +11,18 @@ public class PlayerFreeLookState : PlayerBaseState
     private readonly string FreeLookAnimName = "FreeLookBlentTree";
     private const float CrossFadeDuration = 0.1f;
 
+    private Vector3 ladderForward;
 
-    public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine) { }
+    public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine)
+    {
+    
+    }
 
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookAnimName, CrossFadeDuration);
         stateMachine.InputReader.TargetEvent += OnTarget;
+        stateMachine.LadderDetector.OnLadderDetect += HandleLadderDetect;
     }
 
 
@@ -47,6 +52,7 @@ public class PlayerFreeLookState : PlayerBaseState
     public override void Exit()
     {
         stateMachine.InputReader.TargetEvent -= OnTarget;
+        stateMachine.LadderDetector.OnLadderDetect -= HandleLadderDetect;
     }
 
 
@@ -78,5 +84,11 @@ public class PlayerFreeLookState : PlayerBaseState
         movement.z = stateMachine.InputReader.MovementValue.y;
 
         return movement;
+    }
+
+
+    private void HandleLadderDetect(Vector3 ladderForward)
+    {
+        stateMachine.SwitchState(new PlayerClimbState(stateMachine, ladderForward));
     }
 }

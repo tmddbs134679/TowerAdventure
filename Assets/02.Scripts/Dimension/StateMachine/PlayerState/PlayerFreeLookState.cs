@@ -61,8 +61,6 @@ public class PlayerFreeLookState : PlayerBaseState
         if(!stateMachine.Targeter.SelectTatget())
         { return; }
 
-
-        stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
     }
 
 
@@ -89,6 +87,6 @@ public class PlayerFreeLookState : PlayerBaseState
 
     private void HandleLadderDetect(Vector3 ladderForward)
     {
-        stateMachine.SwitchState(new PlayerClimbState(stateMachine, ladderForward));
+        stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.CLIMB]);
     }
 }

@@ -15,6 +15,7 @@ public class PlayerStunState : PlayerBaseState
 
     public override void Enter()
     {
+        duration = 0.2f;
         stateMachine.Animator.CrossFadeInFixedTime(StunHas, CrossFadeDuration);
     }
 

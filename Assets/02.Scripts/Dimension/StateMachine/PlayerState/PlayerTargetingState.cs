@@ -18,13 +18,13 @@ public class PlayerTargetingState : PlayerBaseState
 
         if (stateMachine.InputReader.IsAttacking)
         {
-            stateMachine.SwitchState(new PlayerAttackingState(stateMachine , 0));
+            stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.FREELOOK]);
             return;
         }
 
         if(stateMachine.Targeter.CurrentTarget == null)
         {
-            stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+            stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.FREELOOK]);
             return;
         }
 
@@ -41,7 +41,7 @@ public class PlayerTargetingState : PlayerBaseState
     {
         stateMachine.Targeter.Cancel();
 
-        stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+        stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.FREELOOK]);
     }
     
 }

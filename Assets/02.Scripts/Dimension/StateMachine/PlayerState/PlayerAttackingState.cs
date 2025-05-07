@@ -9,8 +9,11 @@ public class PlayerAttackingState : PlayerBaseState
     private float previousFrameTime;
 
     private bool alreadyAppliedForce;
+    private int attackIdx = -1;
 
     private Attack attack;
+    private int attackIndex;
+
     public PlayerAttackingState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
         attack = stateMachine.Attaks[attackIndex];
@@ -18,6 +21,11 @@ public class PlayerAttackingState : PlayerBaseState
 
     public override void Enter()
     {
+        attack = stateMachine.Attaks[attackIndex];
+
+        alreadyAppliedForce = false;
+        previousFrameTime = 0;
+
         stateMachine.Weapon.SetAttack(attack.Damage, attack.Knockback);
         stateMachine.Animator.CrossFadeInFixedTime(attack.AnimationName, attack.TransitionDuration);
     }
@@ -48,16 +56,7 @@ public class PlayerAttackingState : PlayerBaseState
         }
         else
         {
-            //if(stateMachine.Targeter.CurrentTarget != null)
-            //{
-            //    stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
-            //}
-            //else
-            //{
-            //    stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
-            //}
-
-            stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+            stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.FREELOOK]);
         }
     }
 
@@ -69,21 +68,22 @@ public class PlayerAttackingState : PlayerBaseState
 
     private void TryComboAttack(float normalizedTime)
     {
-       
+
         if(attack.ComboStateIndex == -1) { return; }
 
        
         if(normalizedTime < attack.ComboAttackTime) { return; }
 
-        stateMachine.SwitchState
-        (
-            new PlayerAttackingState
-            (
-                 stateMachine,
-                 attack.ComboStateIndex
-            )
-        );
 
+        var attackState = (PlayerAttackingState)stateMachine.States[EPLAYERSTATE.ATTACK];
+        attackState.SetAttackIndex(attack.ComboStateIndex);
+        stateMachine.SwitchState(attackState);
+
+    }
+    public void SetAttackIndex(int index)
+    {
+        attackIndex = index;
+        attack = stateMachine.Attaks[attackIndex];
     }
 
 

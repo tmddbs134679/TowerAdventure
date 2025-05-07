@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerStateMachine : StateMachine
 {
+    public Dictionary<EPLAYERSTATE, PlayerBaseState> States = new Dictionary<EPLAYERSTATE, PlayerBaseState>();
     [field: SerializeField]public InputReader InputReader { get; private set; }
     [field: SerializeField] public CharacterController Controller { get; private set; }
 
@@ -21,10 +22,22 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public Attack[] Attaks { get; private set; }
 
 
+
+    private void Awake()
+    {
+        States.Add(EPLAYERSTATE.FREELOOK, new PlayerFreeLookState(this));
+        States.Add(EPLAYERSTATE.ATTACK, new PlayerAttackingState(this, 0));
+        States.Add(EPLAYERSTATE.DEAD, new PlayerDeadState(this));
+        States.Add(EPLAYERSTATE.CLIMB, new PlayerClimbState(this, Vector3.zero));
+        States.Add(EPLAYERSTATE.STUN, new PlayerStunState(this));
+    }
+
+
     // Start is called before the first frame update
     private void Start()
     {
-        SwitchState(new PlayerFreeLookState(this));
+        //SwitchState(new PlayerFreeLookState(this));
+        SwitchState(States[EPLAYERSTATE.FREELOOK]);
     }
 
     private void OnEnable()
@@ -41,12 +54,14 @@ public class PlayerStateMachine : StateMachine
 
     private void HandleTakeDamage()
     {
-        SwitchState(new PlayerStunState(this));
+        // SwitchState(new PlayerStunState(this));
+        SwitchState((States[EPLAYERSTATE.STUN]));
     }
 
     private void HandleDie()
     {
-        SwitchState(new PlayerDeadState(this));
+        // SwitchState(new PlayerDeadState(this));
+        SwitchState((States[EPLAYERSTATE.DEAD]));
     }
 
 

@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyStateMachine : StateMachine
 {
+
+    public Dictionary<EENEMYSTATE, EnemyBaseState> States = new Dictionary<EENEMYSTATE, EnemyBaseState>();
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public CharacterController Controller { get; private set; }
 
@@ -23,8 +25,17 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public Target Target { get; private set; }
 
 
-    public Health Player { get; private set; } 
+    public Health Player { get; private set; }
 
+    private void Awake()
+    {
+        States.Add(EENEMYSTATE.IDLE, new EnemyIdleState(this));
+        States.Add(EENEMYSTATE.CHASING, new EnemyChasingState(this));
+        States.Add(EENEMYSTATE.ATTACK, new EnemyAttackingState(this));
+        States.Add(EENEMYSTATE.STUN, new EnemyStunState(this));
+        States.Add(EENEMYSTATE.DEAD, new EnemyDeadState(this));
+
+    }
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();

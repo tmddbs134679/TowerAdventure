@@ -24,12 +24,12 @@ public class EnemyChasingState : EnemyBaseState
     {
         if(!IsInChaseRange())
         {
-            stateMachine.SwitchState(new EnemyIdleState(stateMachine));
+            stateMachine.SwitchState(stateMachine.States[EENEMYSTATE.IDLE]);
             return;
         }
         else if(IsInAttackRange())
         {
-            stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
+            stateMachine.SwitchState(stateMachine.States[EENEMYSTATE.ATTACK]);
             return;
         }
 

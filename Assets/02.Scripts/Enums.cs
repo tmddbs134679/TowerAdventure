@@ -12,3 +12,18 @@ public enum EPLAYERSTATE
     DEAD
 }
 
+public enum EENEMYSTATE
+{ 
+    IDLE,
+    CHASING,
+    ATTACK,
+    SKILL,
+    STUN,
+    DEAD
+}
+
+public enum EMONSKILLTYPE
+{
+
+}
+

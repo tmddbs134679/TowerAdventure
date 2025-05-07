@@ -17,6 +17,7 @@ public class EnemyStunState : EnemyBaseState
 
     public override void Enter()
     {
+        duration = 1f;
         stateMachine.Animator.CrossFadeInFixedTime(StunHas, CrossFadeDuration);
     }
 
@@ -29,7 +30,7 @@ public class EnemyStunState : EnemyBaseState
 
         if(duration <= 0f)
         {
-            stateMachine.SwitchState(new EnemyIdleState(stateMachine));
+            stateMachine.SwitchState(stateMachine.States[EENEMYSTATE.IDLE]);
         }
     }
 

@@ -305,7 +305,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2468,7 +2468,7 @@ GameObject:
   - component: {fileID: 5118063904057114126}
   - component: {fileID: 5901706876450638440}
   - component: {fileID: 8651557211246369014}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LadderDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3101,7 +3101,7 @@ GameObject:
   - component: {fileID: 8182295123987398291}
   m_Layer: 0
   m_Name: Player_Test
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3181,7 +3181,7 @@ MonoBehaviour:
     <Damage>k__BackingField: 10
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 1
-    <Knockback>k__BackingField: 5
+    <Knockback>k__BackingField: 20
   - <AnimationName>k__BackingField: Attack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
@@ -3189,7 +3189,7 @@ MonoBehaviour:
     <Damage>k__BackingField: 15
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 1
-    <Knockback>k__BackingField: 5
+    <Knockback>k__BackingField: 20
   - <AnimationName>k__BackingField: Attack3
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: -1
@@ -3197,7 +3197,7 @@ MonoBehaviour:
     <Damage>k__BackingField: 20
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 1
-    <Knockback>k__BackingField: 5
+    <Knockback>k__BackingField: 20
 --- !u!114 &1469007580279242358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3248,7 +3248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d33f09c3cb75ba3438d792ac8f76e532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 1785133771934567129}
   agent: {fileID: 0}
   drag: 0.3
 --- !u!114 &15752496320120129

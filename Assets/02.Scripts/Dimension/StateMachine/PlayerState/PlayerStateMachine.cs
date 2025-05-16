@@ -26,6 +26,7 @@ public class PlayerStateMachine : StateMachine
     private void Awake()
     {
         States.Add(EPLAYERSTATE.FREELOOK, new PlayerFreeLookState(this));
+        States.Add(EPLAYERSTATE.DODGE, new PlayerDodgeState(this));
         States.Add(EPLAYERSTATE.ATTACK, new PlayerAttackingState(this, 0));
         States.Add(EPLAYERSTATE.DEAD, new PlayerDeadState(this));
         States.Add(EPLAYERSTATE.CLIMB, new PlayerClimbState(this, Vector3.zero));
@@ -55,13 +56,13 @@ public class PlayerStateMachine : StateMachine
     private void HandleTakeDamage()
     {
         // SwitchState(new PlayerStunState(this));
-        SwitchState((States[EPLAYERSTATE.STUN]));
+        SwitchState(States[EPLAYERSTATE.STUN]);
     }
 
     private void HandleDie()
     {
         // SwitchState(new PlayerDeadState(this));
-        SwitchState((States[EPLAYERSTATE.DEAD]));
+        SwitchState(States[EPLAYERSTATE.DEAD]);
     }
 
 

@@ -15,13 +15,14 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-    
+       
     }
 
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookAnimName, CrossFadeDuration);
         stateMachine.InputReader.TargetEvent += OnTarget;
+        stateMachine.InputReader.DodgeEvent += Dodge;
         stateMachine.LadderDetector.OnLadderDetect += HandleLadderDetect;
     }
 
@@ -53,6 +54,7 @@ public class PlayerFreeLookState : PlayerBaseState
     {
         stateMachine.InputReader.TargetEvent -= OnTarget;
         stateMachine.LadderDetector.OnLadderDetect -= HandleLadderDetect;
+        stateMachine.InputReader.DodgeEvent -= Dodge;
     }
 
 

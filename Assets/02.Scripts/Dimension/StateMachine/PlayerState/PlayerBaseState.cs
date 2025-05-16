@@ -32,6 +32,10 @@ public abstract class PlayerBaseState : State
         stateMachine.transform.rotation = Quaternion.LookRotation(lookPos);
     }
 
+    protected void Dodge()
+    {
+        stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.DODGE]);
+    }
 
     //private Vector3 CalculateMovent()
     //{

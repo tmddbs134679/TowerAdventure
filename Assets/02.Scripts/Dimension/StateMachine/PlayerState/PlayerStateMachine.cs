@@ -8,6 +8,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField]public InputReader InputReader { get; private set; }
     [field: SerializeField] public CharacterController Controller { get; private set; }
 
+    [field: SerializeField] public List<SkillBase> Skills { get; private set; }
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public Health Health { get; private set; }
 
@@ -28,6 +29,7 @@ public class PlayerStateMachine : StateMachine
         States.Add(EPLAYERSTATE.FREELOOK, new PlayerFreeLookState(this));
         States.Add(EPLAYERSTATE.DODGE, new PlayerDodgeState(this));
         States.Add(EPLAYERSTATE.ATTACK, new PlayerAttackingState(this, 0));
+        States.Add(EPLAYERSTATE.SKILL, new PlayerSkillState(this));
         States.Add(EPLAYERSTATE.DEAD, new PlayerDeadState(this));
         States.Add(EPLAYERSTATE.CLIMB, new PlayerClimbState(this, Vector3.zero));
         States.Add(EPLAYERSTATE.STUN, new PlayerStunState(this));

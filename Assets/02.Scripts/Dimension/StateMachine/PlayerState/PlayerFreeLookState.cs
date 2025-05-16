@@ -23,6 +23,7 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookAnimName, CrossFadeDuration);
         stateMachine.InputReader.TargetEvent += OnTarget;
         stateMachine.InputReader.DodgeEvent += Dodge;
+        stateMachine.InputReader.SkillEvent += Skill_Q;
         stateMachine.LadderDetector.OnLadderDetect += HandleLadderDetect;
     }
 
@@ -52,9 +53,10 @@ public class PlayerFreeLookState : PlayerBaseState
     }
     public override void Exit()
     {
-        stateMachine.InputReader.TargetEvent -= OnTarget;
         stateMachine.LadderDetector.OnLadderDetect -= HandleLadderDetect;
+        stateMachine.InputReader.TargetEvent -= OnTarget;
         stateMachine.InputReader.DodgeEvent -= Dodge;
+        stateMachine.InputReader.SkillEvent -= Skill_Q;
     }
 
 
@@ -75,16 +77,7 @@ public class PlayerFreeLookState : PlayerBaseState
             );
     }
 
-    private Vector3 CalculateMovement()
-    {
-        Vector3 movement = new Vector3();
 
-        movement.x = stateMachine.InputReader.MovementValue.x;
-        movement.y = 0;
-        movement.z = stateMachine.InputReader.MovementValue.y;
-
-        return movement;
-    }
 
 
     private void HandleLadderDetect(Vector3 ladderForward)

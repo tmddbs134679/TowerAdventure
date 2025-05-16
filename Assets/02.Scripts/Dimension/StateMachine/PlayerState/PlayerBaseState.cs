@@ -37,6 +37,24 @@ public abstract class PlayerBaseState : State
         stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.DODGE]);
     }
 
+    protected void Skill_Q()
+    {
+        var skill = stateMachine.Skills[0]; 
+        var skillState = (PlayerSkillState)stateMachine.States[EPLAYERSTATE.SKILL];
+        
+        skillState.SetSkill(skill);
+        stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.SKILL]);
+    }
+    protected Vector3 CalculateMovement()
+    {
+        Vector3 movement = new Vector3();
+
+        movement.x = stateMachine.InputReader.MovementValue.x;
+        movement.y = 0;
+        movement.z = stateMachine.InputReader.MovementValue.y;
+
+        return movement;
+    }
     //private Vector3 CalculateMovent()
     //{
     //    Vector3 movement = new Vector3();

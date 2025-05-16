@@ -6,6 +6,7 @@ public enum EPLAYERSTATE
 {
     FREELOOK,
     ATTACK,
+    SKILL,
     DODGE,
     JUMP,
     CLIMB,

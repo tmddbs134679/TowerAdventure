@@ -9,7 +9,7 @@ public class PlayerAttackingState : PlayerBaseState
     private float previousFrameTime;
 
     private bool alreadyAppliedForce;
-    private int attackIdx = -1;
+   
 
     private Attack attack;
     private int attackIndex;

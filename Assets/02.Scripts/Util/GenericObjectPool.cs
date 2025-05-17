@@ -32,7 +32,9 @@ public class GenericObjectPool<T> where T : Component
             SizeUpPool(currentSize);
         }
 
-        return pool.Dequeue();
+        var obj = pool.Dequeue();
+        obj.gameObject.SetActive(true);
+        return obj;
     }
 
     private void SizeUpPool(int currentSize)

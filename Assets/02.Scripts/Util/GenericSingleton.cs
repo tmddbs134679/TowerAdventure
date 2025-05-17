@@ -28,7 +28,7 @@ public abstract class GenericSingleton<T> : MonoBehaviour where T : MonoBehaviou
 
     protected virtual void Awake()
     {
-        if(inst == null )
+        if(inst == null)
         {
             inst = this as T;
             DontDestroyOnLoad(gameObject);

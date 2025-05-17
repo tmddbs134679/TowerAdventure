@@ -34,7 +34,12 @@ public abstract class PlayerBaseState : State
 
     protected void Dodge()
     {
-        stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.DODGE]);
+        if(stateMachine.CanDodge)
+        {
+            stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.DODGE]);
+            SetDodgeCooldown();
+        }
+      
     }
 
     protected void Skill_Q()
@@ -54,6 +59,12 @@ public abstract class PlayerBaseState : State
         movement.z = stateMachine.InputReader.MovementValue.y;
 
         return movement;
+    }
+
+
+    public void SetDodgeCooldown()
+    {
+        stateMachine.lastDodgeTime = Time.time;
     }
     //private Vector3 CalculateMovent()
     //{

@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
 
-    private int health;
+    private float health;
 
     public event Action OnTakeDamage;
     public event Action OnDie;
@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
     }
 
 
-    public void DealDamage(int dmg)
+    public void DealDamage(float dmg)
     {
         if (health == 0) { return; }
 

@@ -17,7 +17,7 @@ MonoBehaviour:
   canMove: 1
   moveSpeed: 2
   duration: 3
-  interval: 0.3
+  interval: 1
   damage: 5
   radius: 2
   spinSpeed: 0

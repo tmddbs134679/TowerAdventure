@@ -8,7 +8,6 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField]public InputReader InputReader { get; private set; }
     [field: SerializeField] public CharacterController Controller { get; private set; }
 
-    [field: SerializeField] public List<SkillBase> Skills { get; private set; }
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public Health Health { get; private set; }
 
@@ -22,8 +21,13 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public Attack[] Attaks { get; private set; }
 
+    [field: SerializeField] public List<SkillBase> Skills { get; private set; }
 
+    [field: SerializeField] public float DodgeCooldown;
+    public bool CanDodge => Time.time >= lastDodgeTime + DodgeCooldown;
 
+    [HideInInspector]
+    public float lastDodgeTime = -Mathf.Infinity;
     private void Awake()
     {
         States.Add(EPLAYERSTATE.FREELOOK, new PlayerFreeLookState(this));

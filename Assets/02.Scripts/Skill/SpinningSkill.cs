@@ -22,7 +22,7 @@ public class SpinningSkill : SkillBase
     {
         float elapsed = 0f;
         float timer = 0f;
-        Debug.Log(elapsed);
+
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
@@ -41,7 +41,7 @@ public class SpinningSkill : SkillBase
                     if (hit.CompareTag("Enemy"))
                     {
                         Debug.Log($"Spin hit {hit.name} for {damage}");
-                        // hit.GetComponent<Enemy>()?.TakeDamage(damage);
+                        hit.GetComponent<Health>()?.DealDamage(damage);
                     }
                 }
             }

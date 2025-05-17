@@ -59,7 +59,7 @@ public class PlayerStateMachine : StateMachine
         Health.OnDie -= HandleDie;
     }
 
-    private void HandleTakeDamage()
+    private void HandleTakeDamage(float _, Vector3 __)
     {
         // SwitchState(new PlayerStunState(this));
         SwitchState(States[EPLAYERSTATE.STUN]);

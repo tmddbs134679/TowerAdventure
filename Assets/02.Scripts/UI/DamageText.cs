@@ -9,7 +9,6 @@ public class DamageText : MonoBehaviour
     [SerializeField] private Vector3 floatOffset;
 
     public TextMeshProUGUI dmgtxt;
-    private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
  
     private float Speed = 1f;
@@ -17,7 +16,6 @@ public class DamageText : MonoBehaviour
 
     private void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
     }
 

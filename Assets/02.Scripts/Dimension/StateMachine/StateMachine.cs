@@ -5,11 +5,7 @@ using UnityEngine;
 public abstract class StateMachine : MonoBehaviour
 {
     private State currentState;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     private void Update()
@@ -24,4 +20,5 @@ public abstract class StateMachine : MonoBehaviour
         currentState.Enter();
 
     }
+
 }

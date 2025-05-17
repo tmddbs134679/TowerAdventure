@@ -57,7 +57,7 @@ public class EnemyStateMachine : StateMachine
         Health.OnDie -= HandleDie;
     }
 
-    private void HandleTakeDamage()
+    private void HandleTakeDamage(float _, Vector3 __)
     {
         SwitchState(new EnemyStunState(this));
     }

@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
 
     private float health;
 
-    public event Action OnTakeDamage;
+    public event Action<float, Vector3>OnTakeDamage;
     public event Action OnDie;
 
     public bool IsDead => health == 0;
@@ -24,9 +24,7 @@ public class Health : MonoBehaviour
 
         health = Mathf.Max(health - dmg, 0);
 
-        OnTakeDamage?.Invoke();
-
-        DamageTextPool.Inst.ShowDamageText(dmg, gameObject.transform.position);
+        OnTakeDamage?.Invoke(dmg, transform.position);
 
         if(health == 0)
         {

@@ -18,13 +18,6 @@ public class Health : MonoBehaviour
         health = maxHealth;
     }
 
-
-    void Update()
-    {
-        
-    }
-
-
     public void DealDamage(float dmg)
     {
         if (health == 0) { return; }
@@ -32,6 +25,8 @@ public class Health : MonoBehaviour
         health = Mathf.Max(health - dmg, 0);
 
         OnTakeDamage?.Invoke();
+
+        DamageTextPool.Inst.ShowDamageText(dmg, gameObject.transform.position);
 
         if(health == 0)
         {

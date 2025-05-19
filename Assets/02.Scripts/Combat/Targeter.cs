@@ -1,4 +1,5 @@
 using Cinemachine.Utility;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,18 +8,34 @@ public class Targeter : MonoBehaviour
 {
 
     private Camera mainCaemra;
+    [SerializeField]private GameObject targetCircle;
 
     [SerializeField] private List<Target> targets = new List<Target>();
+    private float checkInterval = 0.3f;
+    private float checkTimer = 0f;
+
 
     public Target CurrentTarget { get; private set; }
 
 
     private void Start()
     {
+        if (targetCircle != null)
+        {
+            targetCircle.SetActive(false);
+        }
         mainCaemra = Camera.main;
     }
 
-
+    private void Update()
+    {
+        checkTimer -= Time.deltaTime;
+        if (checkTimer <= 0f && targets.Count != 0)
+        {
+            checkTimer = checkInterval;
+            SelectTatget(); //  가장 가까운 타겟을 다시 찾음
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (!other.TryGetComponent<Target>(out Target target)) 
@@ -56,10 +73,28 @@ public class Targeter : MonoBehaviour
             }
         }
 
-        if (closestTarget == null) { return false; }
+        if (closestTarget == null)
+        {
+            targetCircle.SetActive(false);
+            return false;
+        }
 
         CurrentTarget = closestTarget;
+
+        ShowTargetCircle(closestTarget);
         return true;
+    }
+
+    private void ShowTargetCircle(Target closestTarget)
+    {
+        if (closestTarget == null){  return; }
+
+        // 타겟이 바뀌었을 때만 한 번만 수행
+        targetCircle.transform.SetParent(closestTarget.transform, worldPositionStays: false);
+        targetCircle.transform.localPosition = Vector3.zero;
+
+        targetCircle.SetActive(true);
+        targetCircle.GetComponent<TargetCircle>()?.AutoSize();
     }
 
     public void Cancel()
@@ -74,8 +109,16 @@ public class Targeter : MonoBehaviour
             CurrentTarget = null;
         }
 
+
         target.OnDestroyed -= RemoveTarget;
         targets.Remove(target);
+
+        if(targets.Count <= 0)
+        {
+            targetCircle.SetActive(false);
+        }
+  
+
     }
 
 

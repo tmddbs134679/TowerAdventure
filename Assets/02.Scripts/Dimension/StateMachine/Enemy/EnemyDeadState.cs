@@ -11,8 +11,11 @@ public class EnemyDeadState : EnemyBaseState
 
     public override void Enter()
     {
-       stateMachine.Animator.CrossFadeInFixedTime(DeadHas, CrossFadeDuration);
-       stateMachine.Weapon.gameObject.SetActive(false);
+        if(stateMachine.Weapon != null)
+        stateMachine.Weapon.gameObject.SetActive(false);
+
+        stateMachine.Animator.CrossFadeInFixedTime(DeadHas, CrossFadeDuration);
+
        GameObject.Destroy(stateMachine.Target);
     }
 

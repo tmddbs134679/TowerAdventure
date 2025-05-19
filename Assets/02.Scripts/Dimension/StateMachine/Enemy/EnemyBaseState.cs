@@ -38,6 +38,9 @@ public abstract class EnemyBaseState : State
     {
         if (stateMachine.Player.IsDead) { return false; }
 
+        //IdleState 나누지 않기 위해 일단 만들어둠.
+        //if (!stateMachine.States.ContainsKey(EENEMYSTATE.CHASING)) { return false; }
+
         //distance안쓰고 sqr사용하여 최적화
         float playerDistanceSqr = (stateMachine.Player.transform.position - stateMachine.transform.position).sqrMagnitude;
 

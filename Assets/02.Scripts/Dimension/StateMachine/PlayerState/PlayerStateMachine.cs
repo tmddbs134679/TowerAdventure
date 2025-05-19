@@ -61,13 +61,11 @@ public class PlayerStateMachine : StateMachine
 
     private void HandleTakeDamage(float _, Vector3 __)
     {
-        // SwitchState(new PlayerStunState(this));
         SwitchState(States[EPLAYERSTATE.STUN]);
     }
 
     private void HandleDie()
     {
-        // SwitchState(new PlayerDeadState(this));
         SwitchState(States[EPLAYERSTATE.DEAD]);
     }
 

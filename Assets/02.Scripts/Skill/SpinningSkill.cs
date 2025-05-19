@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Skill/Spinning")]
-public class SpinningSkill : SkillBase
+public class SpinningSkill : SkillBase                                                      
 {
     public float duration;
     public float interval = 0.5f;

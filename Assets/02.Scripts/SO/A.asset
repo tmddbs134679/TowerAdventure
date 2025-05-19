@@ -9,15 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a3acc6a4c388347b7f0e3b67b22783, type: 3}
-  m_Name: Spinning Skill
+  m_Script: {fileID: 11500000, guid: 840842084be59fc4789cd2732b36360e, type: 3}
+  m_Name: A
   m_EditorClassIdentifier: 
-  SkillName: Spinning
-  cooldown: 1
-  canMove: 1
-  moveSpeed: 2
-  duration: 3
-  interval: 1
-  damage: 5
-  radius: 1
-  spinSpeed: 0
+  monsterType: 0
+  damage: {fileID: 0}
+  die: {fileID: 0}
+  move: {fileID: 0}

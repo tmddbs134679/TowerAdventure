@@ -2,24 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttackingState : EnemyBaseState
+public class EnemyMeleeAttackState : EnemyBaseState
 {
     private readonly int AttackHas = Animator.StringToHash("Attack1");
     private readonly int SpeedHas = Animator.StringToHash("Speed");
     private const float AnimatorDampTime = 0.1f;
     private const float CrossFadeDuration = 0.1f;
     private bool hasFacedPlayer = false;
-
-    public EnemyAttackingState(EnemyStateMachine stateMachine) : base(stateMachine) { }
+    public EnemyMeleeAttackState(EnemyStateMachine stateMachine) : base(stateMachine){ }
 
     public override void Enter()
     {
-        if(stateMachine.Weapon != null)
-        stateMachine.Weapon.SetAttack(stateMachine.AttackDamage, stateMachine.AttackKnockback);
+        if (stateMachine.Weapon != null)
+            stateMachine.Weapon.SetAttack(stateMachine.AttackDamage, stateMachine.AttackKnockback);
         stateMachine.Animator.CrossFadeInFixedTime(AttackHas, CrossFadeDuration);
     }
 
-  
+
     public override void Tick(float deltaTime)
     {
         AnimatorStateInfo stateInfo = stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
@@ -27,7 +26,7 @@ public class EnemyAttackingState : EnemyBaseState
         // 애니메이션이 끝났으면
         if (stateInfo.normalizedTime % 1f < 0.02f && stateInfo.IsName("Attack1"))
         {
-            if(!hasFacedPlayer)
+            if (!hasFacedPlayer)
             {
                 FacePlayer();
                 hasFacedPlayer = true;
@@ -36,7 +35,7 @@ public class EnemyAttackingState : EnemyBaseState
             {
                 hasFacedPlayer = false;
             }
-           
+
         }
 
 
@@ -49,7 +48,6 @@ public class EnemyAttackingState : EnemyBaseState
 
     public override void Exit()
     {
-       
-    }
 
+    }
 }

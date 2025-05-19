@@ -8,7 +8,7 @@ public abstract class StateMachine : MonoBehaviour
 
 
     // Update is called once per frame
-    private void Update()
+    protected virtual void Update()
     {
         currentState?.Tick(Time.deltaTime);
     }

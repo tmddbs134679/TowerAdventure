@@ -24,34 +24,38 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public Target Target { get; private set; }
 
+    //protected float cooldownTimer = 0f;
+    //public bool CanAttack => cooldownTimer <= 0f;
+
+
 
     public Health Player { get; private set; }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         States.Add(EENEMYSTATE.IDLE, new EnemyIdleState(this));
         States.Add(EENEMYSTATE.CHASING, new EnemyChasingState(this));
-        States.Add(EENEMYSTATE.ATTACK, new EnemyAttackingState(this));
+        States.Add(EENEMYSTATE.ATTACK, new EnemyMeleeAttackState(this));
         States.Add(EENEMYSTATE.STUN, new EnemyStunState(this));
         States.Add(EENEMYSTATE.DEAD, new EnemyDeadState(this));
-
     }
-    void Start()
+ 
+    protected virtual void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
 
         Agent.updatePosition = false;
         Agent.updateRotation = false;
 
-        SwitchState(new EnemyIdleState(this));
+        SwitchState(States[EENEMYSTATE.IDLE]);
     }
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         Health.OnTakeDamage += HandleTakeDamage;
         Health.OnDie += HandleDie;
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         Health.OnTakeDamage -= HandleTakeDamage;
         Health.OnDie -= HandleDie;
@@ -59,11 +63,11 @@ public class EnemyStateMachine : StateMachine
 
     private void HandleTakeDamage(float _, Vector3 __)
     {
-        SwitchState(new EnemyStunState(this));
+        SwitchState(States[EENEMYSTATE.STUN]);
     }
     private void HandleDie()
     {
-        SwitchState(new EnemyDeadState(this));
+        SwitchState(States[EENEMYSTATE.DEAD]);
     }
 
 
@@ -72,5 +76,6 @@ public class EnemyStateMachine : StateMachine
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, PlayerChasingRange);
     }
+ 
 
 }

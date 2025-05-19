@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37a3acc6a4c388347b7f0e3b67b22783, type: 3}
-  m_Name: "\uCEE4\uBC0B\uC6A9"
+  m_Script: {fileID: 11500000, guid: 49b5ecb24a630c242aa8097e91a61dd7, type: 3}
+  m_Name: SlimeAttackSkill
   m_EditorClassIdentifier: 
-  SkillName: Spinning
-  cooldown: 1
-  canMove: 1
-  moveSpeed: 2
-  duration: 3
-  interval: 0.3
-  damage: 5
-  radius: 2
-  spinSpeed: 0
+  SkillName: 
+  cooldown: 3
+  canMove: 0
+  moveSpeed: 1
+  projectilePrefab: {fileID: 8505693054883310282, guid: a49b17faf153e954b95a35de3409451c, type: 3}
+  flightTime: 1.5

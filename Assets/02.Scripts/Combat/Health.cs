@@ -26,10 +26,15 @@ public class Health : MonoBehaviour
 
         OnTakeDamage?.Invoke(dmg, transform.position);
 
-        if(health == 0)
+        EventBus.Publish(new PlayerDamagedEvent
+        {
+            NewHP = (int)health,
+            MaxHP = maxHealth
+        });
+
+        if (health == 0)
         {
             OnDie?.Invoke();
         }
-        Debug.Log(health);
     }
 }

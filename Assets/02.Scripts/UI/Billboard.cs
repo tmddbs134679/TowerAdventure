@@ -5,7 +5,6 @@ using UnityEngine;
 public class Billboard : MonoBehaviour
 {
     private Camera mainCam;
-    [SerializeField] private float smoothSpeed = 10f;
     // Start is called before the first frame update
     void Start()
     {

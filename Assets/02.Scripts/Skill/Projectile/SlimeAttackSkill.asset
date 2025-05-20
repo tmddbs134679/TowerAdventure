@@ -16,5 +16,6 @@ MonoBehaviour:
   cooldown: 3
   canMove: 0
   moveSpeed: 1
+  damage: 10
   projectilePrefab: {fileID: 8505693054883310282, guid: a49b17faf153e954b95a35de3409451c, type: 3}
   flightTime: 1.5

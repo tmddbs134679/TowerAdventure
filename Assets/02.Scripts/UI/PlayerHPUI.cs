@@ -20,6 +20,7 @@ public class PlayerHPUI : MonoBehaviour
 
     private void OnPlayerDamaged(PlayerDamagedEvent e)
     {
+        if (e.Player.tag == this.gameObject.tag) return;
 
         float ratio = (float)e.NewHP / e.MaxHP;
         hpBar.fillAmount = ratio;

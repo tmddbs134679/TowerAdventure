@@ -41,7 +41,7 @@ public class SpinningSkill : SkillBase
                     if (hit.CompareTag("Enemy"))
                     {
                         Debug.Log($"Spin hit {hit.name} for {damage}");
-                        hit.GetComponent<Health>()?.DealDamage(damage);
+                        hit.GetComponent<Health>()?.DealDamage(caster, damage);
                     }
                 }
             }

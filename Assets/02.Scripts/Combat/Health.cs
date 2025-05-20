@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
         health = maxHealth;
     }
 
-    public void DealDamage(float dmg)
+    public void DealDamage(GameObject attacker ,float dmg)
     {
         if (health == 0) { return; }
 
@@ -28,6 +28,7 @@ public class Health : MonoBehaviour
 
         EventBus.Publish(new PlayerDamagedEvent
         {
+            Player = attacker,
             NewHP = (int)health,
             MaxHP = maxHealth
         });

@@ -7,12 +7,11 @@ using UnityEngine;
 public abstract class BaseEvent { }
 
 /// <summary>
-/// 설명적기
+/// Player HP바, Text 처리 이벤트
 /// </summary>
-
 public class PlayerDamagedEvent : BaseEvent
 {
-
+    public GameObject Player;
     public int NewHP;
     public int MaxHP;
 }

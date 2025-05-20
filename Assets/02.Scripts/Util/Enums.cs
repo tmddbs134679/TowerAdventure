@@ -29,3 +29,11 @@ public enum EMONSKILLTYPE
 
 }
 
+public enum EFACTION
+{
+    NONE,
+    PLAYER,
+    ENEMY,
+    NEUTRAL
+}
+

@@ -4,6 +4,7 @@ using System;
 [CreateAssetMenu(menuName = "Skill/ParabolaSkill")]
 public class ParabolaSkill : SkillBase
 {
+    public float damage;
     public GameObject projectilePrefab;
     public float flightTime = 1.5f; //  플레이어에게 도달하는 데 걸리는 시간 (조절 가능)
 
@@ -35,6 +36,7 @@ public class ParabolaSkill : SkillBase
 
         //  투사체 생성 및 발사
         GameObject projectile = Instantiate(projectilePrefab, start, Quaternion.LookRotation(directionXZ));
+        projectile.GetComponent<Projectile>().Init(caster, damage, moveSpeed);
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         if (rb != null)

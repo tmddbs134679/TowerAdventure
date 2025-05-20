@@ -22,32 +22,24 @@ public class AttackArea : MonoBehaviour
         growDuration = duration;
         radius = explosionRadius;
         initPos = pos;
+    }
 
-        float finalSize = radius * 2f; // 직경 기준
+    void Start()
+    {
+        if (visualObject == null)
+            visualObject = transform;
+
+        float finalSize = radius;
+
         originalScale = new Vector3
         (
             growX ? finalSize : visualObject.localScale.x,
             growY ? finalSize : visualObject.localScale.y,
             growZ ? finalSize : visualObject.localScale.z
         );
-    }
 
-    void Start()
-    {
         transform.position = initPos;
-
-        if (visualObject == null)
-            visualObject = transform;
-
-        originalScale = visualObject.localScale;
-
-        // 초기 스케일 설정 (선택된 축만 0으로)
-        visualObject.localScale = new Vector3
-        (
-            growX ? 0f : originalScale.x,
-            growY ? 0f : originalScale.y,
-            growZ ? 0f : originalScale.z
-        );
+        transform.localScale = originalScale;
 
         StartCoroutine(GrowAndAttack());
     }

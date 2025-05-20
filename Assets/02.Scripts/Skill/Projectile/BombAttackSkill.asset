@@ -17,5 +17,5 @@ MonoBehaviour:
   canMove: 0
   moveSpeed: 1
   damage: 10
-  projectilePrefab: {fileID: 4781506235909723914, guid: 6b4cd0dcbc6eaa14184d6fced4aa3fd0, type: 3}
+  projectilePrefab: {fileID: 4293002490308187888, guid: 6b4cd0dcbc6eaa14184d6fced4aa3fd0, type: 3}
   flightTime: 1.5

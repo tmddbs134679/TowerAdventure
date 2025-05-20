@@ -3,12 +3,10 @@ using UnityEngine;
 
 public class AttackArea : MonoBehaviour
 {
-    public float growDuration = 1.5f;
-    public float activeDuration = 0.2f;
-    public int damage = 10;
-
     public Transform visualObject;
-    public Collider triggerCollider;
+    private float growDuration;
+    private float radius;
+    private Vector3 initPos;
 
     // 축별로 커질지 말지 설정
     public bool growX = true;
@@ -18,13 +16,28 @@ public class AttackArea : MonoBehaviour
     private bool active = false;
     private Vector3 originalScale;
 
+    public void Init(float duration, float explosionRadius, Vector3 pos)
+    {
+    
+        growDuration = duration;
+        radius = explosionRadius;
+        initPos = pos;
+
+        float finalSize = radius * 2f; // 직경 기준
+        originalScale = new Vector3
+        (
+            growX ? finalSize : visualObject.localScale.x,
+            growY ? finalSize : visualObject.localScale.y,
+            growZ ? finalSize : visualObject.localScale.z
+        );
+    }
+
     void Start()
     {
+        transform.position = initPos;
+
         if (visualObject == null)
             visualObject = transform;
-
-        if (triggerCollider == null)
-            triggerCollider = GetComponent<Collider>();
 
         originalScale = visualObject.localScale;
 
@@ -36,7 +49,6 @@ public class AttackArea : MonoBehaviour
             growZ ? 0f : originalScale.z
         );
 
-        triggerCollider.enabled = false;
         StartCoroutine(GrowAndAttack());
     }
 
@@ -60,15 +72,10 @@ public class AttackArea : MonoBehaviour
         }
 
         visualObject.localScale = originalScale;
-        triggerCollider.enabled = true;
+
         active = false;
 
-        yield return new WaitForSeconds(activeDuration);
+        yield return null;
         gameObject.SetActive(active);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-      
     }
 }

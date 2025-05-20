@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionDelay: 1
-  explosionRadius: 2
+  explosionRadius: 0.5
   areaPrefab: {fileID: 5792662826094787440, guid: ab77f1740e40b804e9bc0dccd7a17c49, type: 3}
 --- !u!136 &465970752241269316
 CapsuleCollider:
@@ -69,8 +69,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.06
+  m_Height: 0.21
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6028046361476816505

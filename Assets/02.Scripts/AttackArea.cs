@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class AttackArea : MonoBehaviour
 {
+    public Transform backGroundObject;
     public Transform visualObject;
     private float growDuration;
     private float radius;
@@ -22,24 +23,49 @@ public class AttackArea : MonoBehaviour
         growDuration = duration;
         radius = explosionRadius;
         initPos = pos;
+
+
     }
 
     void Start()
     {
+
+
+   
+        float baseVisualRadius = 0.5f;
+        float scaleFactor = radius / baseVisualRadius;
+
+       
+        Vector3 current = visualObject.localScale;
+
         if (visualObject == null)
             visualObject = transform;
 
-        float finalSize = radius;
 
-        originalScale = new Vector3
-        (
-            growX ? finalSize : visualObject.localScale.x,
-            growY ? finalSize : visualObject.localScale.y,
-            growZ ? finalSize : visualObject.localScale.z
+        visualObject.localScale = new Vector3(
+            growX ? 0f : current.x,
+            growY ? 0f : current.y,
+            growZ ? 0f : current.z
         );
 
-        transform.position = initPos;
-        transform.localScale = originalScale;
+
+        originalScale = new Vector3(
+            scaleFactor,
+            scaleFactor,
+            scaleFactor
+        );
+
+       
+        originalScale = new Vector3
+            (
+               growX ? originalScale.x : current.x,
+               growY ? originalScale.y : current.y,
+               growZ ? originalScale.z : current.z
+            );
+
+       // backGroundObject.position = initPos;
+        backGroundObject.localScale = originalScale;
+
 
         StartCoroutine(GrowAndAttack());
     }

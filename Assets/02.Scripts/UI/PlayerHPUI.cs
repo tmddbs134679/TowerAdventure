@@ -26,6 +26,7 @@ public class PlayerHPUI : MonoBehaviour
         float ratio = (float)e.NewHP / e.MaxHP;
         hpBar.fillAmount = ratio;
 
-        hpText.text = e.NewHP.ToString();
+        if(hpText != null )
+             hpText.text = e.NewHP.ToString();
     }
 }

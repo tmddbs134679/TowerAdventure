@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public GameObject attacker { get; private set; }
     public EFACTION OwnerFaction { get; private set; }
     private float damage;
 
     public void Init(GameObject attacker, float speed, float dmg)
     {
-        OwnerFaction = attacker.GetComponent<Faction>().faction;
+
+        //OwnerFaction = attacker.GetComponent<Faction>().faction;
+        this.attacker = attacker;
         damage = dmg;
     }
 
@@ -20,7 +23,7 @@ public class Projectile : MonoBehaviour
             if (targetFaction.faction == OwnerFaction)
                 return;
 
-            other.GetComponent<Health>().DealDamage(gameObject, damage);
+            other.GetComponent<Health>().DealDamage(attacker, damage);
         }
     }
 }

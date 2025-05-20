@@ -11,8 +11,14 @@ public class Health : MonoBehaviour
 
     public event Action<float, Vector3>OnTakeDamage;
     public event Action OnDie;
-
     public bool IsDead => health == 0;
+    public float Current => health;       
+    public int Max => maxHealth;          
+
+    private void Awake()
+    {
+        
+    }
     void Start()
     {
         health = maxHealth;

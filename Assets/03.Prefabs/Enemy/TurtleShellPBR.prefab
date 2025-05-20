@@ -1474,6 +1474,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2159598584761061102, guid: c535d4d6bd4b7744582badca6b5014ce, type: 3}
+      propertyPath: hpBar
+      value: 
+      objectReference: {fileID: 8191857911784862053}
     - target: {fileID: 9056942483316760444, guid: c535d4d6bd4b7744582badca6b5014ce, type: 3}
       propertyPath: m_Name
       value: EnemyHP
@@ -1488,3 +1492,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 900524716244697729, guid: c535d4d6bd4b7744582badca6b5014ce, type: 3}
   m_PrefabInstance: {fileID: 2111724121026225601}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8191857911784862053 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7845563811297531044, guid: c535d4d6bd4b7744582badca6b5014ce, type: 3}
+  m_PrefabInstance: {fileID: 2111724121026225601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

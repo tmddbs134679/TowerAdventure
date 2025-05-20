@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
 
         EventBus.Publish(new PlayerDamagedEvent
         {
-            Player = attacker,
+            Player = attacker.transform.root.gameObject,
             NewHP = (int)health,
             MaxHP = maxHealth
         });

@@ -36,7 +36,7 @@ public class ParabolaSkill : SkillBase
 
         //  투사체 생성 및 발사
         GameObject projectile = Instantiate(projectilePrefab, start, Quaternion.LookRotation(directionXZ));
-        projectile.GetComponent<Projectile>().Init(caster, damage, moveSpeed);
+        projectile.GetComponent<Projectile>().Init(caster, moveSpeed, damage);
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         if (rb != null)

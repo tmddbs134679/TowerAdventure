@@ -15,9 +15,9 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<IFaction>(out var targetFaction))
+        if (other.TryGetComponent<Faction>(out var targetFaction))
         {
-            if (targetFaction.Faction == OwnerFaction)
+            if (targetFaction.faction == OwnerFaction)
                 return;
 
             other.GetComponent<Health>().DealDamage(gameObject, damage);

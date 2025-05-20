@@ -8,6 +8,7 @@ public class PlayerHPUI : MonoBehaviour
 {
     [SerializeField] private Image hpBar;
     [SerializeField] private TextMeshProUGUI hpText;
+    
     private void OnEnable()
     {
         EventBus.Subscribe<PlayerDamagedEvent>(OnPlayerDamaged);
@@ -20,8 +21,8 @@ public class PlayerHPUI : MonoBehaviour
 
     private void OnPlayerDamaged(PlayerDamagedEvent e)
     {
-        if (e.Player.tag == this.gameObject.tag) return;
-
+        if (e.Player == this.transform.root.gameObject) return;
+        
         float ratio = (float)e.NewHP / e.MaxHP;
         hpBar.fillAmount = ratio;
 

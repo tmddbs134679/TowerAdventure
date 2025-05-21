@@ -21,7 +21,7 @@ public class PlayerHPUI : MonoBehaviour
 
     private void OnPlayerDamaged(PlayerDamagedEvent e)
     {
-        if (e.Player == this.transform.root.gameObject) return;
+        if (e.Player != this.transform.root.gameObject) return;
         
         float ratio = (float)e.NewHP / e.MaxHP;
         hpBar.fillAmount = ratio;

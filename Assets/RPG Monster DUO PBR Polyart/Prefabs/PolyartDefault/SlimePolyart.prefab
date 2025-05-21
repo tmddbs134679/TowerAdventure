@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 934722393145197138}
   - component: {fileID: 5208187964947457826}
   - component: {fileID: 157934226639755219}
+  - component: {fileID: 3442052250111156189}
   m_Layer: 0
   m_Name: SlimePolyart
   m_TagString: Enemy
@@ -470,13 +471,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.01
-  m_Radius: 0.5
+  m_Height: 1.96
+  m_Radius: 0.54
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.4, z: 0}
+  m_Center: {x: 0, y: 0.63, z: 0}
 --- !u!95 &5208187964947457826
 Animator:
   serializedVersion: 5
@@ -515,13 +516,26 @@ MonoBehaviour:
   <Agent>k__BackingField: {fileID: 8022543051317313589}
   <Weapon>k__BackingField: {fileID: 0}
   <Health>k__BackingField: {fileID: 7972296665022132385}
-  <AttackDamage>k__BackingField: 0
-  <AttackRange>k__BackingField: 0
-  <PlayerChasingRange>k__BackingField: 0
-  <MovementSpeed>k__BackingField: 0
-  <AttackKnockback>k__BackingField: 0
+  <AttackDamage>k__BackingField: 1
+  <AttackRange>k__BackingField: 5
+  <PlayerChasingRange>k__BackingField: 5
+  <MovementSpeed>k__BackingField: 3
+  <AttackKnockback>k__BackingField: 1
   <Target>k__BackingField: {fileID: 8774871697901528111}
-  baseAttackSkill: {fileID: 0}
+  baseAttackSkill: {fileID: 11400000, guid: 28d02deb5fe1ac943967eb4e0a039d1b, type: 2}
+--- !u!114 &3442052250111156189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153141402127884706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd02ad98d3da6114f9062865e1001dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 2
 --- !u!1 &7446019047767849115
 GameObject:
   m_ObjectHideFlags: 0

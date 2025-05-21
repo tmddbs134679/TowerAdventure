@@ -16,8 +16,6 @@ public class SpinningSkill : SkillBase
 
     public override void Active(GameObject caster, Vector3 dir, Action onComplete = null)
     {
-        base.Active(caster, dir, onComplete);
-
         caster.GetComponent<MonoBehaviour>().StartCoroutine(SpinAttackRoutine(caster, onComplete));
 
         EventBus.Publish(new SkillUsedEvent

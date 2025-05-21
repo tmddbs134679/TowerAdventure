@@ -25,9 +25,10 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public float DodgeCooldown;
     public bool CanDodge => Time.time >= lastDodgeTime + DodgeCooldown;
-
+    public bool CanSkillQ => Time.time >= lastSkill_Q_Time + Skills[0].cooldown;
     [HideInInspector]
     public float lastDodgeTime = -Mathf.Infinity;
+    public float lastSkill_Q_Time = -Mathf.Infinity;
     private void Awake()
     {
         States.Add(EPLAYERSTATE.FREELOOK, new PlayerFreeLookState(this));

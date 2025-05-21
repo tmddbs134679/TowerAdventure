@@ -46,8 +46,9 @@ public abstract class PlayerBaseState : State
     {
         var skill = stateMachine.Skills[0];
 
-        if (skill.IsOnCooldown) return;
+        if (!stateMachine.CanSkillQ) return;
 
+        SetSkillCooldown();
         var skillState = (PlayerSkillState)stateMachine.States[EPLAYERSTATE.SKILL];
         
         skillState.SetSkill(skill);
@@ -70,10 +71,8 @@ public abstract class PlayerBaseState : State
     {
         stateMachine.lastDodgeTime = Time.time;
     }
-    //private Vector3 CalculateMovent()
-    //{
-    //    Vector3 movement = new Vector3();
-
-    //    return movement;
-    //}
+    public void SetSkillCooldown()
+    {
+        stateMachine.lastSkill_Q_Time = Time.time;
+    }
 }

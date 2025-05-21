@@ -8238,8 +8238,8 @@ RectTransform:
   m_GameObject: {fileID: 351498764}
   m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 440896989}
   m_LocalEulerAnglesHint: {x: -180, y: 360, z: 0}
@@ -10054,6 +10054,7 @@ GameObject:
   - component: {fileID: 440896991}
   - component: {fileID: 440896990}
   - component: {fileID: 440896992}
+  - component: {fileID: 440896993}
   m_Layer: 5
   m_Name: Skill2
   m_TagString: Untagged
@@ -10165,6 +10166,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &440896993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440896988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9741d87f4fce348a790a2c08d4e451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootObject: {fileID: 440896988}
+  cooldownFillImage: {fileID: 351498766}
+  cooldownText: {fileID: 843950031}
 --- !u!1001 &444197519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12591,6 +12607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 529688514}
+  - component: {fileID: 529688515}
   m_Layer: 5
   m_Name: SkillUI
   m_TagString: Untagged
@@ -12621,6 +12638,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &529688515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529688513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18de7cb390d0ebf49b6cced4c0d6134b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillslots:
+  - {fileID: 979714328}
+  - {fileID: 440896993}
+  - {fileID: 819622260}
 --- !u!1001 &530941957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17532,8 +17565,8 @@ RectTransform:
   m_GameObject: {fileID: 712419492}
   m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 819622256}
   m_LocalEulerAnglesHint: {x: -180, y: 360, z: 0}
@@ -19811,6 +19844,7 @@ GameObject:
   - component: {fileID: 819622258}
   - component: {fileID: 819622257}
   - component: {fileID: 819622259}
+  - component: {fileID: 819622260}
   m_Layer: 5
   m_Name: Skill3
   m_TagString: Untagged
@@ -19922,6 +19956,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &819622260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819622255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9741d87f4fce348a790a2c08d4e451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootObject: {fileID: 819622255}
+  cooldownFillImage: {fileID: 712419494}
+  cooldownText: {fileID: 1486671397}
 --- !u!1001 &821312003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24560,6 +24609,7 @@ GameObject:
   - component: {fileID: 979714326}
   - component: {fileID: 979714325}
   - component: {fileID: 979714327}
+  - component: {fileID: 979714328}
   m_Layer: 5
   m_Name: Skill1
   m_TagString: Untagged
@@ -24671,6 +24721,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &979714328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979714323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9741d87f4fce348a790a2c08d4e451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootObject: {fileID: 979714323}
+  cooldownFillImage: {fileID: 1705892999}
+  cooldownText: {fileID: 1400460184}
 --- !u!1001 &984886920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46245,8 +46310,8 @@ RectTransform:
   m_GameObject: {fileID: 1705892997}
   m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 979714324}
   m_LocalEulerAnglesHint: {x: -180, y: 360, z: 0}
@@ -48200,7 +48265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4392157}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -50073,7 +50138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4392157}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -52006,7 +52071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4392157}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

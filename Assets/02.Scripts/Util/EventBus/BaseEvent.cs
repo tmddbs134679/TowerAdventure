@@ -16,5 +16,11 @@ public class PlayerDamagedEvent : BaseEvent
     public int MaxHP;
 }
 
+public class SkillUsedEvent : BaseEvent
+{
+    public SkillBase skill;
+    public int skillIdx;
+
+}
 
 // Enum, String과 class 차이 정리  

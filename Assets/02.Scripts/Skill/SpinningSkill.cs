@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Skill/Spinning")]
 public class SpinningSkill : SkillBase                                                      
@@ -15,7 +16,15 @@ public class SpinningSkill : SkillBase
 
     public override void Active(GameObject caster, Vector3 dir, Action onComplete = null)
     {
+        base.Active(caster, dir, onComplete);
+
         caster.GetComponent<MonoBehaviour>().StartCoroutine(SpinAttackRoutine(caster, onComplete));
+
+        EventBus.Publish(new SkillUsedEvent
+        {
+            skill = this,
+            skillIdx = 0
+        }); 
     }
 
     private IEnumerator SpinAttackRoutine(GameObject caster, Action onComplete)

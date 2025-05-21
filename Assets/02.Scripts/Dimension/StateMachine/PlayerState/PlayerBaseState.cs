@@ -44,12 +44,16 @@ public abstract class PlayerBaseState : State
 
     protected void Skill_Q()
     {
-        var skill = stateMachine.Skills[0]; 
+        var skill = stateMachine.Skills[0];
+
+        if (skill.IsOnCooldown) return;
+
         var skillState = (PlayerSkillState)stateMachine.States[EPLAYERSTATE.SKILL];
         
         skillState.SetSkill(skill);
         stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.SKILL]);
     }
+
     protected Vector3 CalculateMovement()
     {
         Vector3 movement = new Vector3();

@@ -1,20 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerSelector : MonoBehaviour
+public class PlayerSelector : GenericSingleton<PlayerSelector>
 {
     [SerializeField] private InputReader inputReader;
-    //[SerializeField] private List<>
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private List<PlayerStateMachine> allPlayers;
+
+    private PlayerStateMachine selectedPlayer;
+
+    private void Start()
     {
-        
+        SelectPlayer(0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SelectPlayer(int idx)
     {
-        
+        if (selectedPlayer != null)
+            selectedPlayer.DisconnectInput(); // 입력 연결 해제
+
+        selectedPlayer = allPlayers[idx];
+        selectedPlayer.ConnectInput(inputReader); // 입력 연결
     }
 }

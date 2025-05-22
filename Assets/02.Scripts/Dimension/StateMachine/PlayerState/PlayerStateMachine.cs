@@ -70,6 +70,20 @@ public class PlayerStateMachine : StateMachine
         SwitchState(States[EPLAYERSTATE.DEAD]);
     }
 
+    public void DisconnectInput()
+    {
+        if (InputReader == null) return;
+        Health.OnTakeDamage -= HandleTakeDamage;
+        Health.OnDie -= HandleDie;
+        InputReader = null;
+    }
+
+    public void ConnectInput(InputReader reader)
+    {
+        InputReader = reader;
+        Health.OnTakeDamage += HandleTakeDamage;
+        Health.OnDie += HandleDie;
+    }
 
 
 }

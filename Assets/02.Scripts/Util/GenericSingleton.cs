@@ -6,11 +6,15 @@ public abstract class GenericSingleton<T> : MonoBehaviour where T : MonoBehaviou
 {
     private static T inst;
 
+    private static bool isShuttingDown = false;     //싱글톤 자동생성 코드에서 게임 종료 할 때 자동생성 되는거 flag
     public static T Inst
     {
         get
         {
-            if(inst == null)
+           
+            if (isShuttingDown) return null;
+
+            if (inst == null)
             {
                 inst =  FindObjectOfType<T>();
 
@@ -38,4 +42,10 @@ public abstract class GenericSingleton<T> : MonoBehaviour where T : MonoBehaviou
             Destroy(gameObject);
         }
     }
+
+    private void OnApplicationQuit()
+    {
+        isShuttingDown = true;
+    }
+
 }

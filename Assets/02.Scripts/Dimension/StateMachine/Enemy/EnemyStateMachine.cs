@@ -62,7 +62,9 @@ public class EnemyStateMachine : StateMachine
 
     protected virtual void OnDisable()
     {
-        PlayerSelector.Inst.OnPlayerChanged -= TargetCanged;
+        if(PlayerSelector.Inst != null) //싱글톤이 먼저 사라지는거 같음 일단 예외처리
+             PlayerSelector.Inst.OnPlayerChanged -= TargetCanged;
+
         Health.OnTakeDamage -= HandleTakeDamage;
         Health.OnDie -= HandleDie;
     }

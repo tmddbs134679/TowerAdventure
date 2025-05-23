@@ -8,7 +8,7 @@ public class SkillCooldownSlot : MonoBehaviour
 {
     [Header("UI References")]
     public GameObject rootObject; // 전체 버튼 or 이미지의 부모 오브젝트
-    private Sprite icon;
+    public Image icon;
     public Image cooldownFillImage;
     public TextMeshProUGUI cooldownText;
 
@@ -24,8 +24,9 @@ public class SkillCooldownSlot : MonoBehaviour
 
     public void SetSkill(SkillBase skill)
     {
-        icon = skill.SkillIcon;
+        icon.sprite = skill.SkillIcon;
         cooldownDuration = skill.cooldown;
+        cooldownFillImage.sprite = icon.sprite;
         cooldownFillImage.fillAmount = 0;
         cooldownText.text = "";
     }

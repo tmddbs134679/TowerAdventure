@@ -23,8 +23,9 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookAnimName, CrossFadeDuration);
         stateMachine.InputReader.TargetEvent += OnTarget;
         stateMachine.InputReader.DodgeEvent += Dodge;
-        stateMachine.InputReader.SkillEvent += Skill_Q;
         stateMachine.LadderDetector.OnLadderDetect += HandleLadderDetect;
+        EventBus.Subscribe<SkillUsedEvent>(OnSkillInvoked);
+
     }
 
 
@@ -56,7 +57,7 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.LadderDetector.OnLadderDetect -= HandleLadderDetect;
         stateMachine.InputReader.TargetEvent -= OnTarget;
         stateMachine.InputReader.DodgeEvent -= Dodge;
-        stateMachine.InputReader.SkillEvent -= Skill_Q;
+        EventBus.Unsubscribe<SkillUsedEvent>(OnSkillInvoked);
     }
 
 
@@ -77,7 +78,12 @@ public class PlayerFreeLookState : PlayerBaseState
             );
     }
 
-
+    private void OnSkillInvoked(SkillUsedEvent e)
+    {
+        var skillState = (PlayerSkillState)stateMachine.States[EPLAYERSTATE.SKILL];
+        skillState.SetSkill(e.skill, e.skillIdx);
+        stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.SKILL]);
+    }
 
 
     private void HandleLadderDetect(Vector3 ladderForward)

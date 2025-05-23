@@ -73,14 +73,20 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if(context.performed)
-        {
-            IsAttacking = true;
-        }
-        else if(context.canceled)
-        {
-            IsAttacking = false;
-        }
+        //if (context.performed)
+        //{
+        //    IsAttacking = true;
+        //}
+    }
+    public void OnAttackClick()
+    {
+        IsAttacking = true;
+    }
+
+    // 공격 입력 처리 후 꼭 호출!
+    public void ResetAttack()
+    {
+        IsAttacking = false;
     }
 
     public void OnSkill(InputAction.CallbackContext context)
@@ -90,4 +96,6 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
         SkillEvent?.Invoke();
     }
+
+  
 }

@@ -12,7 +12,7 @@ public class PlayerSkillState : PlayerBaseState
     {
        
     }
-    public void SetSkill(SkillBase skill)
+    public void SetSkill(SkillBase skill, int skillIdx)
     {
         this.currentSkill = skill; 
     }
@@ -20,7 +20,6 @@ public class PlayerSkillState : PlayerBaseState
     public override void Enter()
     {
         SkillHas = Animator.StringToHash(currentSkill.SkillName);
-        currentSkill.Active(stateMachine.gameObject, stateMachine.transform.forward);
         stateMachine.Animator.CrossFadeInFixedTime(SkillHas, AnimatorDampTime);
 
         currentSkill.Active

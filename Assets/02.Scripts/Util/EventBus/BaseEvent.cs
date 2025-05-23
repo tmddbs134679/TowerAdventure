@@ -21,6 +21,13 @@ public class SkillUsedEvent : BaseEvent
     public SkillBase skill;
     public int skillIdx;
 
+    public SkillUsedEvent(SkillBase skill, int idx)
+    {
+        this.skill = skill;
+        this.skillIdx = idx;
+    }
 }
+
+
 
 // Enum, String과 class 차이 정리  

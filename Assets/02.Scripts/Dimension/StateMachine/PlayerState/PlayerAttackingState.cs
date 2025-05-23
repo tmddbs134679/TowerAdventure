@@ -9,7 +9,6 @@ public class PlayerAttackingState : PlayerBaseState
     private float previousFrameTime;
 
     private bool alreadyAppliedForce;
-   
 
     private Attack attack;
     private int attackIndex;
@@ -49,10 +48,11 @@ public class PlayerAttackingState : PlayerBaseState
                 TryApplyForce();
             }
 
-            if(stateMachine.InputReader.IsAttacking)
+            if (stateMachine.InputReader.IsAttacking)
             {
                 TryComboAttack(normalizedTime);
             }
+     
         }
         else
         {

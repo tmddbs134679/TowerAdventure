@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public abstract class PlayerBaseState : State
@@ -42,18 +43,21 @@ public abstract class PlayerBaseState : State
       
     }
 
-    protected void Skill_Q()
-    {
-        var skill = stateMachine.Skills[0];
+    //protected void Skill_Q()
+    //{
+    //    var skill = stateMachine.Skills[0];
 
-        if (!stateMachine.CanSkillQ) return;
+    //    if (!stateMachine.CanSkillQ) return;
 
-        SetSkillCooldown();
-        var skillState = (PlayerSkillState)stateMachine.States[EPLAYERSTATE.SKILL];
+    //    SetSkillCooldown();
+
+    //    var skillState = (PlayerSkillState)stateMachine.States[EPLAYERSTATE.SKILL];
         
-        skillState.SetSkill(skill);
-        stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.SKILL]);
-    }
+    //    skillState.SetSkill(skill);
+    //    stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.SKILL]);
+    //}
+
+  
 
     protected Vector3 CalculateMovement()
     {

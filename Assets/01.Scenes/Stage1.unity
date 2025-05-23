@@ -10700,6 +10700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rootObject: {fileID: 440896988}
+  icon: {fileID: 1818119012}
   cooldownFillImage: {fileID: 351498766}
   cooldownText: {fileID: 843950031}
 --- !u!1001 &444197519
@@ -13320,6 +13321,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18de7cb390d0ebf49b6cced4c0d6134b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackBtn: {fileID: 1084875241}
+  Skill1_Btn: {fileID: 979714327}
+  Skill2_Btn: {fileID: 440896992}
+  Skill3_Btn: {fileID: 819622259}
   skillslots:
   - {fileID: 979714328}
   - {fileID: 440896993}
@@ -21095,6 +21100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rootObject: {fileID: 819622255}
+  icon: {fileID: 1768154372}
   cooldownFillImage: {fileID: 712419494}
   cooldownText: {fileID: 1486671397}
 --- !u!1001 &821312003
@@ -25003,6 +25009,10 @@ PrefabInstance:
       propertyPath: <InputReader>k__BackingField
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: <Skills>k__BackingField.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: fd6e60053d35aaf419810a9dfe682d79, type: 2}
     - target: {fileID: 8618254747320590482, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.119
@@ -26069,6 +26079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rootObject: {fileID: 979714323}
+  icon: {fileID: 1900811555}
   cooldownFillImage: {fileID: 1705892999}
   cooldownText: {fileID: 1400460184}
 --- !u!1001 &984886920
@@ -29163,7 +29174,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1084875237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 54f7751654ae65343b25cf93124be922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -59901,6 +59912,14 @@ PrefabInstance:
       propertyPath: <InputReader>k__BackingField
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: <Skills>k__BackingField.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: <Skills>k__BackingField.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 989cb4ba1f3708f4d8bc005077fe06b5, type: 2}
     - target: {fileID: 8618254747320590482, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.5

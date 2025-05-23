@@ -9,6 +9,7 @@ public class PlayerSelector : GenericSingleton<PlayerSelector>
 {
     [Header("Player Settings")]
     [SerializeField] private InputReader inputReader;
+    public InputReader Input => inputReader;
     [SerializeField] private List<PlayerStateMachine> allPlayers;
     [HideInInspector] public PlayerStateMachine selectedPlayer;
 

@@ -24,6 +24,9 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public List<SkillBase> Skills { get; private set; }
 
     [field: SerializeField] public float DodgeCooldown;
+
+    //이동 필요
+    [field: SerializeField] public GameObject FollowCam;
     public bool CanDodge => Time.time >= lastDodgeTime + DodgeCooldown;
     public bool CanSkillQ => Time.time >= lastSkill_Q_Time + Skills[0].cooldown;
     [HideInInspector]
@@ -44,7 +47,6 @@ public class PlayerStateMachine : StateMachine
     // Start is called before the first frame update
     private void Start()
     {
-        //SwitchState(new PlayerFreeLookState(this));
         SwitchState(States[EPLAYERSTATE.FREELOOK]);
     }
 
@@ -52,6 +54,8 @@ public class PlayerStateMachine : StateMachine
     {
         Health.OnTakeDamage += HandleTakeDamage;
         Health.OnDie += HandleDie;
+
+        SwitchState(States[EPLAYERSTATE.FREELOOK]);
     }
 
     private void OnDisable()

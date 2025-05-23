@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,8 +28,6 @@ public class EnemyStateMachine : StateMachine
     //protected float cooldownTimer = 0f;
     //public bool CanAttack => cooldownTimer <= 0f;
 
-
-
     public Health Player { get; private set; }
 
     protected virtual void Awake()
@@ -42,7 +41,7 @@ public class EnemyStateMachine : StateMachine
  
     protected virtual void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        Player = PlayerSelector.Inst.selectedPlayer.GetComponent<Health>();
 
         Agent.updatePosition = false;
         Agent.updateRotation = false;
@@ -51,12 +50,19 @@ public class EnemyStateMachine : StateMachine
     }
     protected virtual void OnEnable()
     {
+        PlayerSelector.Inst.OnPlayerChanged += TargetCanged; //Player∞° πŸ≤Ó∏È TargetπŸ≤„¡‹
         Health.OnTakeDamage += HandleTakeDamage;
         Health.OnDie += HandleDie;
     }
 
+    private void TargetCanged(GameObject player)
+    {
+        Player = player.GetComponent<Health>();
+    }
+
     protected virtual void OnDisable()
     {
+        PlayerSelector.Inst.OnPlayerChanged -= TargetCanged;
         Health.OnTakeDamage -= HandleTakeDamage;
         Health.OnDie -= HandleDie;
     }

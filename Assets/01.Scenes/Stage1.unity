@@ -10186,6 +10186,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1418059963432224869, guid: d3be3902f0af21d40b381cd77208daa0, type: 3}
   m_PrefabInstance: {fileID: 420928091}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &424418699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3644019408814350906, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+  m_PrefabInstance: {fileID: 496397080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &427079034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12056,6 +12061,10 @@ PrefabInstance:
       propertyPath: targetCircle
       value: 
       objectReference: {fileID: 4932088507999258216}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: FollowCam
+      value: 
+      objectReference: {fileID: 424418699}
     - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: <InputReader>k__BackingField
       value: 
@@ -24987,6 +24996,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4932088507999258216}
     - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: FollowCam
+      value: 
+      objectReference: {fileID: 1054195780}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: <InputReader>k__BackingField
       value: 
       objectReference: {fileID: 0}
@@ -27880,6 +27893,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1418059963432224869, guid: d3be3902f0af21d40b381cd77208daa0, type: 3}
   m_PrefabInstance: {fileID: 1049897173}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1054195780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3644019408814350906, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+  m_PrefabInstance: {fileID: 944056155}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1054394617
 PrefabInstance:

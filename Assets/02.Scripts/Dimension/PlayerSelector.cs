@@ -15,11 +15,11 @@ public class PlayerSelector : GenericSingleton<PlayerSelector>
     [Header("Camera Settings")]
     [SerializeField] CinemachineFreeLook freeLookCam;
 
+    public event Action<GameObject> OnPlayerChanged;
 
     protected override void Awake()
     {
         base.Awake();
-
         SelectPlayer(0);
     }
 
@@ -31,15 +31,12 @@ public class PlayerSelector : GenericSingleton<PlayerSelector>
             selectedPlayer.DisconnectInput(); // 입력 연결 해제
             selectedPlayer.gameObject.SetActive(false);
         }
-
-        //캠 Setting
-       
-         
         selectedPlayer = allPlayers[idx];
         selectedPlayer.ConnectInput(inputReader); // 입력 연결
-
-        FollowCam();
+        FollowCam(); // 캠 Setting
         allPlayers[idx].gameObject.SetActive(true);
+
+        OnPlayerChanged?.Invoke(selectedPlayer.gameObject);
     }
 
     public void FollowCam()

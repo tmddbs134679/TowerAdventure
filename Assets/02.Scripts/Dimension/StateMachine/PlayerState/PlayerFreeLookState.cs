@@ -43,7 +43,7 @@ public class PlayerFreeLookState : PlayerBaseState
 
         Move(movement * stateMachine.FreeLookMovementSpeed, deltaTime);
 
-        if (stateMachine.InputReader.MovementValue == Vector2.zero)
+        if (GameManager.Inst.JoystickDir == Vector2.zero)
         {
             stateMachine.Animator.SetFloat(FreeLookSpeedHas, 0, AnimatorDampTime, deltaTime);
             return;

@@ -21,8 +21,6 @@ public class UI_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         _initPos = _cursor.transform.position;
 
         _radius = _background.GetComponent<RectTransform>().sizeDelta.y / 3;
-        //_background.transform.position =
-        //_cursor.transform.position = 
     }
 
     public void OnPointerDown(PointerEventData eventData)

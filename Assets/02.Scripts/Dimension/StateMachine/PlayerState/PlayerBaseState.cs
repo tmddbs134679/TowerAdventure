@@ -63,9 +63,9 @@ public abstract class PlayerBaseState : State
     {
         Vector3 movement = new Vector3();
 
-        movement.x = stateMachine.InputReader.MovementValue.x;
+        movement.x = GameManager.Inst.JoystickDir.x;
         movement.y = 0;
-        movement.z = stateMachine.InputReader.MovementValue.y;
+        movement.z = GameManager.Inst.JoystickDir.y;
 
         return movement;
     }

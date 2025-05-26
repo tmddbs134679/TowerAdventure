@@ -51,7 +51,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        MovementValue = context.ReadValue<Vector2>();
+        GameManager.Inst.JoystickDir = context.ReadValue<Vector2>();
     }
 
     public void OnTarget(InputAction.CallbackContext context)

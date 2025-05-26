@@ -1,0 +1,62 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+
+public class UI_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
+{
+    [SerializeField]
+    private GameObject _background;
+
+    [SerializeField]
+    private GameObject _cursor;
+
+    private float _radius;
+    private Vector2 _touchPos;
+    private Vector2 _initPos;
+    public void Start()
+    {
+        _initPos = _cursor.transform.position;
+
+        _radius = _background.GetComponent<RectTransform>().sizeDelta.y / 3;
+        //_background.transform.position =
+        //_cursor.transform.position = 
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        _background.transform.position = eventData.position;
+        _cursor.transform.position = eventData.position;
+        _touchPos = eventData.position;
+
+        //Debug.Log("OnPointerDown");
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        _cursor.transform.position = _touchPos;
+
+        GameManager.Inst.JoystickDir = Vector2.zero;
+
+        _background.transform.position = _initPos;
+        _cursor.transform.position = _initPos;
+      
+        // Debug.Log("OnPointerUp");
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        Vector2 touchDir = (eventData.position - _touchPos);
+
+        float moveDist = Mathf.Min(touchDir.magnitude, _radius);
+        Vector2 moveDir = touchDir.normalized;
+        Vector2 newPosition = _touchPos + moveDir * moveDist;
+        _cursor.transform.position = newPosition;
+
+       GameManager.Inst.JoystickDir = moveDir;
+
+       // Debug.Log("OnDrag");
+    }
+}

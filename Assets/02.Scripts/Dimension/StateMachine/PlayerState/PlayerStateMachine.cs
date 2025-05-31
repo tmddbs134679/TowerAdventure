@@ -82,6 +82,7 @@ public class PlayerStateMachine : StateMachine
         InputReader = null;
     }
 
+    //2¹ø,,..?
     public void ConnectInput(InputReader reader)
     {
         InputReader = reader;

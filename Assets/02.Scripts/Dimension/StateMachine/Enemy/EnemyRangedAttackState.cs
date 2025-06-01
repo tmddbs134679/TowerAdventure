@@ -26,29 +26,29 @@ public class EnemyRangedAttackState : EnemyBaseState
     {
         elapsedTime += deltaTime;
 
-        if (!hasAttacked)
-        {
-            hasAttacked = true;
+        //if (!hasAttacked)
+        //{
+        //    hasAttacked = true;
 
-            if (stateMachine is RangedStateMachine machine &&
-                machine.baseAttackSkill is ParabolaSkill parabolaSkill)
-            {
+        //    if (stateMachine is RangedStateMachine machine &&
+        //        machine.baseAttackSkill is ParabolaSkill parabolaSkill)
+        //    {
               
-                parabolaSkill.Active
-                                    (
-                                        stateMachine.gameObject,
-                                        stateMachine.Player.transform.position,
-                                        null 
-                                    );
+        //        //parabolaSkill.Active
+        //        //                    (
+        //        //                        stateMachine.gameObject,
+        //        //                        stateMachine.Player.transform.position,
+        //        //                        null 
+        //        //                    );
 
-                coolTime = parabolaSkill.cooldown;
-            }
-        }
+        //        coolTime = parabolaSkill.cooldown;
+        //    }
+        //}
 
-        if (elapsedTime >= coolTime)
-        {
-            stateMachine.SwitchState(stateMachine.States[EENEMYSTATE.IDLE]);
-        }
+        //if (elapsedTime >= coolTime)
+        //{
+        //    stateMachine.SwitchState(stateMachine.States[Define.EENEMYSTATE.IDLE]);
+        //}
     }
 
 

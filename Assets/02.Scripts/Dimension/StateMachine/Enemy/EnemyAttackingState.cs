@@ -42,7 +42,7 @@ public class EnemyAttackingState : EnemyBaseState
 
         if (!IsInAttackRange())
         {
-            stateMachine.SwitchState(stateMachine.States[EENEMYSTATE.CHASING]);
+            stateMachine.SwitchState(stateMachine.States[Define.EENEMYSTATE.CHASING]);
         }
     }
 

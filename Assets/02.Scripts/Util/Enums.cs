@@ -2,38 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EPLAYERSTATE
+
+public class Define
 {
-    FREELOOK,
-    ATTACK,
-    SKILL,
-    DODGE,
-    JUMP,
-    CLIMB,
-    STUN,
-    DEAD
+    public enum EPLAYERSTATE
+    {
+        FREELOOK,
+        ATTACK,
+        SKILL,
+        DODGE,
+        JUMP,
+        CLIMB,
+        STUN,
+        DEAD
+    }
+
+    public enum EENEMYSTATE
+    {
+        IDLE,
+        CHASING,
+        ATTACK,
+        SKILL,
+        STUN,
+        DEAD
+    }
+
+    public enum EMONSKILLTYPE
+    {
+
+    }
+
+    public enum EFACTION
+    {
+        NONE,
+        PLAYER,
+        ENEMY,
+        NEUTRAL
+    }
+
+
+    public enum ESKILLTYPE
+    {
+        NONE,
+        SPINNING,
+    }
+
+
+    public enum EOBJECTTYPE
+    {
+        NONE,
+        PLAYER,
+        ENEMY,
+
+    }
+
 }
 
-public enum EENEMYSTATE
-{ 
-    IDLE,
-    CHASING,
-    ATTACK,
-    SKILL,
-    STUN,
-    DEAD
-}
-
-public enum EMONSKILLTYPE
-{
-
-}
-
-public enum EFACTION
-{
-    NONE,
-    PLAYER,
-    ENEMY,
-    NEUTRAL
-}
 

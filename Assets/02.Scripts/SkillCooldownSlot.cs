@@ -24,8 +24,8 @@ public class SkillCooldownSlot : MonoBehaviour
 
     public void SetSkill(SkillBase skill)
     {
-        icon.sprite = skill.SkillIcon;
-        cooldownDuration = skill.cooldown;
+        //icon.sprite = skill.SkillIcon;
+        //cooldownDuration = skill.cooldown;
         cooldownFillImage.sprite = icon.sprite;
         cooldownFillImage.fillAmount = 0;
         cooldownText.text = "";

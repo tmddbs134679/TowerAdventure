@@ -29804,6 +29804,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 157934226639755219, guid: a4ec793513574cd49719c4055b630e2b, type: 3}
+      propertyPath: _ownerType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7153141402127884706, guid: a4ec793513574cd49719c4055b630e2b, type: 3}
       propertyPath: m_Name
       value: SlimePolyart
@@ -34016,6 +34020,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1418059963432224869, guid: d3be3902f0af21d40b381cd77208daa0, type: 3}
   m_PrefabInstance: {fileID: 1218816840}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1218852974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8896679678164239736, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+  m_PrefabInstance: {fileID: 3536427021146220983}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1222781988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35649,6 +35658,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 157934226639755219, guid: a4ec793513574cd49719c4055b630e2b, type: 3}
+      propertyPath: _ownerType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 157934226639755219, guid: a4ec793513574cd49719c4055b630e2b, type: 3}
       propertyPath: baseAttackSkill
       value: 
@@ -41975,6 +41988,10 @@ PrefabInstance:
     - target: {fileID: 80580999921959078, guid: c0ea9de1c1fcc7f4984d64d19b7d0294, type: 3}
       propertyPath: m_Name
       value: TurtleShellPBR
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523926912300001004, guid: c0ea9de1c1fcc7f4984d64d19b7d0294, type: 3}
+      propertyPath: _ownerType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8854198037222305737, guid: c0ea9de1c1fcc7f4984d64d19b7d0294, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53137,12 +53154,44 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
   m_PrefabInstance: {fileID: 3536427021146220983}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1218852974}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dc8935d09dd9d04cafd301441bce8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1868879114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218852974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a3acc6a4c388347b7f0e3b67b22783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skillData:
+    CoolTime: 0
+  radius: 2
+--- !u!114 &1868879115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218852974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823f2fdddd73bf14190c5ff619b3f401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skillList:
+  - {fileID: 11400000, guid: 989cb4ba1f3708f4d8bc005077fe06b5, type: 2}
+  - {fileID: 11400000, guid: 989cb4ba1f3708f4d8bc005077fe06b5, type: 2}
+  - {fileID: 11400000, guid: 989cb4ba1f3708f4d8bc005077fe06b5, type: 2}
+  _ownerType: 0
 --- !u!1001 &1875063540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60297,6 +60346,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1401711534}
     - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: _ownerType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      propertyPath: <skillBook>k__BackingField
+      value: 
+      objectReference: {fileID: 1868879115}
+    - target: {fileID: 2761961976720339691, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: <InputReader>k__BackingField
       value: 
       objectReference: {fileID: 0}
@@ -60360,7 +60417,13 @@ PrefabInstance:
     - {fileID: 1469007580279242358, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8896679678164239736, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1868879114}
+    - targetCorrespondingSourceObject: {fileID: 8896679678164239736, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1868879115}
   m_SourcePrefab: {fileID: 100100000, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
 --- !u!1001 &4790272928309581261
 PrefabInstance:

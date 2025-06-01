@@ -37,7 +37,7 @@ public abstract class PlayerBaseState : State
     {
         if(stateMachine.CanDodge)
         {
-            stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.DODGE]);
+            stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.DODGE]);
             SetDodgeCooldown();
         }
       

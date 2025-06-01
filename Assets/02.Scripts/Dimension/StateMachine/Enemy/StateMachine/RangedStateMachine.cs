@@ -10,11 +10,11 @@ public class RangedStateMachine : EnemyStateMachine
 
     protected override void Awake()
     {
-        States.Add(EENEMYSTATE.IDLE, new EnemyIdleState(this));
-        States.Add(EENEMYSTATE.CHASING, new EnemyChasingState(this));
-        States.Add(EENEMYSTATE.ATTACK, new EnemyRangedAttackState(this));
-        States.Add(EENEMYSTATE.STUN, new EnemyStunState(this));
-        States.Add(EENEMYSTATE.DEAD, new EnemyDeadState(this));
+        States.Add(Define.EENEMYSTATE.IDLE, new EnemyIdleState(this));
+        States.Add(Define.EENEMYSTATE.CHASING, new EnemyChasingState(this));
+        States.Add(Define.EENEMYSTATE.ATTACK, new EnemyRangedAttackState(this));
+        States.Add(Define.EENEMYSTATE.STUN, new EnemyStunState(this));
+        States.Add(Define.EENEMYSTATE.DEAD, new EnemyDeadState(this));
 
     }
     protected override void Update()

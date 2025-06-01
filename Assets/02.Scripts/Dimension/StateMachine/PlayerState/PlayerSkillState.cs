@@ -19,26 +19,29 @@ public class PlayerSkillState : PlayerBaseState
 
     public override void Enter()
     {
-        SkillHas = Animator.StringToHash(currentSkill.SkillName);
+        //SkillHas = Animator.StringToHash(currentSkill.SkillName);
         stateMachine.Animator.CrossFadeInFixedTime(SkillHas, AnimatorDampTime);
 
-        currentSkill.Active
-            (
-                 stateMachine.gameObject,
-                 stateMachine.transform.forward,
-                 () => stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.FREELOOK])
-            );
+        //currentSkill.Active
+        //    (
+        //         stateMachine.gameObject,
+        //         stateMachine.transform.forward,
+        //         () => stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.FREELOOK])
+        //    );
+
+        SequenceSkill skill = (SequenceSkill)currentSkill;
+        skill.DoSkill();
     }
 
 
     public override void Tick(float deltaTime)
     {
-        if(currentSkill.canMove)
-        {
-            Vector3 movement = CalculateMovement();
+        //if(currentSkill.canMove)
+        //{
+        //    Vector3 movement = CalculateMovement();
 
-            Move(movement * currentSkill.moveSpeed, deltaTime);
-        }
+        //    Move(movement * currentSkill.moveSpeed, deltaTime);
+        //}
 
 
     }

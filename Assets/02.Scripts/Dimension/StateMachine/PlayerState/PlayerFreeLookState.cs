@@ -80,14 +80,14 @@ public class PlayerFreeLookState : PlayerBaseState
 
     private void OnSkillInvoked(SkillUsedEvent e)
     {
-        var skillState = (PlayerSkillState)stateMachine.States[EPLAYERSTATE.SKILL];
+        var skillState = (PlayerSkillState)stateMachine.States[Define.EPLAYERSTATE.SKILL];
         skillState.SetSkill(e.skill, e.skillIdx);
-        stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.SKILL]);
+        stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.SKILL]);
     }
 
 
     private void HandleLadderDetect(Vector3 ladderForward)
     {
-        stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.CLIMB]);
+        stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.CLIMB]);
     }
 }

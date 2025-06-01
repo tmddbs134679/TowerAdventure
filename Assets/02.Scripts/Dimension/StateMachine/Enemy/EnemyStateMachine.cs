@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class EnemyStateMachine : StateMachine
 {
 
-    public Dictionary<EENEMYSTATE, EnemyBaseState> States = new Dictionary<EENEMYSTATE, EnemyBaseState>();
+    public Dictionary<Define.EENEMYSTATE, EnemyBaseState> States = new Dictionary<Define.EENEMYSTATE, EnemyBaseState>();
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public CharacterController Controller { get; private set; }
 
@@ -25,6 +25,8 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public Target Target { get; private set; }
 
+
+
     //protected float cooldownTimer = 0f;
     //public bool CanAttack => cooldownTimer <= 0f;
 
@@ -32,11 +34,11 @@ public class EnemyStateMachine : StateMachine
 
     protected virtual void Awake()
     {
-        States.Add(EENEMYSTATE.IDLE, new EnemyIdleState(this));
-        States.Add(EENEMYSTATE.CHASING, new EnemyChasingState(this));
-        States.Add(EENEMYSTATE.ATTACK, new EnemyMeleeAttackState(this));
-        States.Add(EENEMYSTATE.STUN, new EnemyStunState(this));
-        States.Add(EENEMYSTATE.DEAD, new EnemyDeadState(this));
+        States.Add(Define.EENEMYSTATE.IDLE, new EnemyIdleState(this));
+        States.Add(Define.EENEMYSTATE.CHASING, new EnemyChasingState(this));
+        States.Add(Define.EENEMYSTATE.ATTACK, new EnemyMeleeAttackState(this));
+        States.Add(Define.EENEMYSTATE.STUN, new EnemyStunState(this));
+        States.Add(Define.EENEMYSTATE.DEAD, new EnemyDeadState(this));
     }
  
     protected virtual void Start()
@@ -46,7 +48,7 @@ public class EnemyStateMachine : StateMachine
         Agent.updatePosition = false;
         Agent.updateRotation = false;
 
-        SwitchState(States[EENEMYSTATE.IDLE]);
+        SwitchState(States[Define.EENEMYSTATE.IDLE]);
     }
     protected virtual void OnEnable()
     {
@@ -71,11 +73,11 @@ public class EnemyStateMachine : StateMachine
 
     private void HandleTakeDamage(float _, Vector3 __)
     {
-        SwitchState(States[EENEMYSTATE.STUN]);
+        SwitchState(States[Define.EENEMYSTATE.STUN]);
     }
     private void HandleDie()
     {
-        SwitchState(States[EENEMYSTATE.DEAD]);
+        SwitchState(States[Define.EENEMYSTATE.DEAD]);
     }
 
 

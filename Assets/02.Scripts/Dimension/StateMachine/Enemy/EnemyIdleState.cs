@@ -31,7 +31,7 @@ public class EnemyIdleState : EnemyBaseState
 
         if(IsInChaseRange())
         {
-            stateMachine.SwitchState(stateMachine.States[EENEMYSTATE.CHASING]);
+            stateMachine.SwitchState(stateMachine.States[Define.EENEMYSTATE.CHASING]);
             return;
         }
 

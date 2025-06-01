@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Faction : MonoBehaviour
 {
-    public EFACTION faction;
+    public Define.EFACTION faction;
 }

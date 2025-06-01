@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IFaction
 {
-    EFACTION Faction { get; }
+    Define.EFACTION Faction { get; }
 }

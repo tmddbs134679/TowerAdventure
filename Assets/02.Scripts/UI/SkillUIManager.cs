@@ -35,9 +35,9 @@ public class SkillUIManager : MonoBehaviour
     public void Init(GameObject player)     //이름 변경
     {
         List<SkillBase> skills =
-            player.GetComponent<PlayerStateMachine>().Skills;
+            player.GetComponent<PlayerStateMachine>().skillBook.SkillList;
 
-        for (int i=0; i <  skillslots.Length; i++)
+        for (int i = 0; i < skillslots.Length; i++)
         {
             skillslots[i].SetSkill(skills[i]);
         }
@@ -53,9 +53,9 @@ public class SkillUIManager : MonoBehaviour
 
     private void UseSkill(int idx)
     {
-    
+
         List<SkillBase> skills =
-        PlayerSelector.Inst.selectedPlayer.GetComponent<PlayerStateMachine>().Skills;
+        PlayerSelector.Inst.selectedPlayer.GetComponent<PlayerStateMachine>().skillBook.SkillList;
 
         skillslots[idx].SetSkill(skills[idx]);
         skillslots[idx].TriggerCooldown();

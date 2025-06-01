@@ -56,7 +56,7 @@ public class PlayerAttackingState : PlayerBaseState
         }
         else
         {
-            stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.FREELOOK]);
+            stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.FREELOOK]);
         }
     }
 
@@ -75,7 +75,7 @@ public class PlayerAttackingState : PlayerBaseState
         if(normalizedTime < attack.ComboAttackTime) { return; }
 
 
-        var attackState = (PlayerAttackingState)stateMachine.States[EPLAYERSTATE.ATTACK];
+        var attackState = (PlayerAttackingState)stateMachine.States[Define.EPLAYERSTATE.ATTACK];
         attackState.SetAttackIndex(attack.ComboStateIndex);
         stateMachine.SwitchState(attackState);
 

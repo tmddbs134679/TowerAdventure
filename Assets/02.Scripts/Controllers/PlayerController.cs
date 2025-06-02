@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using static Define;
 public class PlayerController : CreatureController
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public override bool Init()
     {
-        
+        base.Init();
+
+        ObjectType = EOBJECTTPYE.PLAYER;
+
+        return true;
     }
 }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Define
+public static class Define
 {
     public enum EPLAYERSTATE
     {
+        NONE,
         FREELOOK,
         ATTACK,
         SKILL,
@@ -19,6 +20,7 @@ public class Define
 
     public enum EENEMYSTATE
     {
+        NONE,
         IDLE,
         CHASING,
         ATTACK,
@@ -41,4 +43,22 @@ public class Define
     }
 
 
+    public enum EOBJECTTPYE
+    {
+        NONE,
+        PLAYER,
+        MONSTER,
+        PROJECTILE,
+    }
+
+    public enum EUIEVENT
+    {
+        CLICK,
+        PRESSED,
+        POINTERDOWN,
+        POINTERUP,
+        BEGINDRAG,
+        DRAG,
+        ENDDRAG,
+    }
 }

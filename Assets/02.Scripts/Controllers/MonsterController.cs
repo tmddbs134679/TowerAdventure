@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Define;
 
 public class MonsterController : CreatureController
 {
     public override bool Init()
     {
-        if(base.Init())
-            return false;
-
+        base.Init();
+        ObjectType = EOBJECTTPYE.MONSTER;
+        
         //TODO
 
 

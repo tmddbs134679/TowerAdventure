@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectManager : MonoBehaviour
+public class ObjectManager
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PlayerController Player { get; private set; }
+    HashSet<MonsterController> Monsters { get; } = new HashSet<MonsterController>();
+    HashSet<ProjectileController> Projectiles { get; } = new HashSet<ProjectileController>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //public T Spawn<T>(int templateID = 0) where T : BaseController
+    //{
+    //    System.Type type = typeof(T);
+
+    //    if(type == typeof(PlayerController))
+    //    {
+             
+    //    }
+
+
+    //}
+
 }

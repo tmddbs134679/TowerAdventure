@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CreatureController : BaseController
 {
-    // Start is called before the first frame update
-    void Start()
+   // public virtual SkillBook Skills { get; set; }
+
+    void Awake()
     {
-        
+        Init();
+    }
+    public override bool Init()
+    {
+        base.Init();
+
+       // Skills = gameObject.GetOrAddComponent<skillbo>();
+
+        return true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

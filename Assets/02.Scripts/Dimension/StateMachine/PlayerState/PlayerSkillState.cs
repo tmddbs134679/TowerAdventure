@@ -26,7 +26,7 @@ public class PlayerSkillState : PlayerBaseState
             (
                  stateMachine.gameObject,
                  stateMachine.transform.forward,
-                 () => stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.FREELOOK])
+                 () => stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.FREELOOK])
             );
     }
 

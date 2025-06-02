@@ -47,7 +47,7 @@ public class EnemyRangedAttackState : EnemyBaseState
 
         if (elapsedTime >= coolTime)
         {
-            stateMachine.SwitchState(stateMachine.States[EENEMYSTATE.IDLE]);
+            stateMachine.SwitchState(stateMachine.States[Define.EENEMYSTATE.IDLE]);
         }
     }
 

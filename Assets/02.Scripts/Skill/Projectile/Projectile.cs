@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public GameObject attacker { get; private set; }
-    public EFACTION OwnerFaction { get; private set; }
+    public Define.EFACTION OwnerFaction { get; private set; }
     protected float damage;
 
     public void Init(GameObject attacker, float speed, float dmg)

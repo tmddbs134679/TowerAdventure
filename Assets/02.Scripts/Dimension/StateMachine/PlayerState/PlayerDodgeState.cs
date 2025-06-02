@@ -31,7 +31,7 @@ public class PlayerDodgeState : PlayerBaseState
 
         if(elapsedTime > dodgeDuration)
         {
-            stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.FREELOOK]);
+            stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.FREELOOK]);
         }
     
      

@@ -30,7 +30,7 @@ public class EnemyStunState : EnemyBaseState
 
         if(duration <= 0f)
         {
-            stateMachine.SwitchState(stateMachine.States[EENEMYSTATE.IDLE]);
+            stateMachine.SwitchState(stateMachine.States[Define.EENEMYSTATE.IDLE]);
         }
     }
 

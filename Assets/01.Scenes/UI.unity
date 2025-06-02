@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 774167346}
   - component: {fileID: 774167348}
   - component: {fileID: 774167347}
+  - component: {fileID: 774167349}
   m_Layer: 5
   m_Name: TitleImage
   m_TagString: Untagged
@@ -224,7 +225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 61, y: -11.877014}
+  m_AnchoredPosition: {x: 61, y: -11.876953}
   m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &774167347
@@ -265,6 +266,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774167345}
   m_CullTransparentMesh: 1
+--- !u!95 &774167349
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774167345}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd978a7ae062e874395b0dfd8b5293a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &799159299
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +467,7 @@ GameObject:
   - component: {fileID: 1083510978}
   - component: {fileID: 1083510977}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: StartText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -460,7 +482,7 @@ RectTransform:
   m_GameObject: {fileID: 1083510975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.327, y: 1.327, z: 1.327}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2145439379}
@@ -492,8 +514,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "    \uD654\uBA74\uC744 \uD130\uCE58\uD574 \uC8FC\uC138\uC694"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3c13637da05c43b48a2a2173299696cd, type: 2}
-  m_sharedMaterial: {fileID: -1530856174796355455, guid: 3c13637da05c43b48a2a2173299696cd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3b969c917799be741962be6dddc08cae, type: 2}
+  m_sharedMaterial: {fileID: 5207820940069087074, guid: 3b969c917799be741962be6dddc08cae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -517,8 +539,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 55.81
+  m_fontSizeBase: 55.81
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -579,6 +601,7 @@ GameObject:
   - component: {fileID: 1107297388}
   - component: {fileID: 1107297387}
   - component: {fileID: 1107297386}
+  - component: {fileID: 1107297390}
   m_Layer: 5
   m_Name: UI_TitleScene
   m_TagString: Untagged
@@ -670,6 +693,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1107297390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107297385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acca7f7422d47fa4492c424c3b22216c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1551948339
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,16 +8,16 @@ public class ObjectManager
     HashSet<MonsterController> Monsters { get; } = new HashSet<MonsterController>();
     HashSet<ProjectileController> Projectiles { get; } = new HashSet<ProjectileController>();
 
-    //public T Spawn<T>(int templateID = 0) where T : BaseController
-    //{
-    //    System.Type type = typeof(T);
+    public T Spawn<T>(int templateID = 0) where T : BaseController
+    {
+        System.Type type = typeof(T);
 
-    //    if(type == typeof(PlayerController))
-    //    {
-             
-    //    }
+        if (type == typeof(PlayerController))
+        {
 
+        }
 
-    //}
+        return null;
+    }
 
 }

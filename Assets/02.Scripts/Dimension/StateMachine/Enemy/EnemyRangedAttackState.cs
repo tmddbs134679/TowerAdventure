@@ -30,19 +30,19 @@ public class EnemyRangedAttackState : EnemyBaseState
         {
             hasAttacked = true;
 
-            if (stateMachine is RangedStateMachine machine &&
-                machine.baseAttackSkill is ParabolaSkill parabolaSkill)
-            {
+            //if (stateMachine is RangedStateMachine machine &&
+            //    machine.baseAttackSkill is ParabolaSkill parabolaSkill)
+            //{
               
-                parabolaSkill.Active
-                                    (
-                                        stateMachine.gameObject,
-                                        stateMachine.Player.transform.position,
-                                        null 
-                                    );
+            //    parabolaSkill.Active
+            //                        (
+            //                            stateMachine.gameObject,
+            //                            stateMachine.Player.transform.position,
+            //                            null 
+            //                        );
 
-                coolTime = parabolaSkill.cooldown;
-            }
+            //    coolTime = parabolaSkill.cooldown;
+            //}
         }
 
         if (elapsedTime >= coolTime)

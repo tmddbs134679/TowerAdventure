@@ -61,4 +61,9 @@ public static class Define
         DRAG,
         ENDDRAG,
     }
+
+    public enum ESKILLTYPE
+    {
+
+    }
 }

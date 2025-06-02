@@ -14,10 +14,10 @@ public class SpinningSkill : SkillBase
 
 
 
-    public override void Active(GameObject caster, Vector3 dir, Action onComplete = null)
-    {
-        caster.GetComponent<MonoBehaviour>().StartCoroutine(SpinAttackRoutine(caster, onComplete));
-    }
+    //public override void Active(GameObject caster, Vector3 dir, Action onComplete = null)
+    //{
+    //    caster.GetComponent<MonoBehaviour>().StartCoroutine(SpinAttackRoutine(caster, onComplete));
+    //}
 
     private IEnumerator SpinAttackRoutine(GameObject caster, Action onComplete)
     {

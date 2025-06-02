@@ -22,12 +22,12 @@ public class PlayerSkillState : PlayerBaseState
         SkillHas = Animator.StringToHash(currentSkill.SkillName);
         stateMachine.Animator.CrossFadeInFixedTime(SkillHas, AnimatorDampTime);
 
-        currentSkill.Active
-            (
-                 stateMachine.gameObject,
-                 stateMachine.transform.forward,
-                 () => stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.FREELOOK])
-            );
+        //currentSkill.Active
+        //    (
+        //         stateMachine.gameObject,
+        //         stateMachine.transform.forward,
+        //         () => stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.FREELOOK])
+        //    );
     }
 
 

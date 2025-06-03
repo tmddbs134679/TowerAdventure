@@ -80,15 +80,6 @@ public abstract class SkillBase : BaseController
 
     }
 
-
-
-
-
-
-
-
-
-
     //public abstract void Active(GameObject caster, Vector3 dir, Action onComplete = null);
  
 

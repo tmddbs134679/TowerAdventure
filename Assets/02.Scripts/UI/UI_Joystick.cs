@@ -9,7 +9,6 @@ public class UI_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField]
     private GameObject _background;
-
     [SerializeField]
     private GameObject _cursor;
 

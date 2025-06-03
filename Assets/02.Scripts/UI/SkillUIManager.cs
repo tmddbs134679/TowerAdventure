@@ -20,7 +20,7 @@ public class SkillUIManager : MonoBehaviour
     private void OnEnable()
     {
         PlayerSelector.Inst.OnPlayerChanged += Init;
-        attackBtn.onButtonTest.AddListener(PlayerSelector.Inst.Input.OnAttackClick);
+        attackBtn.onButtonDown.AddListener(PlayerSelector.Inst.Input.OnAttackClick);
         attackBtn.onButtonUp.AddListener(PlayerSelector.Inst.Input.ResetAttack);
    
     }
@@ -34,13 +34,13 @@ public class SkillUIManager : MonoBehaviour
 
     public void Init(GameObject player)     //이름 변경
     {
-        List<SkillBase> skills =
-            player.GetComponent<PlayerStateMachine>().Skills;
+        //List<SkillBase> skills =
+        //    player.GetComponent<PlayerStateMachine>().Skills;
 
-        for (int i=0; i <  skillslots.Length; i++)
-        {
-            skillslots[i].SetSkill(skills[i]);
-        }
+        //for (int i=0; i <  skillslots.Length; i++)
+        //{
+        //    skillslots[i].SetSkill(skills[i]);
+        //}
 
         Skill1_Btn.onClick.RemoveAllListeners();
         Skill2_Btn.onClick.RemoveAllListeners();
@@ -54,13 +54,13 @@ public class SkillUIManager : MonoBehaviour
     private void UseSkill(int idx)
     {
     
-        List<SkillBase> skills =
-        PlayerSelector.Inst.selectedPlayer.GetComponent<PlayerStateMachine>().Skills;
+        //List<SkillBase> skills =
+        //PlayerSelector.Inst.selectedPlayer.GetComponent<PlayerStateMachine>().Skills;
 
-        skillslots[idx].SetSkill(skills[idx]);
-        skillslots[idx].TriggerCooldown();
+        //skillslots[idx].SetSkill(skills[idx]);
+        //skillslots[idx].TriggerCooldown();
 
-        var skill = skills[idx];
-        EventBus.Publish(new SkillUsedEvent(skill, idx));
+        //var skill = skills[idx];
+        //EventBus.Publish(new SkillUsedEvent(skill, idx));
     }
 }

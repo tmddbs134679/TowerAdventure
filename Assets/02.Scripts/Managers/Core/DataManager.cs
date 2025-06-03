@@ -9,7 +9,7 @@ public interface ILoader<Key, Value>
 public class DataManager 
 {
 
-
+    public Dictionary<int, Data.CreatureData> CreatureDic { get; private set; } = new Dictionary<int, Data.CreatureData>();
 
 
 

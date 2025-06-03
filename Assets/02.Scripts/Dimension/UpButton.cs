@@ -13,7 +13,7 @@ public class UpButton : Button
         get; private set;
     } = new ButtonClickedEvent();
 
-    public ButtonClickedEvent onButtonTest
+    public ButtonClickedEvent onButtonDown
     {
         get; private set;
     } = new ButtonClickedEvent();
@@ -29,7 +29,7 @@ public class UpButton : Button
     public override void OnPointerDown(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);
-        onButtonTest.Invoke();
+        onButtonDown.Invoke();
     }
 
 

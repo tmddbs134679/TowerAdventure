@@ -99,9 +99,11 @@ public class UI_PlayerController : UI_Scene
     {
         //예외처리
 
+        if (!PlayerSelector.Inst.selectedPlayer.CanSelectPlayer) return;
+
         PlayerSelector.Inst.SelectPlayer(idx);
 
-        for(int i=0; i < 3; i++)
+        for(int i = 0; i < 3; i++)
         {
             GetImage((int)Images.Select1_LockImage + i).gameObject.SetActive(true);
             Image img = GetImage((int)Images.Select1_CoolDownImage + i);

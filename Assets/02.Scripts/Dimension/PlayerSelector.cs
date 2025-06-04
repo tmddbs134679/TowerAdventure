@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerSelector : GenericSingleton<PlayerSelector>
@@ -26,12 +27,14 @@ public class PlayerSelector : GenericSingleton<PlayerSelector>
 
     public void SelectPlayer(int idx)
     {
-
+       
         if (selectedPlayer != null)
         {
+            UpdateLastSelectTime();
             selectedPlayer.DisconnectInput(); // 입력 연결 해제
             selectedPlayer.gameObject.SetActive(false);
         }
+
         selectedPlayer = allPlayers[idx];
         selectedPlayer.ConnectInput(inputReader); // 입력 연결
         FollowCam(); // 캠 Setting
@@ -40,8 +43,13 @@ public class PlayerSelector : GenericSingleton<PlayerSelector>
         OnPlayerChanged?.Invoke(selectedPlayer.gameObject);
     }
 
-    public void FollowCam()
+    private void FollowCam()
     {
         freeLookCam.Follow = selectedPlayer.FollowCam.transform;
+    }
+
+    public void UpdateLastSelectTime()
+    {
+        selectedPlayer.lastPlayerSelectTime = Time.time;
     }
 }

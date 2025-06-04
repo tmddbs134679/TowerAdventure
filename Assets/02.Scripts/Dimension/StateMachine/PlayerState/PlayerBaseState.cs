@@ -38,7 +38,7 @@ public abstract class PlayerBaseState : State
         if(stateMachine.CanDodge)
         {
             stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.DODGE]);
-            SetDodgeCooldown();
+            UpdateLastDodgeTime();
         }
       
     }
@@ -71,7 +71,7 @@ public abstract class PlayerBaseState : State
     }
 
 
-    public void SetDodgeCooldown()
+    public void UpdateLastDodgeTime()
     {
         stateMachine.lastDodgeTime = Time.time;
     }

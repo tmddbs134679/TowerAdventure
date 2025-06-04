@@ -134,8 +134,8 @@ public class UI_PlayerController : UI_Scene
     }
 
 
-
-    private IEnumerator CooldownRoutine(Image cooldownFillImage, float duration, TMP_Text cooldownText = null, bool isLocked = false)   //Text까지 표시해야한다면 넣고 아니면 null
+    //Text까지 표시해야한다면 넣고 아니면 null, 잠금 있으면 isLocked = True
+    private IEnumerator CooldownRoutine(Image cooldownFillImage, float duration, TMP_Text cooldownText = null, bool isLocked = false)   
     {
         cooldownFillImage.gameObject.SetActive(true);
         if (cooldownText != null)

@@ -8,8 +8,6 @@ public static class Define
     public static float PLAYER_SELECT_COOLTIME = 1f;
 
 
-
-
     public enum EPLAYERSTATE
     {
         NONE,

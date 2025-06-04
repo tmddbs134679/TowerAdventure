@@ -2087,7 +2087,7 @@ GameObject:
   - component: {fileID: 78375598}
   - component: {fileID: 78375597}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: SelectPlyer2cooldown_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4972,7 +4972,7 @@ GameObject:
   - component: {fileID: 192969842}
   - component: {fileID: 192969841}
   m_Layer: 5
-  m_Name: Skill1_CoolDown
+  m_Name: SelectbackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7176,7 +7176,7 @@ GameObject:
   - component: {fileID: 288356808}
   - component: {fileID: 288356807}
   m_Layer: 5
-  m_Name: UI_Player3
+  m_Name: SelectPlayer3Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8739,12 +8739,12 @@ GameObject:
   - component: {fileID: 351498767}
   - component: {fileID: 351498766}
   m_Layer: 5
-  m_Name: Skill2_CoolDown
+  m_Name: Skill2backgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &351498765
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10653,7 +10653,7 @@ GameObject:
   - component: {fileID: 440896993}
   - component: {fileID: 440896994}
   m_Layer: 5
-  m_Name: UI_Skill2
+  m_Name: Skill2Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10786,7 +10786,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440896988}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d3252ae5ff57bf4491fd59d5bee552c, type: 3}
   m_Name: 
@@ -12992,7 +12992,6 @@ GameObject:
   - component: {fileID: 513908523}
   - component: {fileID: 513908525}
   - component: {fileID: 513908524}
-  - component: {fileID: 513908526}
   m_Layer: 5
   m_Name: img
   m_TagString: Untagged
@@ -13057,50 +13056,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513908522}
   m_CullTransparentMesh: 1
---- !u!114 &513908526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513908522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 513908524}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &514307844
 GameObject:
   m_ObjectHideFlags: 3
@@ -18330,7 +18285,7 @@ GameObject:
   - component: {fileID: 701487202}
   - component: {fileID: 701487201}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: SelectPlyer1cooldown_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18717,12 +18672,12 @@ GameObject:
   - component: {fileID: 712419495}
   - component: {fileID: 712419494}
   m_Layer: 5
-  m_Name: Skill3_CoolDown
+  m_Name: Skill3backgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &712419493
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19234,7 +19189,7 @@ GameObject:
   - component: {fileID: 722981069}
   - component: {fileID: 722981068}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SelectPlyer3cooldown_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21261,7 +21216,7 @@ GameObject:
   - component: {fileID: 819622260}
   - component: {fileID: 819622261}
   m_Layer: 5
-  m_Name: UI_Skill3
+  m_Name: Skill3Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21394,7 +21349,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819622255}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d3252ae5ff57bf4491fd59d5bee552c, type: 3}
   m_Name: 
@@ -22629,12 +22584,12 @@ GameObject:
   - component: {fileID: 843950032}
   - component: {fileID: 843950031}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Skill2cooldown_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &843950030
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24625,7 +24580,7 @@ GameObject:
   - component: {fileID: 908702883}
   - component: {fileID: 908702882}
   m_Layer: 5
-  m_Name: UI_Player1
+  m_Name: SelectPlayer1Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26372,7 +26327,7 @@ GameObject:
   - component: {fileID: 979714328}
   - component: {fileID: 979714329}
   m_Layer: 5
-  m_Name: UI_Skill1
+  m_Name: Skill1Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26505,7 +26460,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979714323}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d3252ae5ff57bf4491fd59d5bee552c, type: 3}
   m_Name: 
@@ -29526,9 +29481,9 @@ GameObject:
   - component: {fileID: 1084875238}
   - component: {fileID: 1084875240}
   - component: {fileID: 1084875239}
-  - component: {fileID: 1084875242}
+  - component: {fileID: 1084875243}
   m_Layer: 5
-  m_Name: UI_Attack
+  m_Name: AttackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29593,7 +29548,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084875237}
   m_CullTransparentMesh: 1
---- !u!114 &1084875242
+--- !u!114 &1084875243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29602,9 +29557,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 1084875237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4354b816dcc704cb7b490a01a31874, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1084875239}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1085140862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39471,12 +39458,12 @@ GameObject:
   - component: {fileID: 1400460185}
   - component: {fileID: 1400460184}
   m_Layer: 5
-  m_Name: SkillCoolTimeText
+  m_Name: Skill1cooldown_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1400460183
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41981,12 +41968,12 @@ GameObject:
   - component: {fileID: 1486671398}
   - component: {fileID: 1486671397}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Skill3cooldown_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1486671396
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48246,12 +48233,12 @@ GameObject:
   - component: {fileID: 1705893000}
   - component: {fileID: 1705892999}
   m_Layer: 5
-  m_Name: SkillbackgroundImage
+  m_Name: Skill1backgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1705892998
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50212,7 +50199,7 @@ GameObject:
   - component: {fileID: 1768154373}
   - component: {fileID: 1768154372}
   m_Layer: 5
-  m_Name: img
+  m_Name: Skill3_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52085,7 +52072,7 @@ GameObject:
   - component: {fileID: 1818119013}
   - component: {fileID: 1818119012}
   m_Layer: 5
-  m_Name: img
+  m_Name: Skill2_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54058,7 +54045,7 @@ GameObject:
   - component: {fileID: 1900811556}
   - component: {fileID: 1900811555}
   m_Layer: 5
-  m_Name: SkillImage
+  m_Name: Skill1_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54510,7 +54497,7 @@ GameObject:
   - component: {fileID: 1919588879}
   - component: {fileID: 1919588878}
   m_Layer: 5
-  m_Name: UI_Player2
+  m_Name: SelectPlayer2Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

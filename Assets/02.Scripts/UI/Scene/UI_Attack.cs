@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class UI_Attack : UI_Base
 {
+    enum GameObjects
+    { 
+        AttackObject,
+    }
     enum Buttons
     {
         AttackButton,
@@ -16,9 +20,9 @@ public class UI_Attack : UI_Base
             return false;
 
         #region Object Bind
-        BindButton(typeof(Buttons));
-        GetButton((int)Buttons.AttackButton).gameObject.BindEvent(OnPointerDown, null, type: Define.EUIEVENT.POINTERDOWN);
-        GetButton((int)Buttons.AttackButton).gameObject.BindEvent(OnPointerUp, null, type: Define.EUIEVENT.POINTERUP);
+        BindObject(typeof(GameObjects));
+        GetButton((int)GameObjects.AttackObject).gameObject.BindEvent(OnPointerDown, null, type: Define.EUIEVENT.POINTERDOWN);
+        GetButton((int)GameObjects.AttackObject).gameObject.BindEvent(OnPointerUp, null, type: Define.EUIEVENT.POINTERUP);
 
 
         #endregion

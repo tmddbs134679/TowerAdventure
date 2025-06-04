@@ -49,6 +49,11 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         DodgeEvent?.Invoke();
     }
 
+    public void OnDodgeClick()
+    {
+        DodgeEvent?.Invoke();
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         GameManager.Inst.JoystickDir = context.ReadValue<Vector2>();

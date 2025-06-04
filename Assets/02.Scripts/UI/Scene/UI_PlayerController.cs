@@ -2,8 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using static Define;
 
 public class UI_PlayerController : UI_Scene
 {
@@ -26,9 +29,15 @@ public class UI_PlayerController : UI_Scene
 
     enum Images
     {
-        Dodge_Icon,
-        Skill1_Icon,
-        Skill2_Icon,
+        Select1_CoolDownImage = 0,
+        Select2_CoolDownImage,
+        Select3_CoolDownImage, 
+        Dodgecooldown_Image,
+        Skill1cooldown_Image,
+        Skill2cooldown_Image,
+        Select1_LockImage,
+        Select2_LockImage,
+        Select3_LockImage,
     }
 
     enum Texts
@@ -36,10 +45,8 @@ public class UI_PlayerController : UI_Scene
         Dodgecooldown_Text,
         Skill1cooldown_Text,
         Skill2cooldown_Text,
-        SelectPlyer1cooldown_Text,
-        SelectPlyer2cooldown_Text,
-        SelectPlyer3cooldown_Text,
     }
+
     #endregion
 
     private void Awake()
@@ -49,7 +56,12 @@ public class UI_PlayerController : UI_Scene
 
     private void Start()
     {
+        GetImage((int)Images.Dodgecooldown_Image).gameObject.SetActive(false);
+        GetImage((int)Images.Select1_LockImage).gameObject.SetActive(false);
+        GetImage((int)Images.Select2_LockImage).gameObject.SetActive(false);
+        GetImage((int)Images.Select3_LockImage).gameObject.SetActive(false);
 
+        GetText((int)Texts.Dodgecooldown_Text).gameObject.SetActive(false);
     }
 
 
@@ -59,9 +71,6 @@ public class UI_PlayerController : UI_Scene
             return false;
 
         #region Bind
-
-
-        //BindObject(typeof(GameObjects));
         BindButton(typeof(Buttons));
         BindText(typeof(Texts));
         BindImage(typeof(Images));
@@ -88,12 +97,28 @@ public class UI_PlayerController : UI_Scene
 
     private void OnClickPlayerSelectButton(int idx)
     {
+        //예외처리
+
         PlayerSelector.Inst.SelectPlayer(idx);
+
+        for(int i=0; i < 3; i++)
+        {
+            GetImage((int)Images.Select1_LockImage + i).gameObject.SetActive(true);
+            Image img = GetImage((int)Images.Select1_CoolDownImage + i);
+            StartCoroutine(CooldownRoutine(img, PLAYER_SELECT_COOLTIME, null, true));
+        }
+       
     }
 
     private void OnClickDodge()
     {
+        if (!PlayerSelector.Inst.selectedPlayer.CanDodge) return; 
+
+
         PlayerSelector.Inst.Input.OnDodgeClick();
+        float cooldown = PlayerSelector.Inst.selectedPlayer.DodgeCooldown;
+        StartCoroutine(CooldownRoutine(GetImage((int)Images.Dodgecooldown_Image), cooldown, GetText((int)Texts.Dodgecooldown_Text)));
+
     }
 
     private void OnAttackPointDown()
@@ -104,5 +129,47 @@ public class UI_PlayerController : UI_Scene
     private void OnAttackPointUp()
     {
         PlayerSelector.Inst.Input.ResetAttack();
+    }
+
+
+
+    private IEnumerator CooldownRoutine(Image cooldownFillImage, float duration, TMP_Text cooldownText = null, bool isLocked = false)   //Text까지 표시해야한다면 넣고 아니면 null
+    {
+        cooldownFillImage.gameObject.SetActive(true);
+        if (cooldownText != null)
+            cooldownText.gameObject.SetActive(true);
+
+        float remainingTime = duration;
+
+        while (remainingTime > 0f)
+        {
+            remainingTime -= Time.deltaTime;
+
+            float ratio = Mathf.Clamp01(remainingTime / duration);
+            cooldownFillImage.fillAmount = ratio;
+
+            if (cooldownText != null)
+                cooldownText.text = Mathf.CeilToInt(remainingTime).ToString("00");
+
+            yield return null;
+        }
+
+        cooldownFillImage.fillAmount = 0f;
+        cooldownFillImage.gameObject.SetActive(false);
+
+        if (cooldownText != null)   //쿨타임 있으면 초기화
+        {
+            cooldownText.text = "";
+            cooldownText.gameObject.SetActive(false);
+        }
+
+        if(isLocked)        //자물쇠 있으면 초기화
+        {
+            for(int i=0; i < 3; i++)
+            {
+                GetImage((int)Images.Select1_LockImage + i).gameObject.SetActive(false);
+            }
+        }
+
     }
 }

@@ -5,6 +5,11 @@ using UnityEngine;
 
 public static class Define
 {
+    public static float PLAYER_SELECT_COOLTIME = 1f;
+
+
+
+
     public enum EPLAYERSTATE
     {
         NONE,
@@ -68,4 +73,9 @@ public static class Define
         SPINNING = 10001,
         FIREBALL = 10011,
     }
+
+
+
+
+
 }

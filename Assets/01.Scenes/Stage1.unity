@@ -7247,19 +7247,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 288356808}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1043638846}
-        m_TargetAssemblyTypeName: PlayerSelector, Assembly-CSharp
-        m_MethodName: SelectPlayer
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &288356808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8744,7 +8732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &351498765
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13539,7 +13527,6 @@ RectTransform:
   - {fileID: 1084875238}
   - {fileID: 979714324}
   - {fileID: 440896989}
-  - {fileID: 819622256}
   m_Father: {fileID: 1457429487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -18672,12 +18659,12 @@ GameObject:
   - component: {fileID: 712419495}
   - component: {fileID: 712419494}
   m_Layer: 5
-  m_Name: Skill3backgroundImage
+  m_Name: Skill1backgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &712419493
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21216,7 +21203,7 @@ GameObject:
   - component: {fileID: 819622260}
   - component: {fileID: 819622261}
   m_Layer: 5
-  m_Name: Skill3Button
+  m_Name: Skill1Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21231,17 +21218,17 @@ RectTransform:
   m_GameObject: {fileID: 819622255}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.210376, y: 1.210376, z: 1.210376}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1768154371}
   - {fileID: 712419493}
   - {fileID: 1486671396}
-  m_Father: {fileID: 529688514}
+  m_Father: {fileID: 979714324}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -350.1, y: 269.9}
+  m_AnchoredPosition: {x: 17.928284, y: 140.3696}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &819622257
@@ -22589,7 +22576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &843950030
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26327,7 +26314,7 @@ GameObject:
   - component: {fileID: 979714328}
   - component: {fileID: 979714329}
   m_Layer: 5
-  m_Name: Skill1Button
+  m_Name: DodgeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26348,6 +26335,7 @@ RectTransform:
   - {fileID: 1900811554}
   - {fileID: 1705892998}
   - {fileID: 1400460183}
+  - {fileID: 819622256}
   m_Father: {fileID: 529688514}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
@@ -39458,12 +39446,12 @@ GameObject:
   - component: {fileID: 1400460185}
   - component: {fileID: 1400460184}
   m_Layer: 5
-  m_Name: Skill1cooldown_Text
+  m_Name: Dodgecooldown_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1400460183
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41968,12 +41956,12 @@ GameObject:
   - component: {fileID: 1486671398}
   - component: {fileID: 1486671397}
   m_Layer: 5
-  m_Name: Skill3cooldown_Text
+  m_Name: Skill1cooldown_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1486671396
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48233,12 +48221,12 @@ GameObject:
   - component: {fileID: 1705893000}
   - component: {fileID: 1705892999}
   m_Layer: 5
-  m_Name: Skill1backgroundImage
+  m_Name: DodgebackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1705892998
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50199,7 +50187,7 @@ GameObject:
   - component: {fileID: 1768154373}
   - component: {fileID: 1768154372}
   m_Layer: 5
-  m_Name: Skill3_Icon
+  m_Name: Skill1_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54045,7 +54033,7 @@ GameObject:
   - component: {fileID: 1900811556}
   - component: {fileID: 1900811555}
   m_Layer: 5
-  m_Name: Skill1_Icon
+  m_Name: Dodge_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54060,7 +54048,7 @@ RectTransform:
   m_GameObject: {fileID: 1900811553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.80558, y: 0.80558, z: 0.80558}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 979714324}
@@ -54090,7 +54078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8aea6e56c1ba2a842b15aab3c58fbae9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f03356416c6c72348915c1dab8c9a8e7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -54568,19 +54556,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1919588879}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1043638846}
-        m_TargetAssemblyTypeName: PlayerSelector, Assembly-CSharp
-        m_MethodName: SelectPlayer
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1919588879
 MonoBehaviour:
   m_ObjectHideFlags: 0

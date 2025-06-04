@@ -21,8 +21,10 @@ public class PlayerFreeLookState : PlayerBaseState
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookAnimName, CrossFadeDuration);
-        stateMachine.InputReader.TargetEvent += OnTarget;
-        stateMachine.InputReader.DodgeEvent += Dodge;
+        PlayerSelector.Inst.Input.TargetEvent += OnTarget;
+        PlayerSelector.Inst.Input.DodgeEvent += Dodge;
+        //stateMachine.InputReader.TargetEvent += OnTarget;
+        //stateMachine.InputReader.DodgeEvent += Dodge;
         stateMachine.LadderDetector.OnLadderDetect += HandleLadderDetect;
         EventBus.Subscribe<SkillUsedEvent>(OnSkillInvoked);
 
@@ -55,8 +57,10 @@ public class PlayerFreeLookState : PlayerBaseState
     public override void Exit()
     {
         stateMachine.LadderDetector.OnLadderDetect -= HandleLadderDetect;
-        stateMachine.InputReader.TargetEvent -= OnTarget;
-        stateMachine.InputReader.DodgeEvent -= Dodge;
+        PlayerSelector.Inst.Input.TargetEvent -= OnTarget;
+        PlayerSelector.Inst.Input.DodgeEvent -= Dodge;
+        //stateMachine.InputReader.TargetEvent -= OnTarget;
+        //stateMachine.InputReader.DodgeEvent -= Dodge;
         EventBus.Unsubscribe<SkillUsedEvent>(OnSkillInvoked);
     }
 

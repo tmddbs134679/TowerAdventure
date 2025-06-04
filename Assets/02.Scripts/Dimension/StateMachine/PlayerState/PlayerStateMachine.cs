@@ -28,11 +28,11 @@ public class PlayerStateMachine : StateMachine
     //이동 필요
     [field: SerializeField] public GameObject FollowCam;
     public bool CanDodge => Time.time >= lastDodgeTime + DodgeCooldown;
-    public bool CanSelectPlayer => Time.time >= lastPlayerSelectTime + PLAYER_SELECT_COOLTIME;
+
     // public bool CanSkillQ => Time.time >= lastSkill_Q_Time + Skills[0].cooldown;
     [HideInInspector]
     public float lastDodgeTime = -Mathf.Infinity;
-    public float lastPlayerSelectTime = -Mathf.Infinity;
+
     public float lastSkill_Q_Time = -Mathf.Infinity;
     private void Awake()
     {

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditorInternal;
 using UnityEngine;
+using static Define;
 
 public class PlayerSelector : GenericSingleton<PlayerSelector>
 {
@@ -16,7 +17,8 @@ public class PlayerSelector : GenericSingleton<PlayerSelector>
 
     [Header("Camera Settings")]
     [SerializeField] CinemachineFreeLook freeLookCam;
-
+    public bool CanSelectPlayer => Time.time >= lastPlayerSelectTime + PLAYER_SELECT_COOLTIME;
+    public float lastPlayerSelectTime = -Mathf.Infinity;
     public event Action<GameObject> OnPlayerChanged;
 
     protected override void Awake()
@@ -50,6 +52,6 @@ public class PlayerSelector : GenericSingleton<PlayerSelector>
 
     public void UpdateLastSelectTime()
     {
-        selectedPlayer.lastPlayerSelectTime = Time.time;
+        lastPlayerSelectTime = Time.time;
     }
 }

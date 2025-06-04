@@ -99,7 +99,7 @@ public class UI_PlayerController : UI_Scene
     {
         //예외처리
 
-        if (!PlayerSelector.Inst.selectedPlayer.CanSelectPlayer) return;
+        if (!PlayerSelector.Inst.CanSelectPlayer) return;
 
         PlayerSelector.Inst.SelectPlayer(idx);
 

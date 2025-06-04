@@ -368,6 +368,8 @@ GameObject:
   - component: {fileID: 5208187964947457826}
   - component: {fileID: 157934226639755219}
   - component: {fileID: 3442052250111156189}
+  - component: {fileID: 7012064883278422744}
+  - component: {fileID: 3245132485887068738}
   m_Layer: 0
   m_Name: SlimePolyart
   m_TagString: Enemy
@@ -522,7 +524,7 @@ MonoBehaviour:
   <MovementSpeed>k__BackingField: 3
   <AttackKnockback>k__BackingField: 1
   <Target>k__BackingField: {fileID: 8774871697901528111}
-  baseAttackSkill: {fileID: 11400000, guid: 28d02deb5fe1ac943967eb4e0a039d1b, type: 2}
+  baseAttackSkill: {fileID: 11400000, guid: 2ccba7b501905504194c43dc271befa9, type: 2}
 --- !u!114 &3442052250111156189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,6 +538,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 2
+--- !u!114 &7012064883278422744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153141402127884706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd02ad98d3da6114f9062865e1001dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 2
+--- !u!114 &3245132485887068738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153141402127884706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0a297cf8c16434fad665cc696759d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CreatureData:
+    DataId: 0
+    DescriptionTextID: 
+    PrefabLabel: 
+    MaxHp: 0
+    MaxHpBonus: 0
+    Atk: 0
+    AtkBonus: 0
+    Def: 0
+    MoveSpeed: 0
+    TotalExp: 0
+    HpRate: 0
+    AtkRate: 0
+    DefRate: 0
+    MoveSpeedRate: 0
+    IconLabel: 
+    SkillTypeList: 
 --- !u!1 &7446019047767849115
 GameObject:
   m_ObjectHideFlags: 0

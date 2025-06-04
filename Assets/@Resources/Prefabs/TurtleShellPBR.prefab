@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 1440762037013370823}
   - component: {fileID: 2523926912300001004}
   - component: {fileID: 7008373252791267159}
+  - component: {fileID: 5673025698935212072}
   m_Layer: 0
   m_Name: TurtleShellPBR
   m_TagString: Enemy
@@ -34,7 +35,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80580999921959078}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9996936, z: -0, w: 0.024754418}
+  m_LocalRotation: {x: 0, y: -0.9996935, z: 0, w: 0.024755096}
   m_LocalPosition: {x: 4.407, y: 0.028, z: 3.7}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
@@ -214,6 +215,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faction: 2
+--- !u!114 &5673025698935212072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80580999921959078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0a297cf8c16434fad665cc696759d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CreatureData:
+    DataId: 0
+    DescriptionTextID: 
+    PrefabLabel: 
+    MaxHp: 0
+    MaxHpBonus: 0
+    Atk: 0
+    AtkBonus: 0
+    Def: 0
+    MoveSpeed: 0
+    TotalExp: 0
+    HpRate: 0
+    AtkRate: 0
+    DefRate: 0
+    MoveSpeedRate: 0
+    IconLabel: 
+    SkillTypeList: 
 --- !u!1 &145171347687042866
 GameObject:
   m_ObjectHideFlags: 0

@@ -98,4 +98,31 @@ namespace Data
     #endregion
 
 
+    #region StageData
+
+    [Serializable]
+    public class StageData
+    {
+        public int StageIndex = 1;
+        public string StageName;
+        public int StageLevel = 1;
+        public string MapName;
+        //public int StageSkill;
+
+        
+    }
+    public class StageDataLoader : ILoader<int, StageData>
+    {
+        public List<StageData> stages = new List<StageData>();
+
+        public Dictionary<int, StageData> MakeDict()
+        {
+            Dictionary<int, StageData> dict = new Dictionary<int, StageData>();
+            foreach (StageData stage in stages)
+                dict.Add(stage.StageIndex, stage);
+            return dict;
+        }
+    }
+
+    #endregion
 }

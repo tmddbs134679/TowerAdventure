@@ -22,15 +22,21 @@ public class Managers : MonoBehaviour
     DataManager _data = new DataManager();
     PoolManager _pool = new PoolManager();
     ResourceManager _resource = new ResourceManager();
+    MySceneManager _scene = new MySceneManager();
     SoundManager _sound = new SoundManager();
     UIManager _ui = new UIManager();
 
+    TestManager _test = new TestManager();
 
     public static DataManager Data { get { return Inst?._data; } }
     public static PoolManager Pool { get { return Inst?._pool; } }
     public static ResourceManager Resource { get { return Inst?._resource; } }
+
+    public static MySceneManager Scene { get { return Inst?._scene; } }
     public static SoundManager Sound { get { return Inst?._sound; } }
     public static UIManager UI { get { return Inst?._ui; } }
+
+    public static TestManager Test { get { return Inst?._test;  } }
     #endregion
 
 
@@ -47,17 +53,18 @@ public class Managers : MonoBehaviour
 
             DontDestroyOnLoad(go);
             s_instance = go.GetComponent<Managers>();
-
+            s_instance._test.Init();
+          
         }
     }
 
     public static void Clear()
     {
-        //Sound.Clear();
-        //Scene.Clear();
-        //UI.Clear();
-        //Pool.Clear();
-        //Object.Clear();
+       // Sound.Clear();
+        Scene.Clear();
+        UI.Clear();
+        Pool.Clear();
+        Object.Clear();
     }
 
 

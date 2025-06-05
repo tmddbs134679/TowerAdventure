@@ -7,6 +7,13 @@ public static class Define
 {
     public static float PLAYER_SELECT_COOLTIME = 1f;
 
+    public enum ESCENE
+    {
+        NONE,
+        TITLESCENE,
+        LOBBYSCENE,
+        GAMESCENE,
+    }
 
     public enum EPLAYERSTATE
     {

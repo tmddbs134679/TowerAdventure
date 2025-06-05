@@ -10,25 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: Default
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: Default
   m_Data:
     m_SerializedData: []
   m_GUID: ce7367cf7dea1584e93dabb9eb814a67
-  m_SerializeEntries:
-  - m_GUID: a4ec793513574cd49719c4055b630e2b
-    m_Address: SlimePolyart.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefabs
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c0ea9de1c1fcc7f4984d64d19b7d0294
-    m_Address: TurtleShellPBR.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefabs
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: cd296e1e5fa942b4c89ebf28e090a342, type: 2}
   m_SchemaSet:

@@ -57,11 +57,18 @@ public class UI_PlayerController : UI_Scene
     private void Start()
     {
         GetImage((int)Images.Dodgecooldown_Image).gameObject.SetActive(false);
+        GetImage((int)Images.Skill1cooldown_Image).gameObject.SetActive(false);
+        GetImage((int)Images.Skill2cooldown_Image).gameObject.SetActive(false);
+        GetImage((int)Images.Select1_CoolDownImage).gameObject.SetActive(false);
+        GetImage((int)Images.Select2_CoolDownImage).gameObject.SetActive(false);
+        GetImage((int)Images.Select3_CoolDownImage).gameObject.SetActive(false);
         GetImage((int)Images.Select1_LockImage).gameObject.SetActive(false);
         GetImage((int)Images.Select2_LockImage).gameObject.SetActive(false);
         GetImage((int)Images.Select3_LockImage).gameObject.SetActive(false);
 
         GetText((int)Texts.Dodgecooldown_Text).gameObject.SetActive(false);
+        GetText((int)Texts.Skill1cooldown_Text).gameObject.SetActive(false);
+        GetText((int)Texts.Skill2cooldown_Text).gameObject.SetActive(false);
     }
 
 

@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 3db6e666395408d46bf97de31cf463c5
   m_SerializeEntries:
+  - m_GUID: ebe44df7360e9274f9a2e80936663be4
+    m_Address: SkillData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefabs
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f71bf2fb49ca6b446879cd360c28ba46
     m_Address: CreatureData
     m_ReadOnly: 0

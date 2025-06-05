@@ -76,7 +76,7 @@ public static class Define
     {
         NONE = 0,
         SPINNING = 10001,
-        FIREBALL = 10011,
+        Fireball = 10011,
     }
 
 

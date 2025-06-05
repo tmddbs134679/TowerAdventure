@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
         health = maxHealth;
     }
 
-    public void DealDamage(GameObject attacker ,float dmg)
+    public void DealDamage(CreatureController attacker ,float dmg)
     {
         if (health == 0) { return; }
 

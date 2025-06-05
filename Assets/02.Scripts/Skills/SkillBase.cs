@@ -12,7 +12,7 @@ public class SkillStat
     public Data.SkillData SkillData;
 }
 
-public abstract class SkillBase : BaseController
+public class SkillBase : BaseController
 {
     public string SkillName;
     public Sprite SkillIcon;
@@ -62,17 +62,18 @@ public abstract class SkillBase : BaseController
     public virtual void OnChangedSkillData() { }
 
     // 레벨 0에서 1될때만 실행
-    public virtual void ActivateSkill()
+    public virtual void ActivateSkill(Action onComplete = null)
     {
         //UpdateSkillData();
+        //onComplete?.Invoke();
     }
 
 
 
     protected virtual void GenerateProjectile(CreatureController Owner, string prefabName, Vector3 startPos, Vector3 dir, Vector3 targetPos, SkillBase skill)
     {
-       // ProjectileController pc = Managers.Object.Spawn<ProjectileController>(startPos, prefabName: prefabName);
-        //pc.SetInfo(Owner, startPos, dir, targetPos, skill);
+        ProjectileController pc = Managers.Object.Spawn<ProjectileController>(startPos, prefabName: prefabName);
+        pc.SetInfo(Owner, startPos, dir, targetPos, skill);
     }
 
     protected void HitEvent(Collider2D collision)

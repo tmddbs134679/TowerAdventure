@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Skill/Spinning")]
-public class SpinningSkill : SkillBase                                                      
+public class SpinningSkill : IntervalSkill                                                      
 {
     public float duration;
     public float interval = 0.5f;
@@ -12,14 +12,13 @@ public class SpinningSkill : SkillBase
     public float radius = 2f;
     public float spinSpeed = 720f;
 
+    public override void ActivateSkill()
+    {
+        base.ActivateSkill();
+        //StartCoroutine(SpinAttackRoutine)
+    }
 
-
-    //public override void Active(GameObject caster, Vector3 dir, Action onComplete = null)
-    //{
-    //    caster.GetComponent<MonoBehaviour>().StartCoroutine(SpinAttackRoutine(caster, onComplete));
-    //}
-
-    private IEnumerator SpinAttackRoutine(GameObject caster, Action onComplete)
+    private IEnumerator SpinAttackRoutine(Action onComplete)
     {
         float elapsed = 0f;
         float timer = 0f;
@@ -29,20 +28,17 @@ public class SpinningSkill : SkillBase
             elapsed += Time.deltaTime;
             timer += Time.deltaTime;
 
-            // 회전
-            caster.transform.Rotate(Vector3.up, spinSpeed * Time.deltaTime);
-
             // 타격
             if (timer >= interval)
             {
                 timer = 0f;
-                Collider[] hits = Physics.OverlapSphere(caster.transform.position, radius);
+                Collider[] hits = Physics.OverlapSphere(transform.position, radius);
                 foreach (var hit in hits)
                 {
                     if (hit.CompareTag("Enemy"))
                     {
                         Debug.Log($"Spin hit {hit.name} for {damage}");
-                        hit.GetComponent<Health>()?.DealDamage(caster, damage);
+                        hit.GetComponent<Health>()?.DealDamage(Owner, damage);
                     }
                 }
             }
@@ -51,5 +47,14 @@ public class SpinningSkill : SkillBase
         }
         onComplete?.Invoke();
     }
+
+
+    protected override void DoSkillJob()
+    {
+
+    }
+
+
+
 }
 

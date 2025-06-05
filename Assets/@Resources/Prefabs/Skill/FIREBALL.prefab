@@ -9,11 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5343434238928628414}
-  - component: {fileID: 706541621250780227}
   - component: {fileID: 465970752241269316}
   - component: {fileID: 6028046361476816505}
   m_Layer: 0
-  m_Name: Bomb
+  m_Name: FIREBALL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,21 +34,6 @@ Transform:
   - {fileID: 6066206546724808924}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &706541621250780227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4293002490308187888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbf2250566274574ebb2685409adfdd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionDelay: 1
-  explosionRadius: 0.5
-  areaPrefab: {fileID: 5792662826094787440, guid: ab77f1740e40b804e9bc0dccd7a17c49, type: 3}
 --- !u!136 &465970752241269316
 CapsuleCollider:
   m_ObjectHideFlags: 0

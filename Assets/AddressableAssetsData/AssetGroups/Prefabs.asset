@@ -10,13 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default
+  m_Name: Prefabs
   m_EditorClassIdentifier: 
-  m_GroupName: Default
+  m_GroupName: Prefabs
   m_Data:
     m_SerializedData: []
   m_GUID: ce7367cf7dea1584e93dabb9eb814a67
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 6b4cd0dcbc6eaa14184d6fced4aa3fd0
+    m_Address: FIREBALL
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: cd296e1e5fa942b4c89ebf28e090a342, type: 2}
   m_SchemaSet:

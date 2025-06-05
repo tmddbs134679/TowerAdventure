@@ -38,7 +38,6 @@ public class SkillBook : MonoBehaviour
         SequenceSkill skill = gameObject.AddComponent(Type.GetType(className)) as SequenceSkill;
         if (skill != null)
         {
-            skill.ActivateSkill();
             skill.Owner = GetComponent<CreatureController>();
             skill.DataId = skillId;
             SkillList.Add(skill);

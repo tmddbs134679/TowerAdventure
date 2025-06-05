@@ -17,4 +17,16 @@ public static class Extension
     {
         UI_Base.BindEvent(go, action, dragAction, type);
     }
+
+    public static bool IsValid(this GameObject go)
+    {
+        return go != null && go.activeSelf;
+    }
+
+    public static bool IsValid(this BaseController bc)
+    {
+        return bc != null && bc.isActiveAndEnabled;
+    }
+
+
 }

@@ -1,14 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
-public class BombProjectile : Projectile
+public class BombProjectile : MonoBehaviour
 {
     [SerializeField] private float explosionDelay;
     [SerializeField] private float explosionRadius;
     [SerializeField] private GameObject areaPrefab;
     private bool hasLanded = false;
 
-    protected override void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
 
     }
@@ -30,26 +30,26 @@ public class BombProjectile : Projectile
         areaPrefab.GetComponent<AttackArea>().Init(explosionDelay, explosionRadius, transform.position);
 
         yield return new WaitForSeconds(explosionDelay);
-        Explode();
+        //Explode();
     }
 
-    private void Explode()
-    {
-        Collider[] hits = Physics.OverlapSphere(transform.position, explosionRadius);
-        foreach (var hit in hits)
-        {
-            if (hit.TryGetComponent<Health>(out var health) &&
-                hit.TryGetComponent<Faction>(out var targetFaction))
-            {
-                if (targetFaction.faction != this.OwnerFaction)
-                {
-                    health.DealDamage(attacker, damage);
-                }
-            }
-        }
+    //private void Explode()
+    //{
+    //    Collider[] hits = Physics.OverlapSphere(transform.position, explosionRadius);
+    //    foreach (var hit in hits)
+    //    {
+    //        if (hit.TryGetComponent<Health>(out var health) &&
+    //            hit.TryGetComponent<Faction>(out var targetFaction))
+    //        {
+    //            if (targetFaction.faction != this.OwnerFaction)
+    //            {
+    //                health.DealDamage(attacker, damage);
+    //            }
+    //        }
+    //    }
 
-        Destroy(gameObject);
-    }
+    //    Destroy(gameObject);
+    //}
 
     private Vector3 GetGroundPosition()
     {

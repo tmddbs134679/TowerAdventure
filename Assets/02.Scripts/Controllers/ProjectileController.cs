@@ -38,7 +38,7 @@ public class ProjectileController : BaseController
 
         switch (skill.SkillType)
         {
-            case Define.ESKILLTYPE.FIREBALL:
+            case Define.ESKILLTYPE.Fireball:
                 StartCoroutine(CoFireBall(_spawnPos, _target, true));
                 break;
             

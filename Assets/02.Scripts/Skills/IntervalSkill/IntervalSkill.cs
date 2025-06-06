@@ -10,7 +10,7 @@ public abstract class IntervalSkill : SkillBase
 
 
     protected abstract void DoSkillJob();
-    public override void ActivateSkill()
+    public override void ActivateSkill(Action onComplelte = null)
     {
         base.ActivateSkill();
         if (_coSkill != null)

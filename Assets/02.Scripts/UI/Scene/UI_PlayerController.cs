@@ -99,7 +99,8 @@ public class UI_PlayerController : UI_Scene
 
     private void UseSkill(int idx)
     {
-        
+        PlayerSelector.Inst.Input.OnSkill(idx);
+       // PlayerSelector.Inst.selectedPlayer.GetComponent<PlayerController>().UseSkill(idx);
     }
 
     private void OnClickPlayerSelectButton(int idx)

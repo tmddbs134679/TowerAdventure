@@ -23,12 +23,14 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookAnimName, CrossFadeDuration);
         PlayerSelector.Inst.Input.TargetEvent += OnTarget;
         PlayerSelector.Inst.Input.DodgeEvent += Dodge;
+        PlayerSelector.Inst.Input.SkillEvent += OnSkill;
         //stateMachine.InputReader.TargetEvent += OnTarget;
         //stateMachine.InputReader.DodgeEvent += Dodge;
         stateMachine.LadderDetector.OnLadderDetect += HandleLadderDetect;
-        EventBus.Subscribe<SkillUsedEvent>(OnSkillInvoked);
+        //EventBus.Subscribe<SkillUsedEvent>(OnSkillInvoked);
 
     }
+
 
 
     public override void Tick(float deltaTime)
@@ -59,9 +61,10 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.LadderDetector.OnLadderDetect -= HandleLadderDetect;
         PlayerSelector.Inst.Input.TargetEvent -= OnTarget;
         PlayerSelector.Inst.Input.DodgeEvent -= Dodge;
+        PlayerSelector.Inst.Input.SkillEvent -= OnSkill;
         //stateMachine.InputReader.TargetEvent -= OnTarget;
         //stateMachine.InputReader.DodgeEvent -= Dodge;
-        EventBus.Unsubscribe<SkillUsedEvent>(OnSkillInvoked);
+       // EventBus.Unsubscribe<SkillUsedEvent>(OnSkillInvoked);
     }
 
 
@@ -71,7 +74,14 @@ public class PlayerFreeLookState : PlayerBaseState
         { return; }
 
     }
-
+    private void OnSkill(int idx)
+    {
+        var skillState = (PlayerSkillState)stateMachine.States[Define.EPLAYERSTATE.SKILL];
+        SkillBase skill = stateMachine.GetComponent<CreatureController>().Skills.SkillList[idx];
+        skillState.SetSkill(skill);
+        stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.SKILL]);
+       
+    }
 
     private void FaceMovementDirection(Vector3 movment, float deltaTtime)
     {
@@ -82,12 +92,12 @@ public class PlayerFreeLookState : PlayerBaseState
             );
     }
 
-    private void OnSkillInvoked(SkillUsedEvent e)
-    {
-        var skillState = (PlayerSkillState)stateMachine.States[Define.EPLAYERSTATE.SKILL];
-        skillState.SetSkill(e.skill, e.skillIdx);
-        stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.SKILL]);
-    }
+    //private void OnSkillInvoked(SkillUsedEvent e)
+    //{
+    //    var skillState = (PlayerSkillState)stateMachine.States[Define.EPLAYERSTATE.SKILL];
+    //    skillState.SetSkill(e.skill, e.skillIdx);
+    //    stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.SKILL]);
+    //}
 
 
     private void HandleLadderDetect(Vector3 ladderForward)

@@ -22,9 +22,11 @@ public class WeaponDamage : MonoBehaviour
 
         alreadyCollderWith.Add(other);
 
+        CreatureController cc = transform.root.GetComponent<CreatureController>();  
+
         if(other.TryGetComponent<Health>(out Health health))
         {
-            health.DealDamage(gameObject, damage);
+            health.DealDamage(cc, damage);
         }
 
         if(other.TryGetComponent<ForceReceiver>(out ForceReceiver forceReceiver))

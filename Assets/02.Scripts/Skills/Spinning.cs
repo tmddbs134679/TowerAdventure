@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Skill/Spinning")]
-public class SpinningSkill : IntervalSkill                                                      
+public class Spinning : IntervalSkill                                                      
 {
     public float duration;
     public float interval = 0.5f;
@@ -12,10 +12,15 @@ public class SpinningSkill : IntervalSkill
     public float radius = 2f;
     public float spinSpeed = 720f;
 
-    public override void ActivateSkill()
+    private void Awake()
+    {
+        SkillType = Define.ESKILLTYPE.Spinning;
+    }
+
+    public override void ActivateSkill(Action OnComplete)
     {
         base.ActivateSkill();
-        //StartCoroutine(SpinAttackRoutine)
+        StartCoroutine(SpinAttackRoutine(OnComplete));
     }
 
     private IEnumerator SpinAttackRoutine(Action onComplete)

@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using static Define;
 public class Util
 {
     public static T GetOrAddComponent<T>(GameObject go) where T : UnityEngine.Component
@@ -50,4 +51,22 @@ public class Util
 
         return null;
     }
+
+    public static ESKILLTYPE GetSkillTypeFromInt(int value)
+    {
+        foreach (ESKILLTYPE skillType in Enum.GetValues(typeof(ESKILLTYPE)))
+        {
+            int minValue = (int)skillType;
+            int maxValue = minValue + 5; // 100501~ 100506 사이 값이면 100501값 리턴
+
+            if (value >= minValue && value <= maxValue)
+            {
+                return skillType;
+            }
+        }
+
+        Debug.LogError($" Faild add skill : {value}");
+        return ESKILLTYPE.NONE;
+    }
+
 }

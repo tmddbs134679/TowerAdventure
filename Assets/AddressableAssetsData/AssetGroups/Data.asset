@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Address: SkillData
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Prefabs
+    - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f71bf2fb49ca6b446879cd360c28ba46
     m_Address: CreatureData

@@ -22,6 +22,7 @@ public class SkillBase : BaseController
     public bool canMove = false;
     public float moveSpeed;
 
+
     public CreatureController Owner { get; set; }
 
 
@@ -65,7 +66,7 @@ public class SkillBase : BaseController
     public virtual void ActivateSkill(Action onComplete = null)
     {
         //UpdateSkillData();
-        //onComplete?.Invoke();
+        onComplete?.Invoke();
     }
 
 

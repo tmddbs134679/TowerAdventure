@@ -75,7 +75,7 @@ public static class Define
     public enum ESKILLTYPE
     {
         NONE = 0,
-        SPINNING = 10001,
+        Spinning = 10001,
         Fireball = 10011,
     }
 

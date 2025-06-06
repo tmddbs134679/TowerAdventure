@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: ce7367cf7dea1584e93dabb9eb814a67
   m_SerializeEntries:
+  - m_GUID: 6ac4042da0e600a40b09949911273ecc
+    m_Address: Spinning
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6b4cd0dcbc6eaa14184d6fced4aa3fd0
     m_Address: FIREBALL
     m_ReadOnly: 0

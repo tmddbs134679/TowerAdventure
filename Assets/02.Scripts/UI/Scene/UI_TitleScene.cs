@@ -36,8 +36,9 @@ public class UI_TitleScene : UI_Scene
         GetObject((int)GameObjects.Slider).GetComponent<Slider>().value = 0;
         GetButton((int)Buttons.StartButton).gameObject.BindEvent(() =>
         {
+            //일단 바로 GamesScene으로
             if (isPreload)
-                Managers.Scene.LoadScene(Define.ESCENE.LOBBYSCENE, transform);
+                Managers.Scene.LoadScene(Define.ESCENE.GAMESCENE, transform);
         });
 
         GetButton((int)Buttons.StartButton).gameObject.SetActive(false);

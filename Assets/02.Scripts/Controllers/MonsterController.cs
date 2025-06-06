@@ -16,9 +16,8 @@ public class MonsterController : CreatureController
         return true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UseSkill(int idx)
     {
-        
+        Skills.SkillList[idx].ActivateSkill();
     }
 }

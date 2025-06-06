@@ -16,7 +16,7 @@ public class EnemyRangedAttackState : EnemyBaseState
     {
         elapsedTime = 0f;
         hasAttacked = false;
-        
+      
         FacePlayer();
         stateMachine.Animator.CrossFadeInFixedTime(AttackHas, CrossFadeDuration);
 
@@ -30,19 +30,9 @@ public class EnemyRangedAttackState : EnemyBaseState
         {
             hasAttacked = true;
 
-            //if (stateMachine is RangedStateMachine machine &&
-            //    machine.baseAttackSkill is ParabolaSkill parabolaSkill)
-            //{
-              
-            //    parabolaSkill.Active
-            //                        (
-            //                            stateMachine.gameObject,
-            //                            stateMachine.Player.transform.position,
-            //                            null 
-            //                        );
+            CreatureController cc = stateMachine.GetComponent<CreatureController>();
+            cc.Skills.SkillList[0].ActivateSkill();
 
-            //    coolTime = parabolaSkill.cooldown;
-            //}
         }
 
         if (elapsedTime >= coolTime)

@@ -7,13 +7,10 @@ using UnityEngine;
 public class Billboard : MonoBehaviour
 {
     private Camera mainCam;
-    private GameObject player;
+
     // Start is called before the first frame update
 
-    private void Awake()
-    {
-        player = transform.root.gameObject;
-    }
+   
     void Start()
     {
         mainCam = Camera.main;
@@ -25,7 +22,7 @@ public class Billboard : MonoBehaviour
     {
         if (mainCam == null) return;
 
-        Vector3 lookDir = mainCam.transform.position - player.transform.position;
+        Vector3 lookDir = mainCam.transform.position - PlayerSelector.Inst.selectedPlayer.transform.position;
         lookDir.y = 0f; 
         transform.rotation = Quaternion.LookRotation(-lookDir);
     }

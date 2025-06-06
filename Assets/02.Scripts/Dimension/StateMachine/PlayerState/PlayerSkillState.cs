@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
@@ -8,26 +9,21 @@ public class PlayerSkillState : PlayerBaseState
     private int SkillHas;
     private const float AnimatorDampTime = 0.1f;
     private SkillBase currentSkill;
+
     public PlayerSkillState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
        
     }
-    public void SetSkill(SkillBase skill, int skillIdx)
+    public void SetSkill(SkillBase skill)
     {
         this.currentSkill = skill; 
     }
 
     public override void Enter()
     {
-        SkillHas = Animator.StringToHash(currentSkill.SkillName);
+        SkillHas = Animator.StringToHash(currentSkill.SkillType.ToString());
         stateMachine.Animator.CrossFadeInFixedTime(SkillHas, AnimatorDampTime);
-
-        //currentSkill.Active
-        //    (
-        //         stateMachine.gameObject,
-        //         stateMachine.transform.forward,
-        //         () => stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.FREELOOK])
-        //    );
+        currentSkill.ActivateSkill(OnSkillFinished);
     }
 
 
@@ -36,16 +32,17 @@ public class PlayerSkillState : PlayerBaseState
         if(currentSkill.canMove)
         {
             Vector3 movement = CalculateMovement();
-
             Move(movement * currentSkill.moveSpeed, deltaTime);
         }
-
 
     }
 
     public override void Exit()
     {
-
+      
     }
-
+    private void OnSkillFinished()
+    {
+        stateMachine.SwitchState(stateMachine.States[Define.EPLAYERSTATE.FREELOOK]);
+    }
 }

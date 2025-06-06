@@ -13,7 +13,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action DodgeEvent;
     public event Action TargetEvent;
     public event Action CancelEvent;
-    public event Action SkillEvent;
+    public event Action<int> SkillEvent;
     public bool IsAttacking { get; private set; }
 
     private Controls controls;
@@ -96,11 +96,14 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public void OnSkill(InputAction.CallbackContext context)
     {
-        if (!context.performed)
-            return;
+        //if (!context.performed)
+        //    return;
 
-        SkillEvent?.Invoke();
+        //SkillEvent?.Invoke();
+    }
+    public void OnSkill(int idx)
+    {
+        SkillEvent?.Invoke(idx);
     }
 
-  
 }

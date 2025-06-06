@@ -361,7 +361,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7498142190150400792}
   - component: {fileID: 8774871697901528111}
-  - component: {fileID: 7972296665022132385}
   - component: {fileID: 704855062032634891}
   - component: {fileID: 8022543051317313589}
   - component: {fileID: 934722393145197138}
@@ -370,6 +369,7 @@ GameObject:
   - component: {fileID: 3442052250111156189}
   - component: {fileID: 7012064883278422744}
   - component: {fileID: 3245132485887068738}
+  - component: {fileID: 363175720935342110}
   m_Layer: 0
   m_Name: SlimePolyart
   m_TagString: Enemy
@@ -407,19 +407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c970f1b5272527498251e5f1467bad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7972296665022132385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7153141402127884706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1f1b23bf209c6a4eaf735742d8fb86e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
 --- !u!114 &704855062032634891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,7 +504,7 @@ MonoBehaviour:
   <Controller>k__BackingField: {fileID: 934722393145197138}
   <Agent>k__BackingField: {fileID: 8022543051317313589}
   <Weapon>k__BackingField: {fileID: 0}
-  <Health>k__BackingField: {fileID: 7972296665022132385}
+  <Health>k__BackingField: {fileID: 363175720935342110}
   <AttackDamage>k__BackingField: 1
   <AttackRange>k__BackingField: 5
   <PlayerChasingRange>k__BackingField: 5
@@ -580,6 +567,19 @@ MonoBehaviour:
     MoveSpeedRate: 0
     IconLabel: 
     SkillTypeList: 
+--- !u!114 &363175720935342110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153141402127884706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f1b23bf209c6a4eaf735742d8fb86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &7446019047767849115
 GameObject:
   m_ObjectHideFlags: 0

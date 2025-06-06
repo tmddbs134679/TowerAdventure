@@ -14,4 +14,13 @@ public class PlayerController : CreatureController
 
         return true;
     }
+
+    private void Start()
+    {
+        InitSkill();
+    }
+    public void UseSkill(int idx)
+    {
+        Skills.SkillList[idx].ActivateSkill();
+    }
 }

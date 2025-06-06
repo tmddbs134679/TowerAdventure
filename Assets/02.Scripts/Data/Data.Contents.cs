@@ -14,16 +14,12 @@ namespace Data
         public int DataId;
         public string DescriptionTextID;
         public string PrefabLabel;
-        public float MaxHp;
-        public float MaxHpBonus;
         public float Atk;
         public float AtkBonus;
-        public float Def;
         public float MoveSpeed;
         public float TotalExp;
         public float HpRate;
         public float AtkRate;
-        public float DefRate;
         public float MoveSpeedRate;
         public string IconLabel;
         public List<int> SkillTypeList;//InGameSkills를 제외한 추가스킬들
@@ -58,18 +54,12 @@ namespace Data
         public string SoundLabel;// 발동사운드 경로
         public string Category;//스킬 카테고리
         public float CoolTime; // 쿨타임
-        public float DamageMultiplier; //스킬데미지 (곱하기)
         public float ProjectileSpacing;// 발사체 사이 간격
         public float Duration; //스킬 지속시간
         public float RecognitionRange;//인식범위
-        public int NumProjectiles;// 회당 공격횟수
         public string CastingSound; // 시전사운드
         public float AngleBetweenProj;// 발사체 사이 각도
         public float AttackInterval; //공격간격
-        public int NumBounce;//바운스 횟수
-        public float BounceSpeed;// 바운스 속도
-        public float BounceDist;//바운스 거리
-        public int NumPenerations; //관통 횟수
         public int CastingEffect; // 스킬 발동시 효과
         public string HitSoundLabel; // 히트사운드
         public float ProbCastingEffect; // 스킬 발동 효과 확률
@@ -81,6 +71,8 @@ namespace Data
         public float RoatateSpeed; // 회전 속도
         public float ProjSpeed; //발사체 속도
         public float ScaleMultiplier;
+        public bool IsMove;         //움직이면서 가능한 공격
+        public float moveSpeed;
     }
     [Serializable]
     public class SkillDataLoader : ILoader<int, SkillData>

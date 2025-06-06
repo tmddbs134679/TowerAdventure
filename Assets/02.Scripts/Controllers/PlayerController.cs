@@ -19,6 +19,22 @@ public class PlayerController : CreatureController
     {
         InitSkill();
     }
+
+    public override void InitSkill()
+    {
+        base.InitSkill();
+
+        //TODO
+        if (Skills)
+        {
+            foreach (SkillBase skill in Skills.SkillList)
+            {
+                skill.UpdateSkillData(skill.DataId);
+            }
+        }
+    }
+
+
     public void UseSkill(int idx)
     {
         Skills.SkillList[idx].ActivateSkill();

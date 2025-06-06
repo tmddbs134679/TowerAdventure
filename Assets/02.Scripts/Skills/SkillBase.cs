@@ -1,26 +1,18 @@
+using Data;
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static Cinemachine.DocumentationSortingAttribute;
 
-public class SkillStat
-{
-    public Define.ESKILLTYPE SkillType;
-    public int Level;
-    public float MaxHp;
-    public Data.SkillData SkillData;
-}
+
 
 public class SkillBase : BaseController
 {
+    public int DataId;
     public string SkillName;
     public Sprite SkillIcon;
     public float cooldown = 1f;
-
-    [Header("움직임 제어")]
-    public bool canMove = false;
-    public float moveSpeed;
 
 
     public CreatureController Owner { get; set; }
@@ -57,8 +49,17 @@ public class SkillBase : BaseController
 
 
     public bool IsLearnedSkill { get; set;  }
+    public Data.SkillData UpdateSkillData(int dataId = 0)
+    {
+        SkillData skillData = new Data.SkillData();
+
+        if (Managers.Data.SkillDic.TryGetValue(dataId, out skillData) == false)
+            return SkillData;
 
 
+        SkillData = skillData;
+        return SkillData;
+    }
 
     public virtual void OnChangedSkillData() { }
 
@@ -81,11 +82,5 @@ public class SkillBase : BaseController
     {
 
     }
-
-    //public abstract void Active(GameObject caster, Vector3 dir, Action onComplete = null);
- 
-
-
-
   
 }

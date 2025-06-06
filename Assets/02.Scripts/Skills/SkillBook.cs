@@ -13,7 +13,6 @@ public class SkillBook : MonoBehaviour
     public List<SkillBase> SkillList { get { return _skillList; } }
     public List<SequenceSkill> SequenceSkills { get; } = new List<SequenceSkill>();
     public List<IntervalSkill> IntervalSkills { get; } = new List<IntervalSkill>();
-    public event Action UpdateSkillUi;
     public EOBJECTTPYE _ownerType;
 
     public void Awake()
@@ -46,6 +45,7 @@ public class SkillBook : MonoBehaviour
         else
         {
             IntervalSkill skillbase = gameObject.GetComponent(Type.GetType(className)) as IntervalSkill;
+            skillbase.DataId = skillId;
             SkillList.Add(skillbase);
         }
     }

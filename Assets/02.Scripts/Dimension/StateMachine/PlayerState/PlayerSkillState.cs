@@ -29,10 +29,10 @@ public class PlayerSkillState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-        if(currentSkill.canMove)
+        if(currentSkill.SkillData.IsMove)
         {
             Vector3 movement = CalculateMovement();
-            Move(movement * currentSkill.moveSpeed, deltaTime);
+            Move(movement * currentSkill.SkillData.moveSpeed, deltaTime);
         }
 
     }

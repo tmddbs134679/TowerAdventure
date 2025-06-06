@@ -9,18 +9,12 @@
       "SoundLabel": "EnergyBolt_Start",
       "Category": "EnergyBolt",
       "CoolTime": 1.2,
-      "DamageMultiplier": 1.28,
       "ProjectileSpacing": 0.2,
       "Duration": 0.0,
       "RecognitionRange": 8.0,
-      "NumProjectiles": 3,
       "CastingSound": "EnergyBolt_Start",
       "AngleBetweenProj": 0.0,
       "AttackInterval": 0.0,
-      "NumBounce": 1,
-      "BounceSpeed": 20.0,
-      "BounceDist": 0.0,
-      "NumPenerations": 0,
       "CastingEffect": 20000,
       "HitSoundLabel": "EnergyBolt_Hit",
       "ProbCastingEffect": 3.0,
@@ -31,7 +25,9 @@
       "MaxCoverage": 8.0,
       "RoatateSpeed": 0.0,
       "ProjSpeed": 20.0,
-      "ScaleMultiplier": 1.0
+      "ScaleMultiplier": 1.0,
+      "IsMove": false,
+      "MoveSpeed" : 0.0
     },
     {
       "DataId": 10002,
@@ -42,18 +38,12 @@
       "SoundLabel": "",
       "Category": "",
       "CoolTime": 5,
-      "DamageMultiplier": 1.53,
       "ProjectileSpacing": 0.0,
       "Duration": 3,
       "RecognitionRange": 3.0,
-      "NumProjectiles": 0,
       "CastingSound": "",
       "AngleBetweenProj": 0.0,
       "AttackInterval": 0.0,
-      "NumBounce": 0,
-      "BounceSpeed": 0,
-      "BounceDist": 0.0,
-      "NumPenerations": 0,
       "CastingEffect": 20000,
       "HitSoundLabel": "",
       "ProbCastingEffect": 0.0,
@@ -64,7 +54,9 @@
       "MaxCoverage": 8.0,
       "RoatateSpeed": 0.0,
       "ProjSpeed": 0,
-      "ScaleMultiplier": 1
+      "ScaleMultiplier": 1,
+      "IsMove": true,
+      "MoveSpeed": 2.0
     }
   ]
 }

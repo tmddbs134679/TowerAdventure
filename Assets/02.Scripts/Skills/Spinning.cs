@@ -6,11 +6,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Skill/Spinning")]
 public class Spinning : IntervalSkill                                                      
 {
-    public float duration;
-    public float interval = 0.5f;
-    public float damage = 10f;
-    public float radius = 2f;
-    public float spinSpeed = 720f;
+    //public float duration;
+    //public float interval = 0.5f;
+    //public float damage = 10f;
+    //public float radius = 2f;
+    //public float spinSpeed = 720f;
 
     private void Awake()
     {
@@ -28,22 +28,21 @@ public class Spinning : IntervalSkill
         float elapsed = 0f;
         float timer = 0f;
 
-        while (elapsed < duration)
+        while (elapsed < SkillData.Duration)
         {
             elapsed += Time.deltaTime;
             timer += Time.deltaTime;
 
             // Å¸°Ý
-            if (timer >= interval)
+            if (timer >= SkillData.AttackInterval)
             {
                 timer = 0f;
-                Collider[] hits = Physics.OverlapSphere(transform.position, radius);
+                Collider[] hits = Physics.OverlapSphere(transform.position, SkillData.RecognitionRange);
                 foreach (var hit in hits)
                 {
                     if (hit.CompareTag("Enemy"))
                     {
-                        Debug.Log($"Spin hit {hit.name} for {damage}");
-                        hit.GetComponent<Health>()?.DealDamage(Owner, damage);
+                        hit.GetComponent<Health>()?.DealDamage(Owner, Owner.CreatureData.Atk);
                     }
                 }
             }

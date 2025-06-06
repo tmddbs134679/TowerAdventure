@@ -17324,60 +17324,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1418059963432224869, guid: d3be3902f0af21d40b381cd77208daa0, type: 3}
   m_PrefabInstance: {fileID: 644018420}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &650101459 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7153141402127884706, guid: a4ec793513574cd49719c4055b630e2b, type: 3}
-  m_PrefabInstance: {fileID: 1292637850}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &650101471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650101459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 992b3190eca176b4a86b83e1701e9d6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SkillName: "\uD30C\uC774\uC5B4"
-  SkillIcon: {fileID: 0}
-  cooldown: 3
-  canMove: 0
-  moveSpeed: 0
-  _skillData:
-    DataId: 10001
-    Name: 
-    Description: 
-    PrefabLabel: 
-    IconLabel: 
-    SoundLabel: 
-    Category: 
-    CoolTime: 0
-    DamageMultiplier: 0
-    ProjectileSpacing: 0
-    Duration: 0
-    RecognitionRange: 0
-    NumProjectiles: 0
-    CastingSound: 
-    AngleBetweenProj: 0
-    AttackInterval: 0
-    NumBounce: 0
-    BounceSpeed: 0
-    BounceDist: 0
-    NumPenerations: 0
-    CastingEffect: 0
-    HitSoundLabel: 
-    ProbCastingEffect: 0
-    HitEffect: 0
-    ProbHitEffect: 0
-    ProjRange: 0
-    MinCoverage: 0
-    MaxCoverage: 0
-    RoatateSpeed: 0
-    ProjSpeed: 0
-    ScaleMultiplier: 0
 --- !u!1001 &650938745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35737,10 +35683,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7153141402127884706, guid: a4ec793513574cd49719c4055b630e2b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 650101471}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4ec793513574cd49719c4055b630e2b, type: 3}
 --- !u!1001 &1295282304
 PrefabInstance:
@@ -36267,16 +36210,12 @@ MonoBehaviour:
     DataId: 0
     DescriptionTextID: 
     PrefabLabel: 
-    MaxHp: 0
-    MaxHpBonus: 0
     Atk: 0
     AtkBonus: 0
-    Def: 0
     MoveSpeed: 0
     TotalExp: 0
     HpRate: 0
     AtkRate: 0
-    DefRate: 0
     MoveSpeedRate: 0
     IconLabel: 
     SkillTypeList: 
@@ -60494,7 +60433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6498346317948430827, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: CreatureData.SkillTypeList.Array.data[0]
-      value: 10001
+      value: 10002
       objectReference: {fileID: 0}
     - target: {fileID: 6498346317948430827, guid: d01a325b8d6efba4093d19fe8978f46c, type: 3}
       propertyPath: CreatureData.SkillTypeList.Array.data[1]

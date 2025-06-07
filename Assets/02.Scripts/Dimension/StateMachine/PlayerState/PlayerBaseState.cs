@@ -42,23 +42,6 @@ public abstract class PlayerBaseState : State
         }
       
     }
-
-    //protected void Skill_Q()
-    //{
-    //    var skill = stateMachine.Skills[0];
-
-    //    if (!stateMachine.CanSkillQ) return;
-
-    //    SetSkillCooldown();
-
-    //    var skillState = (PlayerSkillState)stateMachine.States[EPLAYERSTATE.SKILL];
-        
-    //    skillState.SetSkill(skill);
-    //    stateMachine.SwitchState(stateMachine.States[EPLAYERSTATE.SKILL]);
-    //}
-
-  
-
     protected Vector3 CalculateMovement()
     {
         Vector3 movement = new Vector3();
@@ -70,13 +53,8 @@ public abstract class PlayerBaseState : State
         return movement;
     }
 
-
     public void UpdateLastDodgeTime()
     {
         stateMachine.lastDodgeTime = Time.time;
-    }
-    public void SetSkillCooldown()
-    {
-        stateMachine.lastSkill_Q_Time = Time.time;
     }
 }

@@ -99,8 +99,17 @@ public class UI_PlayerController : UI_Scene
 
     private void UseSkill(int idx)
     {
+        Image img = GetImage((int)Images.Skill1cooldown_Image + idx);
+
+        //스킬 쿨타임 돌고있으면 return;
+        if (img.gameObject.activeSelf) return;
+
+        float cooltime = PlayerSelector.Inst.selectedPlayer.GetComponent<CreatureController>().Skills.SkillList[idx].SkillData.CoolTime;
+        TMP_Text text = GetText((int)Texts.Skill1cooldown_Text + idx);   
+        StartCoroutine(CooldownRoutine(img, cooltime, text, true));
+
         PlayerSelector.Inst.Input.OnSkill(idx);
-       // PlayerSelector.Inst.selectedPlayer.GetComponent<PlayerController>().UseSkill(idx);
+
     }
 
     private void OnClickPlayerSelectButton(int idx)
@@ -110,11 +119,11 @@ public class UI_PlayerController : UI_Scene
         if (!PlayerSelector.Inst.CanSelectPlayer) return;
 
         PlayerSelector.Inst.SelectPlayer(idx);
-
         for(int i = 0; i < 3; i++)
         {
             GetImage((int)Images.Select1_LockImage + i).gameObject.SetActive(true);
             Image img = GetImage((int)Images.Select1_CoolDownImage + i);
+
             StartCoroutine(CooldownRoutine(img, PLAYER_SELECT_COOLTIME, null, true));
         }
        
@@ -182,4 +191,10 @@ public class UI_PlayerController : UI_Scene
         }
 
     }
+
+    private void DisableButtonForCooldown(Button btn, int cooltime)
+    {
+
+    }
+
 }

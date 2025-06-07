@@ -6,62 +6,62 @@ using UnityEngine.UI;
 
 public class SkillCooldownSlot : MonoBehaviour
 {
-    [Header("UI References")]
-    public GameObject rootObject; // 전체 버튼 or 이미지의 부모 오브젝트
-    public Image icon;
-    public Image cooldownFillImage;
-    public TextMeshProUGUI cooldownText;
+    //[Header("UI References")]
+    //public GameObject rootObject; // 전체 버튼 or 이미지의 부모 오브젝트
+    //public Image icon;
+    //public Image cooldownFillImage;
+    //public TextMeshProUGUI cooldownText;
 
-    private float cooldownDuration;
+    //private float cooldownDuration;
 
-    private float remainingTime;
-    private bool isCooling;
+    //private float remainingTime;
+    //private bool isCooling;
 
-    private void Start()
-    {
-        ResetUI();
-    }
+    //private void Start()
+    //{
+    //    ResetUI();
+    //}
 
-    public void SetSkill(SkillBase skill)
-    {
-        icon.sprite = skill.SkillIcon;
-        cooldownDuration = skill.cooldown;
-        cooldownFillImage.sprite = icon.sprite;
-        cooldownFillImage.fillAmount = 0;
-        cooldownText.text = "";
-    }
+    //public void SetSkill(SkillBase skill)
+    //{
+    //    icon.sprite = skill.SkillIcon;
+    //    cooldownDuration = skill.cooldown;
+    //    cooldownFillImage.sprite = icon.sprite;
+    //    cooldownFillImage.fillAmount = 0;
+    //    cooldownText.text = "";
+    //}
 
 
-    public void TriggerCooldown()
-    {
-        if (isCooling) return;
+    //public void TriggerCooldown()
+    //{
+    //    if (isCooling) return;
 
-        remainingTime = cooldownDuration;
-        cooldownFillImage.fillAmount = 1f;
-        isCooling = true;
-        StartCoroutine(CooldownRoutine());
-    }
+    //    remainingTime = cooldownDuration;
+    //    cooldownFillImage.fillAmount = 1f;
+    //    isCooling = true;
+    //    StartCoroutine(CooldownRoutine());
+    //}
 
-    private IEnumerator CooldownRoutine()
-    {
-        while (remainingTime > 0f)
-        {
-            remainingTime -= Time.deltaTime;
+    //private IEnumerator CooldownRoutine()
+    //{
+    //    while (remainingTime > 0f)
+    //    {
+    //        remainingTime -= Time.deltaTime;
 
-            float ratio = Mathf.Clamp01(remainingTime / cooldownDuration);
-            cooldownFillImage.fillAmount = ratio;
-            cooldownText.text = Mathf.Ceil(remainingTime).ToString("00");
+    //        float ratio = Mathf.Clamp01(remainingTime / cooldownDuration);
+    //        cooldownFillImage.fillAmount = ratio;
+    //        cooldownText.text = Mathf.Ceil(remainingTime).ToString("00");
 
-            yield return null;
-        }
+    //        yield return null;
+    //    }
 
-        ResetUI();
-    }
+    //    ResetUI();
+    //}
 
-    private void ResetUI()
-    {
-        cooldownFillImage.fillAmount = 0f;
-        cooldownText.text = "";
-        isCooling = false;
-    }
+    //private void ResetUI()
+    //{
+    //    cooldownFillImage.fillAmount = 0f;
+    //    cooldownText.text = "";
+    //    isCooling = false;
+    //}
 }

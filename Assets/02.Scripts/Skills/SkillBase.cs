@@ -10,11 +10,6 @@ using static Cinemachine.DocumentationSortingAttribute;
 public class SkillBase : BaseController
 {
     public int DataId;
-    public string SkillName;
-    public Sprite SkillIcon;
-    public float cooldown = 1f;
-
-
     public CreatureController Owner { get; set; }
 
 
@@ -69,9 +64,6 @@ public class SkillBase : BaseController
         //UpdateSkillData();
         onComplete?.Invoke();
     }
-
-
-
     protected virtual void GenerateProjectile(CreatureController Owner, string prefabName, Vector3 startPos, Vector3 dir, Vector3 targetPos, SkillBase skill)
     {
         ProjectileController pc = Managers.Object.Spawn<ProjectileController>(startPos, prefabName: prefabName);

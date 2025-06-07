@@ -6,8 +6,6 @@ using UnityEngine;
 public abstract class IntervalSkill : SkillBase
 {
     Coroutine _coSkill;
-    public float coolTime { get; set; } = 1f;
-
 
     protected abstract void DoSkillJob();
     public override void ActivateSkill(Action onComplelte = null)

@@ -47,7 +47,8 @@ public class CreatureController : BaseController
     {
         foreach (int skillId in CreatureData.SkillTypeList)
         {
-            ESKILLTYPE type = Util.GetSkillTypeFromInt(skillId);
+            // ESKILLTYPE type = Util.GetSkillTypeFromInt(skillId);
+            ESKILLTYPE type = (ESKILLTYPE)skillId;
             if (type != ESKILLTYPE.NONE)
                 Skills.AddSkill(type, skillId);
         }

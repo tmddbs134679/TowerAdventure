@@ -18,16 +18,32 @@
     },
     {
       "DataId": 202001,
-      "DescriptionTextID": "Monster1",
+      "DescriptionTextID": "SlimePolyart",
       "PrefabLabel": "MonsterPrefab",
       "Atk": 10.0,
-      "AtkBonus": 2.0,
+      "AtkBonus": 0.0,
       "MoveSpeed": 3.0,
       "TotalExp": 200.0,
       "HpRate": 1.0,
       "AtkRate": 1.0,
       "MoveSpeedRate": 1.0,
-      "IconLabel": "MonsterIcon_01.sprite",
+      "IconLabel": "",
+      "SkillTypeList": [
+        10001
+      ]
+    },
+    {
+      "DataId": 202002,
+      "DescriptionTextID": "TurtleShell",
+      "PrefabLabel": "MonsterPrefab",
+      "Atk": 10.0,
+      "AtkBonus": 0.0,
+      "MoveSpeed": 3.0,
+      "TotalExp": 200.0,
+      "HpRate": 1.0,
+      "AtkRate": 1.0,
+      "MoveSpeedRate": 1.0,
+      "IconLabel": "",
       "SkillTypeList": []
     }
   ]

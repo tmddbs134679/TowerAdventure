@@ -35560,6 +35560,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3245132485887068738, guid: a4ec793513574cd49719c4055b630e2b, type: 3}
+      propertyPath: CreatureData.DataId
+      value: 202001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245132485887068738, guid: a4ec793513574cd49719c4055b630e2b, type: 3}
+      propertyPath: CreatureData.SkillTypeList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7153141402127884706, guid: a4ec793513574cd49719c4055b630e2b, type: 3}
       propertyPath: m_Name
       value: SlimePolyart (1)
@@ -35611,8 +35619,57 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7153141402127884706, guid: a4ec793513574cd49719c4055b630e2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1292637852}
   m_SourcePrefab: {fileID: 100100000, guid: a4ec793513574cd49719c4055b630e2b, type: 3}
+--- !u!1 &1292637851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7153141402127884706, guid: a4ec793513574cd49719c4055b630e2b, type: 3}
+  m_PrefabInstance: {fileID: 1292637850}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1292637852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292637851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cf28a13a13b6e748822d0cadb8fe745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DataId: 0
+  _skillData:
+    DataId: 0
+    Name: 
+    Description: 
+    PrefabLabel: 
+    IconLabel: 
+    SoundLabel: 
+    Category: 
+    CoolTime: 0
+    ProjectileSpacing: 0
+    Duration: 0
+    RecognitionRange: 0
+    CastingSound: 
+    AngleBetweenProj: 0
+    AttackInterval: 0
+    CastingEffect: 0
+    HitSoundLabel: 
+    ProbCastingEffect: 0
+    HitEffect: 0
+    ProbHitEffect: 0
+    ProjRange: 0
+    MinCoverage: 0
+    MaxCoverage: 0
+    RoatateSpeed: 0
+    ProjSpeed: 0
+    ScaleMultiplier: 0
+    IsMove: 0
+    moveSpeed: 0
 --- !u!1001 &1295282304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39320,7 +39377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8854198037222305737, guid: c0ea9de1c1fcc7f4984d64d19b7d0294, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.027
+      value: 1.943
       objectReference: {fileID: 0}
     - target: {fileID: 8854198037222305737, guid: c0ea9de1c1fcc7f4984d64d19b7d0294, type: 3}
       propertyPath: m_LocalRotation.w

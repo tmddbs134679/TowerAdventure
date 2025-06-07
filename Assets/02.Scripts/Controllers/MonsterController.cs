@@ -19,12 +19,21 @@ public class MonsterController : CreatureController
         base.Init();
         ObjectType = EOBJECTTPYE.MONSTER;
 
+        if (CreatureData != null)
+        {
+            if (CreatureData.SkillTypeList.Count != 0)
+            {
+                InitSkill();
+               
+            }
+        }
+
         //TODO
         if (Skills)
         {
             foreach (SkillBase skill in Skills.SkillList)
             {
-                skill.UpdateSkillData();
+                skill.UpdateSkillData(skill.DataId);
             }
         }
 

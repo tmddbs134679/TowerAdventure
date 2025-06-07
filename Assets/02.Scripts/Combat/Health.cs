@@ -26,6 +26,8 @@ public class Health : MonoBehaviour
 
     public void DealDamage(CreatureController attacker ,float dmg)
     {
+        if(attacker == GetComponent<CreatureController>()) { return; }
+
         if (health == 0) { return; }
 
         health = Mathf.Max(health - dmg, 0);

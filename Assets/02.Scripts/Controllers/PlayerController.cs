@@ -17,6 +17,8 @@ public class PlayerController : CreatureController
 
     private void Start()
     {
+        SetInfo(201000);
+
         InitSkill();
     }
 

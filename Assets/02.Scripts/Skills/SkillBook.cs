@@ -45,6 +45,7 @@ public class SkillBook : MonoBehaviour
         else
         {
             IntervalSkill skillbase = gameObject.GetComponent(Type.GetType(className)) as IntervalSkill;
+            skillbase.Owner = GetComponent<CreatureController>();
             skillbase.DataId = skillId;
             SkillList.Add(skillbase);
         }

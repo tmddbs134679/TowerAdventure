@@ -3,14 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Skill/Spinning")]
 public class Spinning : IntervalSkill                                                      
 {
-    //public float duration;
-    //public float interval = 0.5f;
-    //public float damage = 10f;
-    //public float radius = 2f;
-    //public float spinSpeed = 720f;
 
     private void Awake()
     {
@@ -28,6 +22,7 @@ public class Spinning : IntervalSkill
         float elapsed = 0f;
         float timer = 0f;
 
+        //HashSet으로 Target 넣어서 TriggerEnter로 딜처리 하여 최적화 할지 고민중.
         while (elapsed < SkillData.Duration)
         {
             elapsed += Time.deltaTime;
@@ -40,10 +35,7 @@ public class Spinning : IntervalSkill
                 Collider[] hits = Physics.OverlapSphere(transform.position, SkillData.RecognitionRange);
                 foreach (var hit in hits)
                 {
-                    if (hit.CompareTag("Enemy"))
-                    {
-                        hit.GetComponent<Health>()?.DealDamage(Owner, Owner.CreatureData.Atk);
-                    }
+                    hit.GetComponent<Health>()?.DealDamage(Owner, Owner.CreatureData.Atk);
                 }
             }
 

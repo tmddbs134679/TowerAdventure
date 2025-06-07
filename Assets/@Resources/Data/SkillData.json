@@ -43,7 +43,7 @@
       "RecognitionRange": 3.0,
       "CastingSound": "",
       "AngleBetweenProj": 0.0,
-      "AttackInterval": 0.0,
+      "AttackInterval": 0.5, 
       "CastingEffect": 20000,
       "HitSoundLabel": "",
       "ProbCastingEffect": 0.0,

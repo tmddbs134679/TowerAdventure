@@ -6,10 +6,10 @@ using static Define;
 
 public class EnemyRangedAttackState : EnemyBaseState
 {
-    private readonly int AttackHas = Animator.StringToHash("Fireball");
+
     private const float CrossFadeDuration = 0.1f;
     private float elapsedTime = 0f;
-    private bool hasAttacked = false;
+
 
     public EnemyRangedAttackState(EnemyStateMachine stateMachine) : base(stateMachine){ }
 
@@ -17,10 +17,9 @@ public class EnemyRangedAttackState : EnemyBaseState
     {
         Debug.Log("Enter");
         elapsedTime = 0f;
-        hasAttacked = false;
-      
+
         FacePlayer();
-        stateMachine.Animator.CrossFadeInFixedTime(AttackHas, CrossFadeDuration);
+        stateMachine.Animator.CrossFadeInFixedTime(Define.ProjectileHas, CrossFadeDuration);
         CreatureController cc = stateMachine.GetComponent<CreatureController>();
         cc.Skills.SkillList[0].ActivateSkill();
     }

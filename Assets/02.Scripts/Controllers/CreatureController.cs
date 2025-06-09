@@ -9,6 +9,8 @@ using static Define;
 
 public class CreatureController : BaseController
 {
+    public GameObject Indicator;
+
     public CreatureData CreatureData;
     public virtual int DataId { get; set; }
     public virtual SkillBook Skills { get; set; }

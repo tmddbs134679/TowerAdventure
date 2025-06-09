@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class AttackArea : MonoBehaviour
+public class AttackArea : BaseController
 {
+    CreatureController attacker;
     public Transform backGroundObject;
     public Transform visualObject;
     private float growDuration;
@@ -17,9 +18,9 @@ public class AttackArea : MonoBehaviour
     private bool active = false;
     private Vector3 originalScale;
 
-    public void Init(float duration, float explosionRadius, Vector3 pos)
+    public void Init(CreatureController attacker,float duration, float explosionRadius, Vector3 pos)
     {
-    
+        this.attacker = attacker;
         growDuration = duration;
         radius = explosionRadius;
         initPos = pos;
@@ -29,9 +30,6 @@ public class AttackArea : MonoBehaviour
 
     void Start()
     {
-
-
-   
         float baseVisualRadius = 0.5f;
         float scaleFactor = radius / baseVisualRadius;
 
@@ -90,6 +88,17 @@ public class AttackArea : MonoBehaviour
         }
 
         visualObject.localScale = originalScale;
+
+
+        Collider[] targets = Physics.OverlapSphere(transform.position, radius);
+        foreach (Collider col in targets)
+        {
+          
+           var health = col.GetComponent<Health>();
+           if (health != null)
+               health.DealDamage(attacker, attacker.CreatureData.Atk);
+           
+        }
 
         active = false;
 

@@ -27,7 +27,7 @@ public class BombProjectile : MonoBehaviour
     private IEnumerator ExplodeAfterDelay()
     {
         areaPrefab = Instantiate(areaPrefab, GetGroundPosition(), Quaternion.identity);
-        areaPrefab.GetComponent<AttackArea>().Init(explosionDelay, explosionRadius, transform.position);
+       // areaPrefab.GetComponent<AttackArea>().Init(,explosionDelay, explosionRadius, transform.position);
 
         yield return new WaitForSeconds(explosionDelay);
         //Explode();

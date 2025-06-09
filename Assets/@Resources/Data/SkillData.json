@@ -27,7 +27,10 @@
       "ProjSpeed": 3.0,
       "ScaleMultiplier": 1.0,
       "IsMove": false,
-      "MoveSpeed" : 0.0
+      "MoveSpeed": 0.0,
+      "IsExplosive": true,
+      "ExplosionRadius": 1,
+      "ExplosionDelay": 2
     },
     {
       "DataId": 10002,
@@ -43,7 +46,7 @@
       "RecognitionRange": 3.0,
       "CastingSound": "",
       "AngleBetweenProj": 0.0,
-      "AttackInterval": 0.5, 
+      "AttackInterval": 0.5,
       "CastingEffect": 20000,
       "HitSoundLabel": "",
       "ProbCastingEffect": 0.0,
@@ -56,7 +59,10 @@
       "ProjSpeed": 0,
       "ScaleMultiplier": 1,
       "IsMove": true,
-      "MoveSpeed": 2.0
+      "MoveSpeed": 2.0,
+      "IsExplosive": false,
+      "ExplosionRadius": 0,
+      "ExplosionDelay": 0
     }
   ]
 }

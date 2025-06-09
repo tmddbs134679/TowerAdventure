@@ -5,7 +5,7 @@ using static Define;
 public class PlayerController : CreatureController
 {
     [SerializeField]
-    public GameObject Indicator;
+
     public override bool Init()
     {
         base.Init();

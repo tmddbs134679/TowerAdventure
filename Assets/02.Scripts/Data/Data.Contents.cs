@@ -74,6 +74,10 @@ namespace Data
         public float ScaleMultiplier;
         public bool IsMove;         //움직이면서 가능한 공격
         public float moveSpeed;
+        public bool IsExplosive;
+        public float ExplosionRadius;
+        public float ExplosionDelay;
+        //public GameObject ExplosionPrefab;
     }
     [Serializable]
     public class SkillDataLoader : ILoader<int, SkillData>

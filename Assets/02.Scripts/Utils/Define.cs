@@ -6,7 +6,7 @@ using UnityEngine;
 public static class Define
 {
     public static float PLAYER_SELECT_COOLTIME = 1f;
-
+    public static readonly int ProjectileHas = Animator.StringToHash("Projectile");     //원거리 몬스터 투사체 공격은 Projectile로 Anim 이름 통일
     public enum ESCENE
     {
         NONE,

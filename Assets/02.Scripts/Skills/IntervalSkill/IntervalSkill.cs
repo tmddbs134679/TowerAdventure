@@ -24,6 +24,8 @@ public abstract class IntervalSkill : SkillBase
         float elapsed = 0f;
         float timer = 0f;
 
+        DoSkillJob(); // 시작하자마자 한 번 공격
+
         while (elapsed < SkillData.Duration)
         {
             elapsed += Time.deltaTime;
@@ -32,6 +34,8 @@ public abstract class IntervalSkill : SkillBase
             if (timer >= SkillData.AttackInterval)
             {
                 timer = 0f;
+                //스킬 사용할 때 Player 처다보기
+                Extension.LookAtPlayer(gameObject);
                 DoSkillJob(); 
             }
 

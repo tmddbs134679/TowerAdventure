@@ -29,7 +29,7 @@ public class EnemyAttackingState : EnemyBaseState
         {
             if(!hasFacedPlayer)
             {
-                FacePlayer();
+                Extension.LookAtPlayer(stateMachine.gameObject);
                 hasFacedPlayer = true;
             }
             else

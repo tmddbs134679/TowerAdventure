@@ -28,7 +28,7 @@ public class EnemyMeleeAttackState : EnemyBaseState
         {
             if (!hasFacedPlayer)
             {
-                FacePlayer();
+                Extension.LookAtPlayer(stateMachine.gameObject);
                 hasFacedPlayer = true;
             }
             else

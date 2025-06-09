@@ -28,6 +28,7 @@ public class ProjectileController : BaseController
     }
     public void SetInfo(CreatureController owner, Vector3 position, Vector3 dir, Vector3 target, SkillBase skill)
     {
+
         _owner = owner;
         _spawnPos = position;
         _dir = dir;
@@ -66,6 +67,7 @@ public class ProjectileController : BaseController
 
         if (TryGetComponent(out Rigidbody rb))
         {
+            rb.isKinematic = false;
             rb.velocity = velocity;
             rb.useGravity = true;
         }

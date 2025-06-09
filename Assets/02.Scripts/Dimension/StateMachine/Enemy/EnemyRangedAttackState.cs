@@ -18,7 +18,7 @@ public class EnemyRangedAttackState : EnemyBaseState
         Debug.Log("Enter");
         elapsedTime = 0f;
 
-        FacePlayer();
+        Extension.LookAtPlayer(stateMachine.gameObject);
         stateMachine.Animator.CrossFadeInFixedTime(Define.ProjectileHas, CrossFadeDuration);
         CreatureController cc = stateMachine.GetComponent<CreatureController>();
         cc.Skills.SkillList[0].ActivateSkill();

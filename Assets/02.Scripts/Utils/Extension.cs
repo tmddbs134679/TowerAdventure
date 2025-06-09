@@ -28,5 +28,19 @@ public static class Extension
         return bc != null && bc.isActiveAndEnabled;
     }
 
+    public static void LookAtPlayer(GameObject owner)
+    {
+        if(owner.TryGetComponent<EnemyStateMachine>(out var stateMachine))
+        {
+            if (stateMachine.Player == null) { return; }
+
+            Vector3 lookPos = stateMachine.Player.transform.position - stateMachine.transform.position;
+
+            lookPos.y = 0f;
+
+            stateMachine.transform.rotation = Quaternion.LookRotation(lookPos);
+        }
+    
+    }
 
 }

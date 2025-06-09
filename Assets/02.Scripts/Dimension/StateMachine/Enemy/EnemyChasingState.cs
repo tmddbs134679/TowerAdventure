@@ -35,10 +35,10 @@ public class EnemyChasingState : EnemyBaseState
 
         MoveToPlayer(deltaTime);
 
-        FacePlayer();
+        Extension.LookAtPlayer(stateMachine.gameObject);
 
 
-        
+
 
         stateMachine.Animator.SetFloat(SpeedHas, 1f, AnimatorDampTime, deltaTime);
     }

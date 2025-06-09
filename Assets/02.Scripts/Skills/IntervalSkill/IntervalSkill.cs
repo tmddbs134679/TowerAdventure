@@ -8,24 +8,45 @@ public abstract class IntervalSkill : SkillBase
     Coroutine _coSkill;
 
     protected abstract void DoSkillJob();
-    public override void ActivateSkill(Action onComplelte = null)
+    public override void ActivateSkill(Action onComplete = null)
     {
         base.ActivateSkill();
         if (_coSkill != null)
             StopCoroutine(_coSkill);
 
         gameObject.SetActive(true);
-        _coSkill = StartCoroutine(CoStartSkill());
+        _coSkill = StartCoroutine(CoStartSkill(onComplete));
     }
 
-
-    protected virtual IEnumerator CoStartSkill()
+    //스킬 쿨타임 어디서 제어할지 고민
+    protected virtual IEnumerator CoStartSkill(Action onComplete)
     {
-        while (true)
-        {
+        float elapsed = 0f;
+        float timer = 0f;
 
-            DoSkillJob();
+        while (elapsed < SkillData.Duration)
+        {
+            elapsed += Time.deltaTime;
+            timer += Time.deltaTime;
+
+            if (timer >= SkillData.AttackInterval)
+            {
+                timer = 0f;
+                DoSkillJob(); 
+            }
+
             yield return null;
+        }
+
+        onComplete?.Invoke();
+    }
+
+    public override void InterruptSkill()
+    {
+        if (_coSkill != null)
+        {
+            StopCoroutine(_coSkill);
+            _coSkill = null;
         }
     }
 }

@@ -49,6 +49,7 @@ namespace Data
         public int DataId;
         public string Name;
         public string Description;
+        public string AnimName;
         public string PrefabLabel; //프리팹 경로
         public string IconLabel;//아이콘 경로
         public string SoundLabel;// 발동사운드 경로

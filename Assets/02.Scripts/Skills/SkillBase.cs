@@ -58,7 +58,6 @@ public class SkillBase : BaseController
 
     public virtual void OnChangedSkillData() { }
 
-    // 레벨 0에서 1될때만 실행
     public virtual void ActivateSkill(Action onComplete = null)
     {
         //UpdateSkillData();
@@ -74,5 +73,5 @@ public class SkillBase : BaseController
     {
 
     }
-  
+    public virtual void InterruptSkill(){ }
 }

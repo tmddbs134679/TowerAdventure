@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
+    //[SerializeField] private List<zone> zonesInOrder;
     // Start is called before the first frame update
     void Start()
     {

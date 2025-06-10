@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UIElements;
 
 public class ObjectManager
@@ -29,11 +30,11 @@ public class ObjectManager
         else if(type == typeof(MonsterController))
         {
             Data.CreatureData cd = Managers.Data.CreatureDic[templateID];
-            GameObject go = Managers.Resource.Instantiate($"{cd.PrefabLabel}",pooling: true);
+            GameObject go = Managers.Resource.Instantiate($"{cd.PrefabLabel}",pooling: false);
             MonsterController mc = go.GetOrAddComponent<MonsterController>();
-            go.transform.position = position;
+            mc.gameObject.transform.position = position;
             mc.SetInfo(templateID);
-            go.name = cd.PrefabLabel;
+            mc.name = cd.PrefabLabel;
             Monsters.Add(mc);
 
             return mc as T;

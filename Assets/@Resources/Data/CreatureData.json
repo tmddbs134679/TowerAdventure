@@ -19,7 +19,7 @@
     {
       "DataId": 202001,
       "DescriptionTextID": "SlimePolyart",
-      "PrefabLabel": "MonsterPrefab",
+      "PrefabLabel": "SlimePolyart.prefab",
       "Atk": 10.0,
       "AtkBonus": 0.0,
       "MoveSpeed": 3.0,
@@ -35,7 +35,7 @@
     {
       "DataId": 202002,
       "DescriptionTextID": "TurtleShell",
-      "PrefabLabel": "MonsterPrefab",
+      "PrefabLabel": "TurtleShellPBR.prefab",
       "Atk": 10.0,
       "AtkBonus": 0.0,
       "MoveSpeed": 3.0,

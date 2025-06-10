@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class WorldMapManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    List<MonsterZone> zones = new List<MonsterZone>();
+
+    private void Awake()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

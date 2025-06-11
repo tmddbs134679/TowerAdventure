@@ -43,7 +43,7 @@
       "CoolTime": 5,
       "ProjectileSpacing": 0.0,
       "Duration": 3,
-      "RecognitionRange": 3.0,
+      "RecognitionRange": 1.0,
       "CastingSound": "",
       "AngleBetweenProj": 0.0,
       "AttackInterval": 0.5,

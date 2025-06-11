@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Scripting.APIUpdating;
+using Random = UnityEngine.Random;
 
 public class EnemyIdleState : EnemyBaseState
 {
@@ -16,7 +18,6 @@ public class EnemyIdleState : EnemyBaseState
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(IdleHas, CrossFadeDuration);
-      
     }
 
 

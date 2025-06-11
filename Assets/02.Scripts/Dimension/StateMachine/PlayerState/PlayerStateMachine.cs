@@ -23,6 +23,7 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public float DodgeCooldown;
 
+    public bool IsCastingSkill;
     //이동 필요
     [field: SerializeField] public GameObject FollowCam;
     public bool CanDodge => Time.time >= lastDodgeTime + DodgeCooldown;
@@ -65,7 +66,8 @@ public class PlayerStateMachine : StateMachine
 
     private void HandleTakeDamage(float _, Vector3 __)
     {
-        SwitchState(States[EPLAYERSTATE.STUN]);
+        if(!IsCastingSkill)
+            SwitchState(States[EPLAYERSTATE.STUN]);
     }
 
     private void HandleDie()

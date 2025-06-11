@@ -9,13 +9,13 @@ public class PlayerStunState : PlayerBaseState
 
     private const float CrossFadeDuration = 0.1f;
 
-    private float duration = 0.2f;
+    private float duration = 0.1f;
 
     public PlayerStunState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
-        duration = 0.2f;
+        duration = 0.1f;
         stateMachine.Animator.CrossFadeInFixedTime(StunHas, CrossFadeDuration);
     }
 

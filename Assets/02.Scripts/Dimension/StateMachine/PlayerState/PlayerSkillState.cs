@@ -24,6 +24,7 @@ public class PlayerSkillState : PlayerBaseState
         SkillHas = Animator.StringToHash(currentSkill.SkillType.ToString());
         stateMachine.Animator.CrossFadeInFixedTime(SkillHas, AnimatorDampTime);
         currentSkill.ActivateSkill(OnSkillFinished);
+        stateMachine.IsCastingSkill = true;
     }
 
 
@@ -39,7 +40,7 @@ public class PlayerSkillState : PlayerBaseState
 
     public override void Exit()
     {
-      
+        stateMachine.IsCastingSkill = false;
     }
     private void OnSkillFinished()
     {

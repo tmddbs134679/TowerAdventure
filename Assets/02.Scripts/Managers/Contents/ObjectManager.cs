@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 public class ObjectManager
 {
     public PlayerController Player { get; private set; }
-    HashSet<MonsterController> Monsters { get; } = new HashSet<MonsterController>();
+    public HashSet<MonsterController> Monsters { get; } = new HashSet<MonsterController>();
     HashSet<ProjectileController> Projectiles { get; } = new HashSet<ProjectileController>();
 
     public T Spawn<T>(Vector3 position, int templateID = 0, string prefabName = "") where T : BaseController
@@ -30,9 +30,9 @@ public class ObjectManager
         else if(type == typeof(MonsterController))
         {
             Data.CreatureData cd = Managers.Data.CreatureDic[templateID];
-            GameObject go = Managers.Resource.Instantiate($"{cd.PrefabLabel}",pooling: false);
+            GameObject go = Managers.Resource.Instantiate($"{cd.PrefabLabel}",pooling: true);
             MonsterController mc = go.GetOrAddComponent<MonsterController>();
-            mc.gameObject.transform.position = position;
+            go.transform.position = position;
             mc.SetInfo(templateID);
             mc.name = cd.PrefabLabel;
             Monsters.Add(mc);

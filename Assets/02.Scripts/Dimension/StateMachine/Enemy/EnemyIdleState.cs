@@ -24,9 +24,6 @@ public class EnemyIdleState : EnemyBaseState
     public override void Tick(float deltaTime)
     {
 
-        Move(deltaTime);
-
-
        // if (!stateMachine.CanAttack) { return; }
 
         if(IsInChaseRange())

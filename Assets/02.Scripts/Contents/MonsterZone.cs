@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterZone : MonoBehaviour
 {
@@ -35,19 +36,17 @@ public class MonsterZone : MonoBehaviour
     }
     private void SpawnMonsters()
     {
-        //MonsterController monster;
-        //for (int i = 0; i < spawnPoints.Count; i++)
-        //{
-        //    if (i < 4)
-        //        monster = Managers.Object.Spawn<MonsterController>(spawnPoints[i].transform.position, 202002);
-        //    else
-        //        monster = Managers.Object.Spawn<MonsterController>(spawnPoints[i].transform.position, 202001);
+        MonsterController monster;
+        for (int i = 0; i < spawnPoints.Count; i++)
+        {
+            if (i < 4)
+                monster = Managers.Object.Spawn<MonsterController>(spawnPoints[i].transform.position, 202002);
+            else
+                monster = Managers.Object.Spawn<MonsterController>(spawnPoints[i].transform.position, 202001);
 
-        //    Debug.Log("Mosnter Pos : " + monster.transform.position);
-        //    monsterCount++;
-        //}
-   
-        Managers.Object.Spawn<MonsterController>(spawnPoints[0].transform.position, 202002);
+            monsterCount++;
+        }
+  
 
     }
 
@@ -61,5 +60,13 @@ public class MonsterZone : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        //if(Input.GetKeyDown(KeyCode.A))
+        //{
+        //    Debug.Log("change");
+        //    monsterController.transform.position = new Vector3(3, 3, 3);
+        //}
+    }
 
 }

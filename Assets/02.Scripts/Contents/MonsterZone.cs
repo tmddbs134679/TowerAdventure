@@ -9,15 +9,8 @@ public class MonsterZone : MonoBehaviour
     [SerializeField] private List<GameObject> spawnPoints;
     [SerializeField] private List<GameObject> monsterPrefabs;
     [SerializeField] private List<GameObject> walls; // 다음 구역 차단용
-    private int monsterCount = 0;
-    private int killedCount = 0;
-   // private StageManager stageManager;
-
-    //public void Activate(StageManager mgr)
-    //{
-    //    stageManager = mgr;
-    //    wall.SetActive(true); // 벽 닫기 (진입 전)
-    //}
+    [SerializeField] private int monsterCount = 0;
+    [SerializeField] private int killedCount = 0;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -44,6 +37,12 @@ public class MonsterZone : MonoBehaviour
             else
                 monster = Managers.Object.Spawn<MonsterController>(spawnPoints[i].transform.position, 202001);
 
+            Health health = monster.GetComponent<Health>();
+            health.OnDie += () =>
+            {
+                OnMonsterKilled(); 
+                health.OnDie -= OnMonsterKilled; 
+            };
             monsterCount++;
         }
   
@@ -53,20 +52,19 @@ public class MonsterZone : MonoBehaviour
     private void OnMonsterKilled()
     {
         killedCount++;
-        if (killedCount >= monsterCount)
+        if (killedCount >= monsterCount) //Zone Clear
         {
-           // wall.SetActive(false); // 다음 영역 이동 가능
-            //stageManager.OnZoneCleared();
+            UnActiveZone();
+          
         }
     }
 
-    private void Update()
+    private void UnActiveZone()
     {
-        //if(Input.GetKeyDown(KeyCode.A))
-        //{
-        //    Debug.Log("change");
-        //    monsterController.transform.position = new Vector3(3, 3, 3);
-        //}
+        foreach (var wall in walls)
+        {
+            wall.gameObject.SetActive(false);
+        }
     }
 
 }

@@ -18,13 +18,13 @@ MonoBehaviour:
   m_GUID: beba88e27eb01584f841dd0c721e6b40
   m_SerializeEntries:
   - m_GUID: a4ec793513574cd49719c4055b630e2b
-    m_Address: SlimePolyart.prefab
+    m_Address: SlimePolyart
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c0ea9de1c1fcc7f4984d64d19b7d0294
-    m_Address: TurtleShellPBR.prefab
+    m_Address: TurtleShellPBR
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad

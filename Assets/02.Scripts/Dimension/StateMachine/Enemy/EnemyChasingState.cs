@@ -45,22 +45,30 @@ public class EnemyChasingState : EnemyBaseState
 
     public override void Exit()
     {
-        stateMachine.Agent.ResetPath();
-        stateMachine.Agent.velocity = Vector3.zero;
+        if (stateMachine.Agent.isOnNavMesh)
+        {
+            stateMachine.Agent.ResetPath();
+            stateMachine.Agent.velocity = Vector3.zero;
+        }
     }
 
     private void MoveToPlayer(float deltaTime)
     {
 
-        if(stateMachine.Agent.isOnNavMesh)
-        {
-            stateMachine.Agent.destination = stateMachine.Player.transform.position;
+        if (!stateMachine.Agent.isOnNavMesh)
+            return;
 
-            Move(stateMachine.Agent.desiredVelocity.normalized * stateMachine.MovementSpeed, deltaTime);
-        }
+        // 1. 목적지 설정 (NavMeshAgent는 경로만 계산)
+        stateMachine.Agent.updatePosition = false;
+        stateMachine.Agent.updateRotation = false;
+        stateMachine.Agent.destination = stateMachine.Player.transform.position;
 
+        // 2. 경로 계산 결과를 기반으로 직접 이동
+        Vector3 velocity = stateMachine.Agent.desiredVelocity.normalized * stateMachine.MovementSpeed;
+        stateMachine.Controller.Move(velocity * deltaTime); // 이게 당신의 Move()
 
-        stateMachine.Agent.velocity = stateMachine.Controller.velocity;
+        // 3. 위치 동기화
+        stateMachine.Agent.nextPosition = stateMachine.Controller.transform.position;
     }
 
 

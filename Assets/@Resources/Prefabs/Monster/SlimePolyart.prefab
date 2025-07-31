@@ -470,7 +470,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.71
-  m_BaseOffset: 0
+  m_BaseOffset: 0.16
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!143 &934722393145197138
@@ -543,7 +543,7 @@ MonoBehaviour:
   <MovementSpeed>k__BackingField: 3
   <AttackKnockback>k__BackingField: 1
   <Target>k__BackingField: {fileID: 8774871697901528111}
-  baseAttackSkill: {fileID: 11400000, guid: 2ccba7b501905504194c43dc271befa9, type: 2}
+  baseAttackSkill: {fileID: 0}
 --- !u!114 &3442052250111156189
 MonoBehaviour:
   m_ObjectHideFlags: 0

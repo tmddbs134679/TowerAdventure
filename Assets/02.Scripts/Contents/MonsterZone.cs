@@ -29,6 +29,7 @@ public class MonsterZone : MonoBehaviour
     }
     private void SpawnMonsters()
     {
+        //Zone에 들어갈떄 monster가 chasing상태로 바로가면 버그나느듯
         MonsterController monster;
         for (int i = 0; i < spawnPoints.Count; i++)
         {
@@ -36,6 +37,7 @@ public class MonsterZone : MonoBehaviour
                 monster = Managers.Object.Spawn<MonsterController>(spawnPoints[i].transform.position, 202002);
             else
                 monster = Managers.Object.Spawn<MonsterController>(spawnPoints[i].transform.position, 202001);
+
 
             Health health = monster.GetComponent<Health>();
             health.OnDie += () =>

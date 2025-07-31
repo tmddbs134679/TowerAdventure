@@ -106,7 +106,6 @@ MonoBehaviour:
   controller: {fileID: 1440762037013370823}
   agent: {fileID: 3061576344099748816}
   drag: 0.3
-  verticalVelocity: 0
 --- !u!114 &3957416499925241905
 MonoBehaviour:
   m_ObjectHideFlags: 0

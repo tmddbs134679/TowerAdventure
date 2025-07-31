@@ -17,6 +17,7 @@ public class GenericObjectPool<T> where T : Component
 
         for(int i =0; i < initSize; i++)
         {
+           
             T obj = GameObject.Instantiate(prefab, parent);
             obj.gameObject.SetActive(false);
             pool.Enqueue(obj);

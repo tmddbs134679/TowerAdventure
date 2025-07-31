@@ -67,7 +67,7 @@ public class ResourceManager
         if (pooling)
             return Managers.Pool.Pop(prefab);
 
-        GameObject go = Object.Instantiate(prefab, parent);
+         GameObject go = Object.Instantiate(prefab, parent);
 
         go.name = prefab.name;
         return go;

@@ -35,6 +35,8 @@ public class PlayerSelector : GenericSingleton<PlayerSelector>
             UpdateLastSelectTime();
             selectedPlayer.DisconnectInput(); // 입력 연결 해제
             selectedPlayer.gameObject.SetActive(false);
+            allPlayers[idx].transform.position = selectedPlayer.transform.position;
+            allPlayers[idx].transform.rotation = selectedPlayer.transform.rotation;
         }
 
         selectedPlayer = allPlayers[idx];

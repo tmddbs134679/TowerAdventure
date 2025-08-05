@@ -71,15 +71,14 @@ public class PlayerAttackingState : PlayerBaseState
 
         if(attack.ComboStateIndex == -1) { return; }
 
-       
         if(normalizedTime < attack.ComboAttackTime) { return; }
-
 
         var attackState = (PlayerAttackingState)stateMachine.States[Define.EPLAYERSTATE.ATTACK];
         attackState.SetAttackIndex(attack.ComboStateIndex);
         stateMachine.SwitchState(attackState);
 
     }
+
     public void SetAttackIndex(int index)
     {
         attackIndex = index;

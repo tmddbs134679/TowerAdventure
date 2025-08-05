@@ -12,7 +12,6 @@ public class SkillBase : BaseController
     public int DataId;
     public CreatureController Owner { get; set; }
 
-
     Define.ESKILLTYPE skillType;
     public Define.ESKILLTYPE SkillType
     {
@@ -41,16 +40,14 @@ public class SkillBase : BaseController
         }
     }
     #endregion
-
-
     public bool IsLearnedSkill { get; set;  }
+
     public Data.SkillData UpdateSkillData(int dataId = 0)
     {
         SkillData skillData = new Data.SkillData();
 
         if (Managers.Data.SkillDic.TryGetValue(dataId, out skillData) == false)
             return SkillData;
-
 
         SkillData = skillData;
         return SkillData;
@@ -60,7 +57,6 @@ public class SkillBase : BaseController
 
     public virtual void ActivateSkill(Action onComplete = null)
     {
-        //UpdateSkillData();
         onComplete?.Invoke();
     }
     protected virtual void GenerateProjectile(CreatureController Owner, string prefabName, Vector3 startPos, Vector3 dir, Vector3 targetPos, SkillBase skill)

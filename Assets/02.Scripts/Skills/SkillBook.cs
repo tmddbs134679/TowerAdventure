@@ -33,7 +33,6 @@ public class SkillBook : MonoBehaviour
     {
         string className = skillType.ToString();
 
-        // AddComponent¸¸ ÇÏ¸éµÊ
         SequenceSkill skill = gameObject.AddComponent(Type.GetType(className)) as SequenceSkill;
         if (skill != null)
         {

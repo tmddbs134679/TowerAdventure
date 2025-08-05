@@ -55,14 +55,14 @@ public class UI_TitleScene : UI_Scene
     {
         Managers.Resource.LoadAllAsync<Object>("PreLoad", (key, count, totalCount) =>
         {
-        GetObject((int)GameObjects.Slider).GetComponent<Slider>().value = (float)count / totalCount;
-        if (count == totalCount)
-        {
-            isPreload = true;
-                GetButton((int)Buttons.StartButton).gameObject.SetActive(true);
-                Managers.Data.Init();
-                StartButtonAnimation();
-        }
+            GetObject((int)GameObjects.Slider).GetComponent<Slider>().value = (float)count / totalCount;
+            if (count == totalCount)
+            {
+                isPreload = true;
+                    GetButton((int)Buttons.StartButton).gameObject.SetActive(true);
+                    Managers.Data.Init();
+                    StartButtonAnimation();
+            }
         });
     }
 

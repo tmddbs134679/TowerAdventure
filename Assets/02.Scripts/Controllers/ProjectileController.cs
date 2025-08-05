@@ -42,7 +42,6 @@ public class ProjectileController : BaseController
             case Define.ESKILLTYPE.Fireball:
                 Fireball(_spawnPos, _target);
                 break;
-            
         }
 
     }

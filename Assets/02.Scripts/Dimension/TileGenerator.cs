@@ -28,12 +28,10 @@ public class TileGenerator : EditorWindow
         height = EditorGUILayout.IntField("Heights", height);
         spacing = EditorGUILayout.FloatField("Spacing", spacing);
 
-        if (GUILayout.Button("Generatge"))
+        if (GUILayout.Button("Generate"))
         {
             GenerateGrid();
         }
-
-
     }
 
     private void GenerateGrid()

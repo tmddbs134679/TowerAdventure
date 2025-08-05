@@ -43,8 +43,6 @@ public class PlayerStateMachine : StateMachine
         States.Add(EPLAYERSTATE.STUN, new PlayerStunState(this));
     }
 
-
-    // Start is called before the first frame update
     private void Start()
     {
         SwitchState(States[EPLAYERSTATE.FREELOOK]);

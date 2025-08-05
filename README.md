@@ -4,7 +4,7 @@
 
 # 🎮 Tower Adventure
 
-> ![Title](C:\Users\tmddb\images\0\Title.png)
+<img width="1536" height="1024" alt="Title" src="https://github.com/user-attachments/assets/8ed1129f-c123-4029-9405-e53067dddddb" />
 
 ---
 
@@ -54,9 +54,10 @@
 
 | 기능                | 구현                              |
 | ------------------- | --------------------------------- |
-| **플레이어**        | [플레이어 이동](), [Dash, Dead]() |
+| **플레이어**        | [플레이어 FSM](), |
 | **연속공격 시스템** | [공격 시스템]()                   |
 | **스킬 시스템**     | [스킬 시스템 구현]()              |
+| **AI(FSM)** | [FSM]()                                 |
 | **어드레서블**      | [어드레서블 Load]()               |
 | **커스텀 에디터**   | [3D 타일 맵 자동화 시스템](Assets/02.Scripts/Dimension/TileGenerator.md)      |
 

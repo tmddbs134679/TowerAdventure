@@ -5,11 +5,13 @@
 # 🎮 Tower Adventure
 
 <img width="1536" height="1024" alt="Title" src="https://github.com/user-attachments/assets/8ed1129f-c123-4029-9405-e53067dddddb" />
-![tool](https://github.com/user-attachments/assets/0af4d730-c4f4-4427-b1aa-8a2c8f21a41e)
-![skill](https://github.com/user-attachments/assets/dfbff8dd-2f24-47e1-9dc4-bd8681cfa4a1)
-![enemy](https://github.com/user-attachments/assets/1b846843-8fc3-425b-95b5-c2cd92b56ba0)
-![change](https://github.com/user-attachments/assets/9cb96efa-5c0b-4050-9084-ae33b5c66200)
-![Attack1](https://github.com/user-attachments/assets/fa1d2fb2-61ca-4871-a299-ab4207361202)
+
+![Attack1](./Assets/Attack1.gif)
+![skill](./Assets/skill.gif)
+![change](./Assets/change.gif)
+![enemy](./Assets/enemy.gif)
+![tool](./Assets/tool.gif)
+
 
 ---
 

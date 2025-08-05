@@ -22,7 +22,7 @@ FSM은 Enemy AI쪽과 같이 사용하기 때문에 제외하였습니다.
 | 기능          | 설명                                                     | 클래스명                                        |
 | :------------ | -------------------------------------------------------- | ----------------------------------------------- |
 | InputReader   | 사용자 입력을 처리하는 클래스                            | [InputReader](../../InputReader.cs)             |
-| ForceReceiver | 캐릭터가 받는 힘(Impact)과 중력을 처리하는 클래스        | [ForceReceiver](../../../InputReader.cs)        |
+| ForceReceiver | 캐릭터가 받는 힘(Impact)과 중력을 처리하는 클래스        | [ForceReceiver](../../../ForceReceiver.cs)        |
 | Targeter      | 플레이어가 타겟을 자동으로 선택하고 표시하는 클래스      | [Targeter](../../../Combat/Targeter.cs)         |
 | WeaponDamage  | 무기의 피해 및 넉백 처리를 담당하는 클래스               | [WeaponDamage](../../../Combat/WeaponDamage.cs) |
 | Attack        | **플레이어의 공격에 관련된 정보를 저장**하는 데이터 구조 | [Attack](../Attack.cs)                          |

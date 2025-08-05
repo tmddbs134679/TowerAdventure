@@ -54,7 +54,7 @@
 
 | 기능                | 구현                              |
 | ------------------- | --------------------------------- |
-| **플레이어**        | [플레이어(Assets/02.Scripts/Dimension/StateMachine/PlayerState/PlayerState.md)] |
+| **플레이어**        | [플레이어](Assets/02.Scripts/Dimension/StateMachine/PlayerState/PlayerState.md) |
 | **스킬 시스템**     | [스킬 시스템 구현](Assets/02.Scripts/Skills/Skill.md)              |
 | **AI(FSM)** | [FSM](Assets/02.Scripts/Dimension/StateMachine/Enemy/EnemyStateMachine.md)                                 |
 | **커스텀 에디터**   | [3D 타일 맵 자동화 시스템](Assets/02.Scripts/Dimension/TileGenerator.md)      |
